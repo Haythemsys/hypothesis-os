@@ -1,0 +1,1327 @@
+{
+  "generatedBy": "scripts/index-archive.mjs",
+  "source": "/root/storage/downloads",
+  "note": "Index of research-relevant files actually present on disk. Filenames/sizes are real; no contents fabricated.",
+  "fileCount": 218,
+  "categories": {
+    "archive-bundle": 33,
+    "concept": 3,
+    "corpus-intelligence": 3,
+    "engine-report": 56,
+    "master-report": 1,
+    "other": 64,
+    "phase-report": 45,
+    "results": 11,
+    "strategy": 2
+  },
+  "files": [
+    {
+      "name": "bapa-project-v3-main (11).zip",
+      "ext": "zip",
+      "bytes": 124296250,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-project-v3-main (10).zip",
+      "ext": "zip",
+      "bytes": 124284091,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-project-v3-main (9).zip",
+      "ext": "zip",
+      "bytes": 124284091,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "BAPA_DEMO.zip",
+      "ext": "zip",
+      "bytes": 10300036,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-project-v3-main (8).zip",
+      "ext": "zip",
+      "bytes": 2753271,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "BAPA_ARCHIVE.zip",
+      "ext": "zip",
+      "bytes": 1849503,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-project-v3-main (7).zip",
+      "ext": "zip",
+      "bytes": 882784,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-project-v3-main (5).zip",
+      "ext": "zip",
+      "bytes": 841714,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-project-v3-main (6).zip",
+      "ext": "zip",
+      "bytes": 841714,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-identity-platform-main (2).zip",
+      "ext": "zip",
+      "bytes": 715064,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-identity-platform-main (1).zip",
+      "ext": "zip",
+      "bytes": 472311,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-identity-platform-main.zip",
+      "ext": "zip",
+      "bytes": 472311,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-project-v3-main (4).zip",
+      "ext": "zip",
+      "bytes": 453451,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-project-v3-main (3).zip",
+      "ext": "zip",
+      "bytes": 345953,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-project-v3-main (2).zip",
+      "ext": "zip",
+      "bytes": 277747,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "CognitiveOS-v5-FINAL (1).zip",
+      "ext": "zip",
+      "bytes": 233383,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "getbapa.v2-main.zip",
+      "ext": "zip",
+      "bytes": 219988,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "CognitiveOS-v4-fix-1.zip",
+      "ext": "zip",
+      "bytes": 186607,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "CognitiveOS-v4-fix.zip",
+      "ext": "zip",
+      "bytes": 186607,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "CognitiveOS-v5-FINAL.zip",
+      "ext": "zip",
+      "bytes": 186566,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "CognitiveOS-FINAL.zip",
+      "ext": "zip",
+      "bytes": 186365,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "CognitiveOS-v3-fix.zip",
+      "ext": "zip",
+      "bytes": 186269,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "CognitiveOS-v2-fix.zip",
+      "ext": "zip",
+      "bytes": 184653,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "CognitiveOS-deploy.zip",
+      "ext": "zip",
+      "bytes": 184554,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-project-v3-main (1).zip",
+      "ext": "zip",
+      "bytes": 95842,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-project-v3-main.zip",
+      "ext": "zip",
+      "bytes": 78236,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-micro-main (1).zip",
+      "ext": "zip",
+      "bytes": 27573,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-micro-main.zip",
+      "ext": "zip",
+      "bytes": 27080,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "BAPA_DEMO_PACKAGE.zip",
+      "ext": "zip",
+      "bytes": 22946,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "LingenOS_Cognitive.zip",
+      "ext": "zip",
+      "bytes": 21456,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "account-bapa-main.zip",
+      "ext": "zip",
+      "bytes": 18888,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "BAPA_RELEASE_FINAL.zip",
+      "ext": "zip",
+      "bytes": 9099,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "bapa-fix.zip",
+      "ext": "zip",
+      "bytes": 4035,
+      "category": "archive-bundle"
+    },
+    {
+      "name": "BAPAPassport.jsx.txt",
+      "ext": "txt",
+      "bytes": 31918,
+      "category": "concept"
+    },
+    {
+      "name": "cognitive_passport.md",
+      "ext": "md",
+      "bytes": 8492,
+      "category": "concept"
+    },
+    {
+      "name": "bapa-passports.txt",
+      "ext": "txt",
+      "bytes": 35,
+      "category": "concept"
+    },
+    {
+      "name": "BAPA_CORPUS_INTELLIGENCE_OUTPUT.zip",
+      "ext": "zip",
+      "bytes": 3296652,
+      "category": "corpus-intelligence"
+    },
+    {
+      "name": "BAPA_CORPUS_B_BLUEPRINT.zip",
+      "ext": "zip",
+      "bytes": 5104,
+      "category": "corpus-intelligence"
+    },
+    {
+      "name": "BAPA_CORPUS_INTELLIGENCE_REPORT.txt",
+      "ext": "txt",
+      "bytes": 1560,
+      "category": "corpus-intelligence"
+    },
+    {
+      "name": "Bapa engine v2  (1).pdf",
+      "ext": "pdf",
+      "bytes": 1780205,
+      "category": "engine-report"
+    },
+    {
+      "name": "Bapa engine v2  (2).pdf",
+      "ext": "pdf",
+      "bytes": 1780205,
+      "category": "engine-report"
+    },
+    {
+      "name": "Bapa engine v2  (3).pdf",
+      "ext": "pdf",
+      "bytes": 1780205,
+      "category": "engine-report"
+    },
+    {
+      "name": "Bapa engine v2 .pdf",
+      "ext": "pdf",
+      "bytes": 1780205,
+      "category": "engine-report"
+    },
+    {
+      "name": "Beauty engine v1.pdf",
+      "ext": "pdf",
+      "bytes": 1219890,
+      "category": "engine-report"
+    },
+    {
+      "name": "Bapa engine v1 .pdf",
+      "ext": "pdf",
+      "bytes": 959962,
+      "category": "engine-report"
+    },
+    {
+      "name": "Beaty engine v2 .pdf",
+      "ext": "pdf",
+      "bytes": 695997,
+      "category": "engine-report"
+    },
+    {
+      "name": "Aesthetic DNA Engine v1.1 (1).pdf",
+      "ext": "pdf",
+      "bytes": 613057,
+      "category": "engine-report"
+    },
+    {
+      "name": "Aesthetic DNA Engine v1.1 (2).pdf",
+      "ext": "pdf",
+      "bytes": 613057,
+      "category": "engine-report"
+    },
+    {
+      "name": "Aesthetic DNA Engine v1.1.pdf",
+      "ext": "pdf",
+      "bytes": 613057,
+      "category": "engine-report"
+    },
+    {
+      "name": "Aesthetic DNA Engine v1.0 (2).pdf",
+      "ext": "pdf",
+      "bytes": 586068,
+      "category": "engine-report"
+    },
+    {
+      "name": "Aesthetic DNA Engine v1.0 (1) (1).pdf",
+      "ext": "pdf",
+      "bytes": 405744,
+      "category": "engine-report"
+    },
+    {
+      "name": "Aesthetic DNA Engine v1.0 (1).pdf",
+      "ext": "pdf",
+      "bytes": 405744,
+      "category": "engine-report"
+    },
+    {
+      "name": "Aesthetic DNA Engine v1.0.pdf",
+      "ext": "pdf",
+      "bytes": 405744,
+      "category": "engine-report"
+    },
+    {
+      "name": "PREDICTIVE BEAUTY ENGINE v1.0-- (1).pdf",
+      "ext": "pdf",
+      "bytes": 232661,
+      "category": "engine-report"
+    },
+    {
+      "name": "PREDICTIVE BEAUTY ENGINE v1.0--.pdf",
+      "ext": "pdf",
+      "bytes": 232661,
+      "category": "engine-report"
+    },
+    {
+      "name": "Bapa engine v2  (1).txt",
+      "ext": "txt",
+      "bytes": 206363,
+      "category": "engine-report"
+    },
+    {
+      "name": "Bapa engine v2  (2).txt",
+      "ext": "txt",
+      "bytes": 206363,
+      "category": "engine-report"
+    },
+    {
+      "name": "Bapa engine v2  (3).txt",
+      "ext": "txt",
+      "bytes": 206363,
+      "category": "engine-report"
+    },
+    {
+      "name": "Bapa engine v2 .txt",
+      "ext": "txt",
+      "bytes": 206363,
+      "category": "engine-report"
+    },
+    {
+      "name": "spiritual-engines-main (5).zip",
+      "ext": "zip",
+      "bytes": 166763,
+      "category": "engine-report"
+    },
+    {
+      "name": "spiritual-engines-main (6).zip",
+      "ext": "zip",
+      "bytes": 166763,
+      "category": "engine-report"
+    },
+    {
+      "name": "spiritual-engines-main (2).zip",
+      "ext": "zip",
+      "bytes": 166639,
+      "category": "engine-report"
+    },
+    {
+      "name": "spiritual-engines-main (1).zip",
+      "ext": "zip",
+      "bytes": 166526,
+      "category": "engine-report"
+    },
+    {
+      "name": "FINAL_spiritual_engines.zip",
+      "ext": "zip",
+      "bytes": 166353,
+      "category": "engine-report"
+    },
+    {
+      "name": "spiritual-engines-fixed.zip",
+      "ext": "zip",
+      "bytes": 166353,
+      "category": "engine-report"
+    },
+    {
+      "name": "spiritual-engines-main (3).zip",
+      "ext": "zip",
+      "bytes": 166326,
+      "category": "engine-report"
+    },
+    {
+      "name": "spiritual-engines-main (4).zip",
+      "ext": "zip",
+      "bytes": 166326,
+      "category": "engine-report"
+    },
+    {
+      "name": "spiritual-engines-main.zip",
+      "ext": "zip",
+      "bytes": 165991,
+      "category": "engine-report"
+    },
+    {
+      "name": "kts engine.pdf",
+      "ext": "pdf",
+      "bytes": 144313,
+      "category": "engine-report"
+    },
+    {
+      "name": "Bapa engine v1 .txt",
+      "ext": "txt",
+      "bytes": 110629,
+      "category": "engine-report"
+    },
+    {
+      "name": "Beauty engine v1.txt",
+      "ext": "txt",
+      "bytes": 107279,
+      "category": "engine-report"
+    },
+    {
+      "name": "bapa-engine-view.zip",
+      "ext": "zip",
+      "bytes": 100182,
+      "category": "engine-report"
+    },
+    {
+      "name": "Aesthetic DNA Engine v1.0 (2).txt",
+      "ext": "txt",
+      "bytes": 69035,
+      "category": "engine-report"
+    },
+    {
+      "name": "XIROS_v5_Context_Engineering_Blueprint.md",
+      "ext": "md",
+      "bytes": 68061,
+      "category": "engine-report"
+    },
+    {
+      "name": "Beaty engine v2 .txt",
+      "ext": "txt",
+      "bytes": 66135,
+      "category": "engine-report"
+    },
+    {
+      "name": "Aesthetic DNA Engine v1.1 (1).txt",
+      "ext": "txt",
+      "bytes": 65961,
+      "category": "engine-report"
+    },
+    {
+      "name": "Aesthetic DNA Engine v1.1 (2).txt",
+      "ext": "txt",
+      "bytes": 65961,
+      "category": "engine-report"
+    },
+    {
+      "name": "Aesthetic DNA Engine v1.1.txt",
+      "ext": "txt",
+      "bytes": 65961,
+      "category": "engine-report"
+    },
+    {
+      "name": "ibn_arabi_engine (1).html",
+      "ext": "html",
+      "bytes": 61317,
+      "category": "engine-report"
+    },
+    {
+      "name": "ibn_arabi_engine.html",
+      "ext": "html",
+      "bytes": 61317,
+      "category": "engine-report"
+    },
+    {
+      "name": "astrovision-engine-v1.0.zip",
+      "ext": "zip",
+      "bytes": 48461,
+      "category": "engine-report"
+    },
+    {
+      "name": "Aesthetic DNA Engine v1.0 (1) (1).txt",
+      "ext": "txt",
+      "bytes": 44023,
+      "category": "engine-report"
+    },
+    {
+      "name": "Aesthetic DNA Engine v1.0 (1).txt",
+      "ext": "txt",
+      "bytes": 44023,
+      "category": "engine-report"
+    },
+    {
+      "name": "Aesthetic DNA Engine v1.0.txt",
+      "ext": "txt",
+      "bytes": 44023,
+      "category": "engine-report"
+    },
+    {
+      "name": "XIROS_DESIGN_FORGE_Context_Engineering.md",
+      "ext": "md",
+      "bytes": 35512,
+      "category": "engine-report"
+    },
+    {
+      "name": "polymath-context-engine-1.md",
+      "ext": "md",
+      "bytes": 31139,
+      "category": "engine-report"
+    },
+    {
+      "name": "polymath-context-engine.md",
+      "ext": "md",
+      "bytes": 31139,
+      "category": "engine-report"
+    },
+    {
+      "name": "PREDICTIVE BEAUTY ENGINE v1.0-- (1).txt",
+      "ext": "txt",
+      "bytes": 18039,
+      "category": "engine-report"
+    },
+    {
+      "name": "PREDICTIVE BEAUTY ENGINE v1.0--.txt",
+      "ext": "txt",
+      "bytes": 18039,
+      "category": "engine-report"
+    },
+    {
+      "name": "verdict-engine.txt",
+      "ext": "txt",
+      "bytes": 12427,
+      "category": "engine-report"
+    },
+    {
+      "name": "LingenOS_SmartEngine.zip",
+      "ext": "zip",
+      "bytes": 9182,
+      "category": "engine-report"
+    },
+    {
+      "name": "BAPA_ENGINE_02_CHARACTER_NGRAM_REPORT.txt",
+      "ext": "txt",
+      "bytes": 7117,
+      "category": "engine-report"
+    },
+    {
+      "name": "system_prompt_book_engines.md",
+      "ext": "md",
+      "bytes": 6566,
+      "category": "engine-report"
+    },
+    {
+      "name": "BAPA_ENGINE_03_FEATURE_FUSION_REPORT.txt",
+      "ext": "txt",
+      "bytes": 6371,
+      "category": "engine-report"
+    },
+    {
+      "name": "BAPA_ENGINE_01_SENTENCE_LENGTH_REPORT.txt",
+      "ext": "txt",
+      "bytes": 4479,
+      "category": "engine-report"
+    },
+    {
+      "name": "BAPA_MASTER_RESEARCH_REPORT.txt",
+      "ext": "txt",
+      "bytes": 214478,
+      "category": "master-report"
+    },
+    {
+      "name": "Bapa v3 .pdf",
+      "ext": "pdf",
+      "bytes": 1447793,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Full_Report_The_Phoenix_2026-02-04.pdf",
+      "ext": "pdf",
+      "bytes": 203663,
+      "category": "other"
+    },
+    {
+      "name": "Bapa v3 .txt",
+      "ext": "txt",
+      "bytes": 149892,
+      "category": "other"
+    },
+    {
+      "name": "BAPA Integration Plan - 14 Days to Production.pdf",
+      "ext": "pdf",
+      "bytes": 143609,
+      "category": "other"
+    },
+    {
+      "name": "bapa-dashboard-unified.html",
+      "ext": "html",
+      "bytes": 86227,
+      "category": "other"
+    },
+    {
+      "name": "BAPA-IdentityOS-v3.html",
+      "ext": "html",
+      "bytes": 83829,
+      "category": "other"
+    },
+    {
+      "name": "bapa-academic-adapter-v2 (1).txt",
+      "ext": "txt",
+      "bytes": 70719,
+      "category": "other"
+    },
+    {
+      "name": "bapa-operations-center-1.html",
+      "ext": "html",
+      "bytes": 65626,
+      "category": "other"
+    },
+    {
+      "name": "bapa-operations-center.html",
+      "ext": "html",
+      "bytes": 65626,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_DEMO_MASTER.md",
+      "ext": "md",
+      "bytes": 46797,
+      "category": "other"
+    },
+    {
+      "name": "BAPA-Cognitive-Services-Dashboard (1).html",
+      "ext": "html",
+      "bytes": 40210,
+      "category": "other"
+    },
+    {
+      "name": "bapa-neural-matrix-1769826064820.json",
+      "ext": "json",
+      "bytes": 36363,
+      "category": "other"
+    },
+    {
+      "name": "bapa-neural-matrix-1770210359565_tree.pdf",
+      "ext": "pdf",
+      "bytes": 35885,
+      "category": "other"
+    },
+    {
+      "name": "bapa-neural-matrix-1770210359565.json",
+      "ext": "json",
+      "bytes": 31737,
+      "category": "other"
+    },
+    {
+      "name": "BAPA-30-Days-Ready-Content-1.docx",
+      "ext": "docx",
+      "bytes": 27966,
+      "category": "other"
+    },
+    {
+      "name": "BAPA-30-Days-Ready-Content-2.docx",
+      "ext": "docx",
+      "bytes": 27966,
+      "category": "other"
+    },
+    {
+      "name": "BAPA-30-Days-Ready-Content-3.docx",
+      "ext": "docx",
+      "bytes": 27966,
+      "category": "other"
+    },
+    {
+      "name": "bapa-master-fix.txt",
+      "ext": "txt",
+      "bytes": 24880,
+      "category": "other"
+    },
+    {
+      "name": "cognitive_Haithem barkaoui_1774219899358.json",
+      "ext": "json",
+      "bytes": 23654,
+      "category": "other"
+    },
+    {
+      "name": "cognitive_Haitem barkaoui_1774221624752.json",
+      "ext": "json",
+      "bytes": 23505,
+      "category": "other"
+    },
+    {
+      "name": "cognitive_Haithem barkaoui_1774218867757.json",
+      "ext": "json",
+      "bytes": 23238,
+      "category": "other"
+    },
+    {
+      "name": "resultat_bapa.md",
+      "ext": "md",
+      "bytes": 23218,
+      "category": "other"
+    },
+    {
+      "name": "bapa-analysis-1770673149285.json",
+      "ext": "json",
+      "bytes": 22385,
+      "category": "other"
+    },
+    {
+      "name": "bapa-analysis-1770633889191.json",
+      "ext": "json",
+      "bytes": 22237,
+      "category": "other"
+    },
+    {
+      "name": "PROMPT_bapa_micro.md",
+      "ext": "md",
+      "bytes": 19994,
+      "category": "other"
+    },
+    {
+      "name": "bapa-neural-matrix-1770210359565_tree.txt",
+      "ext": "txt",
+      "bytes": 18398,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_FINAL_STATUS_REPORT.txt",
+      "ext": "txt",
+      "bytes": 17113,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Full_Report_The_Phoenix_2026-01-25 (1).html",
+      "ext": "html",
+      "bytes": 16711,
+      "category": "other"
+    },
+    {
+      "name": "BAPA Integration Plan - 14 Days to Production.txt",
+      "ext": "txt",
+      "bytes": 16537,
+      "category": "other"
+    },
+    {
+      "name": "cognitive_Haithem barkaoui_1774218714348.json",
+      "ext": "json",
+      "bytes": 15687,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Full_Report_The_Phoenix_2026-01-23 (4).html",
+      "ext": "html",
+      "bytes": 14835,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Full_Report_The_Phoenix_2026-01-23 (2).html",
+      "ext": "html",
+      "bytes": 14833,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Full_Report_The_Phoenix_2026-01-23 (3).html",
+      "ext": "html",
+      "bytes": 14833,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Full_Report_The_Phoenix_2026-01-23.html",
+      "ext": "html",
+      "bytes": 14823,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Full_Report_The_Phoenix_2026-01-23 (1).html",
+      "ext": "html",
+      "bytes": 14760,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_PRODUCTION_READY_REPORT.txt",
+      "ext": "txt",
+      "bytes": 13965,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Full_Report_The_Architect_2026-01-25.html",
+      "ext": "html",
+      "bytes": 13420,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Full_Report_The_Phoenix_2026-01-25.html",
+      "ext": "html",
+      "bytes": 13304,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Full_Report_The_Phoenix_2026-01-29.html",
+      "ext": "html",
+      "bytes": 12736,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Full_Report_The_Phoenix_2026-02-04.html",
+      "ext": "html",
+      "bytes": 12685,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Full_Report_The_Architect_2026-02-04.html",
+      "ext": "html",
+      "bytes": 12615,
+      "category": "other"
+    },
+    {
+      "name": "cognitive_Haithem barkaoui_1774218854975.txt",
+      "ext": "txt",
+      "bytes": 11997,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Integration_Complete_Report.md",
+      "ext": "md",
+      "bytes": 11253,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_ENTERPRISE_SECURITY_FINAL.md",
+      "ext": "md",
+      "bytes": 10374,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_BACKEND_RUNTIME_FINAL.md",
+      "ext": "md",
+      "bytes": 9469,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Technical_Fix_Summary.md",
+      "ext": "md",
+      "bytes": 9381,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_PRODUCTION_FINAL.md",
+      "ext": "md",
+      "bytes": 9108,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_RELEASE_READINESS.md",
+      "ext": "md",
+      "bytes": 8522,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_FINAL_DEPLOYMENT_REPORT.txt",
+      "ext": "txt",
+      "bytes": 8491,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Quick_Start_Guide.md",
+      "ext": "md",
+      "bytes": 7092,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_ENTERPRISE_E2E_AUDIT.md",
+      "ext": "md",
+      "bytes": 6611,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_WORKSPACE_RECOVERY_REPORT.txt",
+      "ext": "txt",
+      "bytes": 5796,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_SESSION_EXPIRY_REPORT.txt",
+      "ext": "txt",
+      "bytes": 5596,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Full_Report_The_Phoenix_2026-02-04.txt",
+      "ext": "txt",
+      "bytes": 4509,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Neural_Matrix_Report_1769678549286.html",
+      "ext": "html",
+      "bytes": 4356,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Neural_Matrix_Report_1770210332680.html",
+      "ext": "html",
+      "bytes": 4355,
+      "category": "other"
+    },
+    {
+      "name": "bapa-neural-matrix-1769687830506.json",
+      "ext": "json",
+      "bytes": 1814,
+      "category": "other"
+    },
+    {
+      "name": "bapa-neural-matrix-1769678287608.json",
+      "ext": "json",
+      "bytes": 1797,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Report_1769324679557.html",
+      "ext": "html",
+      "bytes": 1400,
+      "category": "other"
+    },
+    {
+      "name": "bapa-analysis-1768648739653.txt",
+      "ext": "txt",
+      "bytes": 1063,
+      "category": "other"
+    },
+    {
+      "name": "bapa-executive-report-1781517814212.txt",
+      "ext": "txt",
+      "bytes": 436,
+      "category": "other"
+    },
+    {
+      "name": "bapa-executive-report-1781517816640.txt",
+      "ext": "txt",
+      "bytes": 436,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Citation_1769324682485.txt",
+      "ext": "txt",
+      "bytes": 239,
+      "category": "other"
+    },
+    {
+      "name": "BAPA_Metrics_1769324676926.csv",
+      "ext": "csv",
+      "bytes": 174,
+      "category": "other"
+    },
+    {
+      "name": "CodeOS-FINAL-Phase8-16.zip",
+      "ext": "zip",
+      "bytes": 387595,
+      "category": "phase-report"
+    },
+    {
+      "name": "CodeOS-Phase8-13-MEGA-1.zip",
+      "ext": "zip",
+      "bytes": 375777,
+      "category": "phase-report"
+    },
+    {
+      "name": "CodeOS-Phase8-13-MEGA-2.zip",
+      "ext": "zip",
+      "bytes": 375777,
+      "category": "phase-report"
+    },
+    {
+      "name": "CodeOS-Phase8-13-MEGA.zip",
+      "ext": "zip",
+      "bytes": 375645,
+      "category": "phase-report"
+    },
+    {
+      "name": "CodeOS-v13-Phase8-Complete.zip",
+      "ext": "zip",
+      "bytes": 357585,
+      "category": "phase-report"
+    },
+    {
+      "name": "CodeOS-v13-Phase9-12.zip",
+      "ext": "zip",
+      "bytes": 353117,
+      "category": "phase-report"
+    },
+    {
+      "name": "CodeOS-NEXUS-v13-Phase456-1.zip",
+      "ext": "zip",
+      "bytes": 352699,
+      "category": "phase-report"
+    },
+    {
+      "name": "CodeOS-NEXUS-v13-Phase456.zip",
+      "ext": "zip",
+      "bytes": 352699,
+      "category": "phase-report"
+    },
+    {
+      "name": "CodeOS-v13-Phase9-Research.zip",
+      "ext": "zip",
+      "bytes": 351265,
+      "category": "phase-report"
+    },
+    {
+      "name": "nexus-v16-all-phases-1.zip",
+      "ext": "zip",
+      "bytes": 287342,
+      "category": "phase-report"
+    },
+    {
+      "name": "nexus-v16-all-phases.zip",
+      "ext": "zip",
+      "bytes": 287342,
+      "category": "phase-report"
+    },
+    {
+      "name": "nexus-v16-phase4.zip",
+      "ext": "zip",
+      "bytes": 277889,
+      "category": "phase-report"
+    },
+    {
+      "name": "v18-phases.zip",
+      "ext": "zip",
+      "bytes": 140350,
+      "category": "phase-report"
+    },
+    {
+      "name": "terminal_pro_v4_phase6.zip",
+      "ext": "zip",
+      "bytes": 140310,
+      "category": "phase-report"
+    },
+    {
+      "name": "CodeOS-v13-Phase8.zip",
+      "ext": "zip",
+      "bytes": 93110,
+      "category": "phase-report"
+    },
+    {
+      "name": "codeos-dashboard-phase1.html",
+      "ext": "html",
+      "bytes": 61376,
+      "category": "phase-report"
+    },
+    {
+      "name": "CodeOS-NEXUS-16-Phase-Master-Plan.txt",
+      "ext": "txt",
+      "bytes": 30342,
+      "category": "phase-report"
+    },
+    {
+      "name": "lingenOS_phase3.zip",
+      "ext": "zip",
+      "bytes": 29006,
+      "category": "phase-report"
+    },
+    {
+      "name": "BAPA_PHASE_04_MASTER_REPORT.txt",
+      "ext": "txt",
+      "bytes": 25596,
+      "category": "phase-report"
+    },
+    {
+      "name": "PROMPT_phase6_pipeline.md",
+      "ext": "md",
+      "bytes": 24302,
+      "category": "phase-report"
+    },
+    {
+      "name": "BAPA_PHASE_08_CORPUS_PROGRAM.txt",
+      "ext": "txt",
+      "bytes": 22688,
+      "category": "phase-report"
+    },
+    {
+      "name": "BAPA_PHASE_09_MASTER_PROGRAM.txt",
+      "ext": "txt",
+      "bytes": 21491,
+      "category": "phase-report"
+    },
+    {
+      "name": "BAPA_PHASE_07_MASTER_REPORT.txt",
+      "ext": "txt",
+      "bytes": 20992,
+      "category": "phase-report"
+    },
+    {
+      "name": "PROMPT_phase3_micro_integration.md",
+      "ext": "md",
+      "bytes": 20661,
+      "category": "phase-report"
+    },
+    {
+      "name": "PROMPT_phase7_dashboard.md",
+      "ext": "md",
+      "bytes": 19885,
+      "category": "phase-report"
+    },
+    {
+      "name": "Phase-8-Interface-Evolution-FULL.txt",
+      "ext": "txt",
+      "bytes": 19686,
+      "category": "phase-report"
+    },
+    {
+      "name": "BAPA_PHASE_05_RESEARCH_BLUEPRINT.txt",
+      "ext": "txt",
+      "bytes": 19010,
+      "category": "phase-report"
+    },
+    {
+      "name": "PROMPT_phase4_spiritual_engines.md",
+      "ext": "md",
+      "bytes": 18909,
+      "category": "phase-report"
+    },
+    {
+      "name": "ghost_terminal_pro_all_phases-1.zip",
+      "ext": "zip",
+      "bytes": 17735,
+      "category": "phase-report"
+    },
+    {
+      "name": "ghost_terminal_pro_all_phases.zip",
+      "ext": "zip",
+      "bytes": 17735,
+      "category": "phase-report"
+    },
+    {
+      "name": "BAPA_PHASE_06_DISCOVERY_REPORT.md",
+      "ext": "md",
+      "bytes": 16899,
+      "category": "phase-report"
+    },
+    {
+      "name": "BAPA_PHASE_10_AI_ADAPTATION_LAB.txt",
+      "ext": "txt",
+      "bytes": 16363,
+      "category": "phase-report"
+    },
+    {
+      "name": "phase1_ghost_integration.zip",
+      "ext": "zip",
+      "bytes": 16073,
+      "category": "phase-report"
+    },
+    {
+      "name": "PROMPT_phase5_learning_system.md",
+      "ext": "md",
+      "bytes": 15937,
+      "category": "phase-report"
+    },
+    {
+      "name": "PROMPT_phase1_local_models.md",
+      "ext": "md",
+      "bytes": 15181,
+      "category": "phase-report"
+    },
+    {
+      "name": "PROMPT_phase2_preflight.md",
+      "ext": "md",
+      "bytes": 14100,
+      "category": "phase-report"
+    },
+    {
+      "name": "lingenOS_phase2.zip",
+      "ext": "zip",
+      "bytes": 13208,
+      "category": "phase-report"
+    },
+    {
+      "name": "BAPA_PHASE2_PREPARATION_REPORT.txt",
+      "ext": "txt",
+      "bytes": 12798,
+      "category": "phase-report"
+    },
+    {
+      "name": "BAPA_POST_PHASE2_FINAL_REPORT.txt",
+      "ext": "txt",
+      "bytes": 12007,
+      "category": "phase-report"
+    },
+    {
+      "name": "phase4_dashboard_v3.zip",
+      "ext": "zip",
+      "bytes": 11159,
+      "category": "phase-report"
+    },
+    {
+      "name": "phase1_terminal_pro.zip",
+      "ext": "zip",
+      "bytes": 9272,
+      "category": "phase-report"
+    },
+    {
+      "name": "phase5_ai_engine_v2.zip",
+      "ext": "zip",
+      "bytes": 8279,
+      "category": "phase-report"
+    },
+    {
+      "name": "PHASE19_MASTER_RESULTS.zip",
+      "ext": "zip",
+      "bytes": 7975,
+      "category": "phase-report"
+    },
+    {
+      "name": "PHASE20_PERSON_ROLE_RESULTS.zip",
+      "ext": "zip",
+      "bytes": 6911,
+      "category": "phase-report"
+    },
+    {
+      "name": "BAPA_PHASE16_EVIDENCE_LIMIT.zip",
+      "ext": "zip",
+      "bytes": 3544,
+      "category": "phase-report"
+    },
+    {
+      "name": "[Journal of Comparative Physiology A_ Neuroethology, Sensory, Neural, and Behavioral Physiology 2015-aug 3...1 iss. 12] Fukushima, Makoto_ Rauske, Peter L._ Margoliash, Daniel - Temporal and rate code analysis of respon - libgen.li.pdf",
+      "ext": "pdf",
+      "bytes": 4679685,
+      "category": "results"
+    },
+    {
+      "name": "[Journal of Comparative Physiology A_ Neuroethology, Sensory, Neural, and Behavioral Physiology 2015-aug 3...1 iss. 12] Fukushima, Makoto_ Rauske, Peter L._ Margoliash, Daniel - Temporal and rate code analysis of respon - libgen.li.txt",
+      "ext": "txt",
+      "bytes": 44215,
+      "category": "results"
+    },
+    {
+      "name": "BAPA_RESULTS.zip",
+      "ext": "zip",
+      "bytes": 26638,
+      "category": "results"
+    },
+    {
+      "name": "BAPA_VALIDATION_MASTER_REPORT.txt",
+      "ext": "txt",
+      "bytes": 16639,
+      "category": "results"
+    },
+    {
+      "name": "BAPA_FINAL_RESULTS.zip",
+      "ext": "zip",
+      "bytes": 12298,
+      "category": "results"
+    },
+    {
+      "name": "BAPA_RESULTS_FINAL.md",
+      "ext": "md",
+      "bytes": 9429,
+      "category": "results"
+    },
+    {
+      "name": "BAPA_TEMPORAL_STABILITY_LOWER_BOUND.zip",
+      "ext": "zip",
+      "bytes": 7823,
+      "category": "results"
+    },
+    {
+      "name": "BAPA_TEMPORAL_STABILITY_RESULTS.zip",
+      "ext": "zip",
+      "bytes": 7629,
+      "category": "results"
+    },
+    {
+      "name": "BAPA_PERSON_VS_ROLE_RESULTS.zip",
+      "ext": "zip",
+      "bytes": 7249,
+      "category": "results"
+    },
+    {
+      "name": "BAPA_SE_TEMPORAL_REPLICATION.zip",
+      "ext": "zip",
+      "bytes": 5566,
+      "category": "results"
+    },
+    {
+      "name": "BAPA_Forensic_1769324673694.json",
+      "ext": "json",
+      "bytes": 380,
+      "category": "results"
+    },
+    {
+      "name": "BAPA_NEXT_FRONTIER_REPORT.txt",
+      "ext": "txt",
+      "bytes": 19094,
+      "category": "strategy"
+    },
+    {
+      "name": "BAPA_2_0_STRATEGIC_REFRAME.zip",
+      "ext": "zip",
+      "bytes": 5107,
+      "category": "strategy"
+    }
+  ]
+}

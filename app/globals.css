@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html, body { background: #0b0f17; color: #e5e7eb; }
+
+@layer components {
+  .card { @apply rounded-2xl border border-line bg-panel p-4; }
+  .pill { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+  .label { @apply text-xs uppercase tracking-wide text-gray-400; }
+  .btn { @apply rounded-xl bg-white/10 px-4 py-2 text-sm font-semibold active:bg-white/20; }
+  .input { @apply w-full rounded-xl border border-line bg-black/30 p-3 text-base outline-none focus:border-white/30; }
+}
+.verdict-GO { @apply bg-go/20 text-go; }
+.verdict-KILL { @apply bg-kill/20 text-kill; }
+.verdict-UNRESOLVED { @apply bg-unresolved/20 text-unresolved; }

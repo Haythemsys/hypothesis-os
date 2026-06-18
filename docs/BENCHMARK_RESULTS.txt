@@ -1,0 +1,14 @@
+HypothesisOS — BAPA benchmark
+================================================================
+PASS * identity_static          exp=KILL       got=KILL       sup=0.22  fails hostile/confound tests (survival 0.10 < 0.34)
+PASS   cognitive_fingerprint    exp=KILL       got=KILL       sup=0.23  fails hostile/confound tests (survival 0.15 < 0.34)
+PASS * model_fingerprint        exp=KILL       got=KILL       sup=0.28  fails hostile/confound tests (survival 0.20 < 0.34)
+PASS * portable_register        exp=KILL       got=KILL       sup=0.23  no measurable effect (effect 0.10 < 0.15)
+PASS * context_dominance        exp=GO         got=GO         sup=0.89  support 0.89 >= 0.65
+PASS * temporal_stability       exp=GO         got=GO         sup=0.78  support 0.78 >= 0.65
+PASS   within_context_person    exp=UNRESOLVED got=UNRESOLVED sup=0.53  missing: support 0.53 >= 0.65
+PASS   adaptation_layer         exp=UNRESOLVED got=UNRESOLVED sup=0.34  missing: support 0.34 >= 0.65
+================================================================
+overall: 8/8 correct
+MAJOR (success criterion): 5/5 correct
+SUCCESS CRITERION MET ✓
