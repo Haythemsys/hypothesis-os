@@ -2,9 +2,23 @@
 
 A research **operating system** for evaluating hypotheses. Not a chat.
 
-**Input:** a hypothesis. **Output:** `GO` / `KILL` / `UNRESOLVED`, with the evidence and the reason.
+**Input:** a hypothesis. **Output:** `GO` / `KILL` / `UNRESOLVED`, with the evidence, the
+reason, a calibration score, and a self-critique it had to survive.
 
 Every feature exists to answer one question: *does this improve hypothesis evaluation?* If it doesn't, it isn't here.
+
+## v2 — trustworthy, not just interesting
+
+A verdict never appears without justification. v2 adds:
+
+- **Verdict Explanation** — evidence for / against / missing, assumptions, confounds, and why the other verdicts were rejected.
+- **Calibration (0–100, HIGH/MED/LOW)** — the system knows when it is uncertain; a verdict can be correct *and* low-confidence.
+- **Self-critique** — before finalizing, the engine attacks its own hypothesis, evidence, and verdict; a premature GO is downgraded.
+- **Contradiction Engine** — auto-detects when two hypotheses make opposing claims about the same variable.
+- **Research Memory** — versioned, traceable hypothesis history ("git for research").
+- **Multi-domain benchmarks** — 24 fixtures across Science / Psychology / Business / Marketing / AI, plus the founding BAPA set.
+
+> v2 correctness fix: a hypothesis with **no evidence** is now `UNRESOLVED / LOW`, not a confident `KILL`. Absence of evidence is not evidence of absence.
 
 ## Why it exists
 
