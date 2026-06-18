@@ -1,7 +1,10 @@
 import { classify, BAPA_HYPOTHESES } from "@/lib/core";
 import { VerdictPill } from "@/components/Verdict";
 // @ts-ignore - JS module
-import { EDGES, REL_STYLE } from "@/lib/graph.mjs";
+import { EDGES as _EDGES, REL_STYLE as _REL_STYLE } from "@/lib/graph.mjs";
+
+const EDGES = _EDGES as { from: string; to: string; rel: string; note: string }[];
+const REL_STYLE = _REL_STYLE as Record<string, string>;
 
 export default function Graph() {
   const byId = Object.fromEntries(BAPA_HYPOTHESES.map((h) => [h.id, h]));
