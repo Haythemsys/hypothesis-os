@@ -38,9 +38,11 @@ export default function Workflow() {
       const raw = localStorage.getItem(DRAFT_KEY);
       if (!raw) return;
       const d = JSON.parse(raw);
+      // Pre-fill title from import even before a hypothesis is created
+      if (d.title && !d.hyp) { setTitle(d.title); setProject(d.project || "My research"); }
       if (d.hyp) { setHyp(d.hyp); setTitle(d.title || ""); setProject(d.project || "My research"); }
       if (d.plan) setPlan(d.plan);
-      if (d.ev) setEv(d.ev);
+      if (d.ev) setEv({ ...DEFAULT_EV, ...d.ev });
       if (d.result) setResult(d.result);
       if (d.report) setReport(d.report);
     } catch {}
@@ -219,13 +221,23 @@ export default function Workflow() {
         <section className="card space-y-2">
           <div className="label">5 · Report {report.aiAssisted ? "· AI-assisted summary included" : "· deterministic"}</div>
           <pre className="table-scroll whitespace-pre-wrap rounded-xl bg-black/40 p-3 text-xs text-steel">{report.markdown}</pre>
-          <div className="flex gap-2">
-            <button className="btn flex-1" onClick={reset}>Start another</button>
+          <div className="flex flex-wrap gap-2">
             {hyp && (
-              <Link href={`/audit/${hyp.id}`} className="btn flex-1 text-center bg-white/5 text-sm">
-                View audit trail
+              <Link href={`/report/${hyp.id}`} className="btn-primary flex-1 text-center text-sm min-w-[140px]">
+                Executive Report ↗
               </Link>
             )}
+            {hyp && (
+              <Link href={`/export?id=${hyp.id}`} className="btn-ghost flex-1 text-center text-sm min-w-[120px]">
+                Export ↗
+              </Link>
+            )}
+            {hyp && (
+              <Link href={`/audit/${hyp.id}`} className="btn-ghost flex-1 text-center text-sm min-w-[120px]">
+                Audit Trail
+              </Link>
+            )}
+            <button className="btn-quiet flex-1 text-sm min-w-[120px]" onClick={reset}>Start another</button>
           </div>
         </section>
       )}

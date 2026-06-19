@@ -90,10 +90,84 @@ input[type="range"]:focus-visible { outline-offset: 4px; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
 }
 
-/* ── Print (Executive Brief) ──────────────────────────────────────────────── */
+/* ── Print — Executive Intelligence Report ────────────────────────────────── */
 @media print {
+  @page { margin: 1.8cm 2.2cm; size: A4; }
+
+  /* Hide chrome */
   nav, .print\:hidden, [data-shell] { display: none !important; }
-  html, body { background: #fff; color: #111; overflow: visible; }
-  .card, .card-flat, .card-raised, .card-accent { border-color: #e5e7eb; background: #fff; box-shadow: none; }
-  .text-go { color: #15803d !important; } .text-kill { color: #b91c1c !important; } .text-unresolved { color: #b45309 !important; }
+
+  /* Base reset to white */
+  html, body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 9.5pt !important;
+    line-height: 1.45 !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Surface cards become white panels with thin border */
+  .card, .card-flat, .card-raised, .card-accent {
+    background: #ffffff !important;
+    border-color: #d1d5db !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Verdict colours — print-safe */
+  .text-go         { color: #15803d !important; }
+  .text-kill       { color: #b91c1c !important; }
+  .text-unresolved { color: #b45309 !important; }
+  .text-amber      { color: #92400e !important; }
+  .text-ivory, .text-white { color: #111827 !important; }
+  .text-steel      { color: #374151 !important; }
+  .text-slate      { color: #6b7280 !important; }
+  .text-slate-dim  { color: #9ca3af !important; }
+
+  /* Fill classes — force render on print */
+  .bg-go      { background-color: #15803d !important; }
+  .bg-kill    { background-color: #b91c1c !important; }
+  .bg-amber   { background-color: #92400e !important; }
+  .bg-go\/15, .bg-go\/10 { background-color: #dcfce7 !important; }
+  .bg-kill\/15, .bg-kill\/10 { background-color: #fee2e2 !important; }
+  .bg-amber\/15, .bg-amber\/10 { background-color: #fef3c7 !important; }
+  .bg-white\/8, .bg-white\/5, .bg-white\/3, .bg-obsidian\/50 { background-color: #f9fafb !important; }
+  .bg-obsidian { background-color: #f3f4f6 !important; }
+  .bg-graphite, .bg-graphite-2 { background-color: #f9fafb !important; }
+
+  /* Cover page takes full first page */
+  .print\:min-h-\[60vh\] { min-height: 80vh !important; }
+
+  /* Break-after cover */
+  section:first-of-type { break-after: page; }
+
+  /* Sections avoid breaking mid-card */
+  section { break-inside: avoid; page-break-inside: avoid; }
+
+  /* Report section spacing */
+  .mb-4 { margin-bottom: 0.6rem !important; }
+  .space-y-0 > * + * { margin-top: 0.75rem !important; }
+
+  /* Typography adjustments */
+  h1 { font-size: 18pt !important; }
+  h2 { font-size: 11pt !important; }
+  .text-3xl { font-size: 16pt !important; }
+  .text-2xl { font-size: 14pt !important; }
+  .text-xl  { font-size: 12pt !important; }
+  .text-lg  { font-size: 11pt !important; }
+  .text-sm  { font-size: 8.5pt !important; }
+  .text-xs  { font-size: 7.5pt !important; }
+
+  /* Border lines become visible */
+  .border-border-hair { border-color: #e5e7eb !important; }
+  .border-border-soft { border-color: #d1d5db !important; }
+
+  /* Footer spacing */
+  footer { break-before: auto; margin-top: 2rem !important; }
+
+  /* Data / mono font */
+  .data { font-family: "Courier New", Courier, monospace !important; }
 }

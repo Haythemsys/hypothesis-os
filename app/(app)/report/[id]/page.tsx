@@ -88,15 +88,24 @@ export default function ExecutiveReport({ params }: { params: Promise<{ id: stri
 
   return (
     <div className="mx-auto max-w-3xl space-y-0">
-      {/* Print / controls bar */}
-      <div className="mb-5 flex items-center justify-between print:hidden">
+      {/* Controls bar — hidden on print */}
+      <div className="mb-5 flex flex-wrap items-center justify-between gap-2 print:hidden">
         <div className="label">Executive Intelligence Report</div>
-        <button
-          onClick={() => window.print()}
-          className="btn-ghost text-sm"
-        >
-          Print / Save PDF
-        </button>
+        <div className="flex items-center gap-2">
+          <ShareButton />
+          <a
+            href={`/export?id=${id}`}
+            className="btn-ghost text-sm"
+          >
+            Export ↗
+          </a>
+          <button
+            onClick={() => window.print()}
+            className="btn-primary text-sm"
+          >
+            Print / Save PDF
+          </button>
+        </div>
       </div>
 
       {/* ══════════════════════════════════════════════════════════════════
@@ -547,7 +556,7 @@ export default function ExecutiveReport({ params }: { params: Promise<{ id: stri
       <footer className="mt-6 border-t border-border-hair pt-5 text-center text-xs text-slate print:mt-12">
         <div className="flex items-center justify-center gap-2 mb-1">
           <Mark size={14} variant="mono" />
-          <span className="font-semibold text-ivory">SignalVertex</span>
+          <span className="font-semibold text-ivory">HypothesisOS</span>
           <span>·</span>
           <span>Decision Falsification Platform</span>
         </div>
@@ -595,5 +604,24 @@ function Row({ label, value, mono }: { label: string; value: string; mono?: bool
       <dt className="text-slate">{label}</dt>
       <dd className={`text-steel ${mono ? "data break-all" : ""}`}>{value}</dd>
     </div>
+  );
+}
+
+function ShareButton() {
+  const [copied, setCopied] = useState(false);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // fallback: prompt
+      window.prompt("Copy report URL:", window.location.href);
+    }
+  };
+  return (
+    <button onClick={copy} className="btn-ghost text-sm">
+      {copied ? "✓ Copied" : "Share ↗"}
+    </button>
   );
 }

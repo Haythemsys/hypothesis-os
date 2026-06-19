@@ -46,7 +46,7 @@ export function LandingNav() {
         </span>
 
         {/* CTA */}
-        <Link href="/app" className="btn-primary text-sm">
+        <Link href="/workflow" className="btn-primary text-sm">
           <span className="hidden sm:inline">Run a decision →</span>
           <span className="sm:hidden">Start →</span>
         </Link>
@@ -73,7 +73,7 @@ export function Hero() {
           you can defend.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/app" className="btn-primary px-6 text-base">Run your first decision →</Link>
+          <Link href="/workflow" className="btn-primary px-6 text-base">Run your first decision →</Link>
           <a href="#how" className="btn-ghost px-6 text-base">See how it works</a>
         </div>
         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate">
@@ -288,7 +288,7 @@ export function Pricing() {
               Help shape the future of evidence-based decision making.
             </p>
           </div>
-          <Link href="/app" className="btn-primary shrink-0 px-6">Join Beta →</Link>
+          <Link href="/workflow" className="btn-primary shrink-0 px-6">Join Beta →</Link>
         </div>
         <div className="mt-5 grid grid-cols-1 gap-3 border-t border-amber-dim/30 pt-5 sm:grid-cols-3">
           {[
@@ -337,7 +337,7 @@ export function Pricing() {
               ))}
             </ul>
             <Link
-              href="/app"
+              href="/workflow"
               className={`${tier.highlight ? "btn-primary" : "btn-ghost"} mt-5 w-full text-sm`}
             >
               Join Beta
@@ -386,7 +386,7 @@ export function FinalCTA() {
       <p className="mx-auto mt-4 max-w-xl text-steel">
         Run a real decision through the engine in the next five minutes. No account required to start.
       </p>
-      <div className="mt-8"><Link href="/app" className="btn-primary px-8 text-base">Run your first decision →</Link></div>
+      <div className="mt-8"><Link href="/workflow" className="btn-primary px-8 text-base">Run your first decision →</Link></div>
       <footer className="mt-16 flex flex-col items-center gap-3 border-t border-border-hair pt-8 text-sm text-slate sm:flex-row sm:justify-between">
         <Logo size={20} />
         <div className="flex gap-5">

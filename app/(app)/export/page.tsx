@@ -1,6 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { api } from "@/lib/client";
 import { Card } from "@/components/ui/Card";
 
@@ -20,18 +21,25 @@ function toCSV(rows: [string, string][]) {
   return rows.map((r) => r.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(",")).join("\n");
 }
 
-export default function ExportCenter() {
+function ExportCenterInner() {
+  const searchParams = useSearchParams();
   const [hypotheses, setHypotheses] = useState<Hyp[]>([]);
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState(searchParams.get("id") || "");
   const [loading, setLoading] = useState(true);
   const [exporting, setExporting] = useState<string | null>(null);
 
   useEffect(() => {
     api<{ hypotheses: Hyp[] }>("/api/hypotheses")
-      .then((r) => setHypotheses(r.hypotheses || []))
+      .then((r) => {
+        const list = r.hypotheses || [];
+        setHypotheses(list);
+        // If ?id param was provided but not yet validated, keep it
+        const paramId = searchParams.get("id");
+        if (paramId && list.some((h) => h.id === paramId)) setSelected(paramId);
+      })
       .catch(() => {})
       .finally(() => setLoading(false));
-  }, []);
+  }, [searchParams]);
 
   const selectedHyp = hypotheses.find((h) => h.id === selected);
 
@@ -243,7 +251,7 @@ export default function ExportCenter() {
 
       {/* Quick links */}
       <div className="flex flex-wrap items-center gap-4 text-sm">
-        <Link href="/audit" className="text-steel hover:text-ivory">Audit Index →</Link>
+        <Link href="/library" className="text-steel hover:text-ivory">Decision Library →</Link>
         <Link href="/vault" className="text-steel hover:text-ivory">Evidence Vault →</Link>
         {selected ? (
           <Link href={`/report/${selected}`} className="text-steel hover:text-ivory">Open Report →</Link>
@@ -252,5 +260,13 @@ export default function ExportCenter() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function ExportCenter() {
+  return (
+    <Suspense fallback={<div className="card text-sm text-steel animate-pulse">Loading…</div>}>
+      <ExportCenterInner />
+    </Suspense>
   );
 }

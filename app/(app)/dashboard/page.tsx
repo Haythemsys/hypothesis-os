@@ -202,6 +202,24 @@ export default function MissionControl() {
         </div>
       ) : (
         <>
+          {/* ── Quick Actions bar ─────────────────────────────────── */}
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-6">
+            {([
+              ["/workflow",  "⚡", "New Decision"],
+              ["/library",   "⊟", "Library"],
+              ["/evidence",  "⚖", "Analyze"],
+              ["/compare",   "⇄", "Compare"],
+              ["/import",    "↑",  "Import"],
+              ["/export",    "↗",  "Export"],
+            ] as [string, string, string][]).map(([href, icon, label]) => (
+              <Link key={href} href={href}
+                className="flex items-center gap-2 rounded-inner border border-border-hair px-3 py-2.5 text-sm text-steel transition-colors hover:border-amber/40 hover:text-ivory">
+                <span className="text-amber">{icon}</span>
+                <span className="truncate">{label}</span>
+              </Link>
+            ))}
+          </div>
+
           {/* ── Row 1: Health · Risk · Debt avg ──────────────────── */}
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
             <Card className="flex items-center gap-4">
@@ -313,9 +331,12 @@ export default function MissionControl() {
                 <div className="label">
                   Active Hypotheses {riskFilter && <span className="text-amber">· {riskFilter}</span>}
                 </div>
-                {riskFilter && (
-                  <button onClick={() => setRiskFilter(null)} className="text-xs text-slate hover:text-ivory">clear</button>
-                )}
+                <div className="flex items-center gap-2">
+                  {riskFilter && (
+                    <button onClick={() => setRiskFilter(null)} className="text-xs text-slate hover:text-ivory">clear</button>
+                  )}
+                  <Link href="/library" className="text-xs text-slate hover:text-ivory">Library →</Link>
+                </div>
               </div>
               {shownActive.length === 0 ? (
                 <p className="text-sm text-slate">
