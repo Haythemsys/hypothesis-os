@@ -425,21 +425,21 @@
     "decision_date": "2019-09-01",
     "expected": "UNRESOLVED",
     "hypothesisos": {
-      "verdict": "KILL",
-      "baseVerdict": "KILL",
-      "support": 0.32,
-      "calibration": 50,
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.38,
+      "calibration": 56,
       "band": "MEDIUM CONFIDENCE",
       "downgrade": null,
       "reasons": [
-        "fails hostile/confound tests (survival 0.20 < 0.34)",
-        "explained by an uncontrolled confound (control 0.18 < 0.2)"
+        "missing: support 0.38 >= 0.65",
+        "missing: interval excludes the null"
       ]
     },
     "baseline": {
-      "verdict": "KILL",
-      "score": 0.35,
-      "reasoning": "Mean evidence quality 0.35 ≤ 0.35 threshold."
+      "verdict": "UNRESOLVED",
+      "score": 0.4,
+      "reasoning": "Mean evidence quality 0.4 is ambiguous (0.35–0.55)."
     }
   },
   {
@@ -474,21 +474,21 @@
     "decision_date": "2023-03-15",
     "expected": "UNRESOLVED",
     "hypothesisos": {
-      "verdict": "KILL",
-      "baseVerdict": "KILL",
-      "support": 0.45,
-      "calibration": 58,
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.49,
+      "calibration": 60,
       "band": "MEDIUM CONFIDENCE",
       "downgrade": null,
       "reasons": [
-        "fails hostile/confound tests (survival 0.30 < 0.34)",
-        "claim asserts generality but it does not generalize (gen 0.25 < 0.34)"
+        "missing: support 0.48 >= 0.65",
+        "missing: interval excludes the null"
       ]
     },
     "baseline": {
       "verdict": "UNRESOLVED",
-      "score": 0.42,
-      "reasoning": "Mean evidence quality 0.42 is ambiguous (0.35–0.55)."
+      "score": 0.47,
+      "reasoning": "Mean evidence quality 0.47 is ambiguous (0.35–0.55)."
     }
   }
 ]

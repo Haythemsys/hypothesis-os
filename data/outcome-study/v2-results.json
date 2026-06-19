@@ -1,0 +1,3134 @@
+[
+  {
+    "id": "power_posing",
+    "domain": "psychology",
+    "hypothesis": "High-power body poses (expansive postures) causally increase testosterone, decrease cortisol, and increase risk-taking behaviour.",
+    "decision_date": "2010-06-01",
+    "expected": "KILL",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.24,
+      "calibration": 36,
+      "band": "LOW CONFIDENCE",
+      "downgrade": "Verdict stands but flagged LOW CONFIDENCE (calibration 36/100).",
+      "reasons": [
+        "claim asserts generality but it does not generalize (gen 0.10 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.24,
+      "reasoning": "Mean 0.24 ≤ 0.35."
+    }
+  },
+  {
+    "id": "ego_depletion",
+    "domain": "psychology",
+    "hypothesis": "Self-control draws from a limited mental resource; exerting willpower on one task reduces performance on a subsequent unrelated task (ego depletion).",
+    "decision_date": "2011-01-01",
+    "expected": "KILL",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.45,
+      "calibration": 55,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.30 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.44,
+      "reasoning": "Mean 0.44 is ambiguous."
+    }
+  },
+  {
+    "id": "social_priming_florida",
+    "domain": "psychology",
+    "hypothesis": "Priming people with elderly-related words causes them to walk measurably more slowly (the Florida priming effect).",
+    "decision_date": "2011-01-01",
+    "expected": "KILL",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.28,
+      "calibration": 46,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.15 < 0.34)",
+        "explained by an uncontrolled confound (control 0.18 < 0.2)",
+        "claim asserts generality but it does not generalize (gen 0.25 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.27,
+      "reasoning": "Mean 0.27 ≤ 0.35."
+    }
+  },
+  {
+    "id": "spacing_effect",
+    "domain": "psychology",
+    "hypothesis": "Distributing practice over time (spaced practice) produces better long-term retention than the same amount of massed practice.",
+    "decision_date": "2006-01-01",
+    "expected": "GO",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.85,
+      "calibration": 88,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.84 >= 0.65",
+        "replicated (1.00 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.80 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.84,
+      "reasoning": "Mean 0.84 ≥ 0.55."
+    }
+  },
+  {
+    "id": "theranos_blood_testing",
+    "domain": "technology",
+    "hypothesis": "Theranos's Edison device can perform 200+ clinical-grade blood tests reliably from a single finger-prick of blood.",
+    "decision_date": "2013-06-01",
+    "expected": "KILL",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.09,
+      "calibration": 33,
+      "band": "LOW CONFIDENCE",
+      "downgrade": "Verdict stands but flagged LOW CONFIDENCE (calibration 33/100).",
+      "reasons": [
+        "no measurable effect (effect 0.08 < 0.15)",
+        "fails hostile/confound tests (survival 0.05 < 0.34)",
+        "explained by an uncontrolled confound (control 0.05 < 0.2)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.06,
+      "reasoning": "Mean 0.06 ≤ 0.35."
+    }
+  },
+  {
+    "id": "google_glass_consumer",
+    "domain": "technology",
+    "hypothesis": "Google Glass will achieve significant mainstream consumer adoption as a wearable computing platform.",
+    "decision_date": "2013-06-01",
+    "expected": "KILL",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.19,
+      "calibration": 45,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.20 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.15 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.19,
+      "reasoning": "Mean 0.19 ≤ 0.35."
+    }
+  },
+  {
+    "id": "moviepass_sustainability",
+    "domain": "business",
+    "hypothesis": "MoviePass can build a sustainable subscription business at $9.99/month for unlimited movie tickets.",
+    "decision_date": "2017-08-15",
+    "expected": "KILL",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.14,
+      "calibration": 44,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "no measurable effect (effect 0.05 < 0.15)",
+        "fails hostile/confound tests (survival 0.05 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.12,
+      "reasoning": "Mean 0.12 ≤ 0.35."
+    }
+  },
+  {
+    "id": "wework_valuation",
+    "domain": "business",
+    "hypothesis": "WeWork's business model justifies a $47 billion valuation at the January 2019 SoftBank funding round.",
+    "decision_date": "2019-01-07",
+    "expected": "KILL",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.16,
+      "calibration": 43,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "no measurable effect (effect 0.10 < 0.15)",
+        "fails hostile/confound tests (survival 0.10 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.13,
+      "reasoning": "Mean 0.13 ≤ 0.35."
+    }
+  },
+  {
+    "id": "quibi_mobile_streaming",
+    "domain": "technology",
+    "hypothesis": "Short-form (<10 min) mobile-only premium streaming will capture significant market share in the video streaming market.",
+    "decision_date": "2020-04-06",
+    "expected": "KILL",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.18,
+      "calibration": 45,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.15 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.20 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.19,
+      "reasoning": "Mean 0.19 ≤ 0.35."
+    }
+  },
+  {
+    "id": "nokia_smartphone_dominance",
+    "domain": "business",
+    "hypothesis": "Nokia's dominant position in mobile phones will persist despite the iPhone's emergence in 2007.",
+    "decision_date": "2007-06-30",
+    "expected": "KILL",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.19,
+      "calibration": 48,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.10 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.20 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.21,
+      "reasoning": "Mean 0.21 ≤ 0.35."
+    }
+  },
+  {
+    "id": "netflix_streaming_wins",
+    "domain": "business",
+    "hypothesis": "Netflix streaming will displace physical DVD rental as the primary home video delivery method.",
+    "decision_date": "2012-01-01",
+    "expected": "GO",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.7,
+      "calibration": 79,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.70 >= 0.65",
+        "replicated (0.70 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.70 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.7,
+      "reasoning": "Mean 0.7 ≥ 0.55."
+    }
+  },
+  {
+    "id": "deep_learning_image_classification",
+    "domain": "AI",
+    "hypothesis": "Deep convolutional neural networks will substantially and durably outperform all other approaches on large-scale image classification benchmarks.",
+    "decision_date": "2012-09-30",
+    "expected": "GO",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.74,
+      "calibration": 82,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.74 >= 0.65",
+        "replicated (0.65 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.85 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.73,
+      "reasoning": "Mean 0.73 ≥ 0.55."
+    }
+  },
+  {
+    "id": "crispr_editing_feasibility",
+    "domain": "science",
+    "hypothesis": "CRISPR-Cas9 can be adapted to programmably edit the human genome at targeted loci with sufficient efficiency for research and therapeutic applications.",
+    "decision_date": "2013-01-01",
+    "expected": "GO",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.71,
+      "calibration": 78,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.71 >= 0.65",
+        "replicated (0.65 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.65 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.68,
+      "reasoning": "Mean 0.68 ≥ 0.55."
+    }
+  },
+  {
+    "id": "sugar_hyperactivity",
+    "domain": "psychology",
+    "hypothesis": "Dietary sugar consumption causes hyperactive behaviour in children.",
+    "decision_date": "1995-01-01",
+    "expected": "KILL",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.6,
+      "calibration": 89,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "no measurable effect (effect 0.02 < 0.15)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.72,
+      "reasoning": "Mean 0.72 ≥ 0.55."
+    }
+  },
+  {
+    "id": "bitcoin_store_of_value",
+    "domain": "finance",
+    "hypothesis": "Bitcoin will establish itself as a reliable store of value for institutional investors.",
+    "decision_date": "2017-12-01",
+    "expected": "UNRESOLVED",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.37,
+      "calibration": 53,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.37 >= 0.65",
+        "missing: replicated (0.30 >= 0.5)",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.34,
+      "reasoning": "Mean 0.34 ≤ 0.35."
+    }
+  },
+  {
+    "id": "neural_scaling_laws",
+    "domain": "AI",
+    "hypothesis": "LLM performance scales predictably as a power law with compute, data, and parameter count across multiple orders of magnitude.",
+    "decision_date": "2020-03-01",
+    "expected": "GO",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.73,
+      "calibration": 79,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.73 >= 0.65",
+        "replicated (0.65 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.80 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.72,
+      "reasoning": "Mean 0.72 ≥ 0.55."
+    }
+  },
+  {
+    "id": "growth_mindset_at_scale",
+    "domain": "psychology",
+    "hypothesis": "Brief growth mindset interventions (teaching students that intelligence is not fixed) produce meaningful improvement in academic outcomes when deployed at scale.",
+    "decision_date": "2015-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.39,
+      "calibration": 55,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.39 >= 0.65",
+        "missing: replicated (0.40 >= 0.5)",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.38,
+      "reasoning": "Mean 0.38 is ambiguous."
+    }
+  },
+  {
+    "id": "social_media_teen_depression",
+    "domain": "psychology",
+    "hypothesis": "Social media use causally increases depression and anxiety in teenagers.",
+    "decision_date": "2019-09-01",
+    "expected": "UNRESOLVED",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.38,
+      "calibration": 56,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.38 >= 0.65",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.4,
+      "reasoning": "Mean 0.4 is ambiguous."
+    }
+  },
+  {
+    "id": "uber_path_to_profitability",
+    "domain": "business",
+    "hypothesis": "Uber can achieve sustainable profitability at scale as a global ride-sharing platform.",
+    "decision_date": "2019-05-10",
+    "expected": "UNRESOLVED",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.36,
+      "calibration": 57,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.36 >= 0.65",
+        "missing: replicated (0.30 >= 0.5)",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.36,
+      "reasoning": "Mean 0.36 is ambiguous."
+    }
+  },
+  {
+    "id": "llm_mathematical_reasoning",
+    "domain": "AI",
+    "hypothesis": "Large language models can reliably perform multi-step mathematical reasoning without external tools.",
+    "decision_date": "2023-03-15",
+    "expected": "UNRESOLVED",
+    "sources": [],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.49,
+      "calibration": 60,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.48 >= 0.65",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.47,
+      "reasoning": "Mean 0.47 is ambiguous."
+    }
+  },
+  {
+    "id": "oxycontin_addiction_risk_low",
+    "domain": "medicine",
+    "hypothesis": "OxyContin (extended-release oxycodone) carries a low risk of addiction when used for chronic pain management because its slow-release formulation prevents the euphoric peaks that drive dependence.",
+    "decision_date": "1996-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Porter J & Jick H 1980, NEJM (letter widely misquoted)",
+      "Van Zee A 2009, American Journal of Public Health",
+      "Meier B 2003, Pain Killer: A 'Wonder' Drug's Trail of Addiction and Death",
+      "US DOJ 2007, United States v. The Purdue Frederick Company plea agreement"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.17,
+      "calibration": 41,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.20 < 0.34)",
+        "explained by an uncontrolled confound (control 0.12 < 0.2)",
+        "claim asserts generality but it does not generalize (gen 0.25 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.17,
+      "reasoning": "Mean 0.17 ≤ 0.35."
+    }
+  },
+  {
+    "id": "hydroxychloroquine_covid19_treatment",
+    "domain": "medicine",
+    "hypothesis": "Hydroxychloroquine (HCQ) reduces mortality and improves clinical outcomes in hospitalized COVID-19 patients.",
+    "decision_date": "2020-04-01",
+    "expected": "KILL",
+    "sources": [
+      "Gautret et al. 2020, International Journal of Antimicrobial Agents",
+      "Horby et al. (RECOVERY) 2020, NEJM",
+      "WHO Solidarity Trial Consortium 2021, NEJM",
+      "Cavalcanti et al. 2020, NEJM (COALITION I trial)"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.27,
+      "calibration": 50,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.28 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.26,
+      "reasoning": "Mean 0.26 ≤ 0.35."
+    }
+  },
+  {
+    "id": "ivermectin_covid19_severity",
+    "domain": "medicine",
+    "hypothesis": "Ivermectin significantly reduces COVID-19 severity, hospitalization rates, and mortality when given early in the disease course.",
+    "decision_date": "2021-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Reis et al. (TOGETHER) 2022, NEJM",
+      "Popp et al. 2022, Cochrane Database of Systematic Reviews",
+      "Roman et al. 2022, PLOS Medicine",
+      "Elgazzar A et al. 2020, Research Square (retracted 2021)"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.26,
+      "calibration": 46,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.25 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.23,
+      "reasoning": "Mean 0.23 ≤ 0.35."
+    }
+  },
+  {
+    "id": "mrna_vaccine_covid19_efficacy",
+    "domain": "medicine",
+    "hypothesis": "mRNA COVID-19 vaccines (BNT162b2 and mRNA-1273) are safe and at least 90% effective at preventing symptomatic COVID-19 in adults.",
+    "decision_date": "2020-12-01",
+    "expected": "GO",
+    "sources": [
+      "Polack et al. 2020, NEJM (BNT162b2 trial)",
+      "Baden et al. 2021, NEJM (mRNA-1273 trial)",
+      "Dagan et al. 2021, NEJM (Israel real-world effectiveness)",
+      "Lopez Bernal et al. 2021, NEJM (UK real-world effectiveness)"
+    ],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.82,
+      "calibration": 90,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.82 >= 0.65",
+        "replicated (0.85 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.95 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.83,
+      "reasoning": "Mean 0.83 ≥ 0.55."
+    }
+  },
+  {
+    "id": "statins_primary_prevention_cvd",
+    "domain": "medicine",
+    "hypothesis": "Statin therapy reduces major cardiovascular events (MI, stroke, cardiovascular death) in patients without prior cardiovascular disease but with elevated LDL cholesterol.",
+    "decision_date": "2002-01-01",
+    "expected": "GO",
+    "sources": [
+      "Shepherd et al. (WOSCOPS) 1995, NEJM",
+      "Downs et al. (AFCAPS/TexCAPS) 1998, JAMA",
+      "Baigent et al. (CTT Collaboration) 2005, Lancet",
+      "Taylor et al. 2013, Cochrane Database of Systematic Reviews"
+    ],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.73,
+      "calibration": 84,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.73 >= 0.65",
+        "replicated (0.80 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.85 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.73,
+      "reasoning": "Mean 0.73 ≥ 0.55."
+    }
+  },
+  {
+    "id": "ssri_mild_depression_efficacy",
+    "domain": "medicine",
+    "hypothesis": "SSRIs (selective serotonin reuptake inhibitors) produce clinically meaningful improvement over placebo in adults with mild-to-moderate major depressive disorder.",
+    "decision_date": "2000-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Kirsch et al. 1998, Prevention and Treatment (early meta-analysis)",
+      "Kirsch et al. 2008, PLOS Medicine",
+      "Turner et al. 2008, NEJM (publication bias analysis)",
+      "Cipriani et al. 2018, Lancet"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.47,
+      "calibration": 68,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.47 >= 0.65"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.49,
+      "reasoning": "Mean 0.49 is ambiguous."
+    }
+  },
+  {
+    "id": "mammography_screening_40_49",
+    "domain": "medicine",
+    "hypothesis": "Routine annual mammography screening reduces breast cancer mortality in average-risk women aged 40-49.",
+    "decision_date": "2005-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Nystrom et al. 2002, Lancet",
+      "USPSTF 2009, Annals of Internal Medicine",
+      "Gotzsche & Nielsen 2006, Cochrane Database of Systematic Reviews",
+      "Miller et al. (NBSS) 2000, Journal of the National Cancer Institute"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.45,
+      "calibration": 63,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.45 >= 0.65",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.46,
+      "reasoning": "Mean 0.46 is ambiguous."
+    }
+  },
+  {
+    "id": "crispr_sickle_cell_feasibility",
+    "domain": "medicine",
+    "hypothesis": "CRISPR-Cas9 gene editing can safely and durably reactivate fetal hemoglobin in patients with sickle cell disease, eliminating or drastically reducing vaso-occlusive crises.",
+    "decision_date": "2023-06-01",
+    "expected": "GO",
+    "sources": [
+      "Frangoul et al. 2021, NEJM",
+      "Locatelli et al. 2022, NEJM (updated trial data)",
+      "FDA 2023, Approval of Casgevy (exagamglogene autotemcel)",
+      "Esrick et al. 2021, NEJM (lentiviral comparator supporting mechanism)"
+    ],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.7,
+      "calibration": 79,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.70 >= 0.65",
+        "replicated (0.55 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.60 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.71,
+      "reasoning": "Mean 0.71 ≥ 0.55."
+    }
+  },
+  {
+    "id": "vitamin_d_covid19_prevention",
+    "domain": "medicine",
+    "hypothesis": "Vitamin D supplementation prevents or significantly reduces the risk of COVID-19 infection and severe disease in the general population.",
+    "decision_date": "2021-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Martineau et al. 2017, BMJ (prior respiratory infection RCT meta-analysis)",
+      "Alcala-Diaz et al. 2021, Nutrients (observational)",
+      "Jolliffe et al. (CORONAVIT) 2022, BMJ",
+      "USPSTF 2021, JAMA (vitamin D supplementation statement)"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.28,
+      "calibration": 53,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.30 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.28 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.29,
+      "reasoning": "Mean 0.29 ≤ 0.35."
+    }
+  },
+  {
+    "id": "intermittent_fasting_metabolic_health",
+    "domain": "medicine",
+    "hypothesis": "Intermittent fasting (including 16:8 time-restricted eating and 5:2 protocols) produces clinically meaningful improvements in metabolic health markers (insulin sensitivity, fasting glucose, triglycerides, blood pressure) beyond those explained by caloric restriction alone.",
+    "decision_date": "2019-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Varady et al. 2015, Nutrition Journal",
+      "Cioffi et al. 2018, Journal of Translational Medicine",
+      "Lowe et al. 2020, JAMA Internal Medicine (TREAT trial)",
+      "Harris et al. 2018, PLOS ONE (systematic review)"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.46,
+      "calibration": 63,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.46 >= 0.65",
+        "missing: replicated (0.48 >= 0.5)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.45,
+      "reasoning": "Mean 0.45 is ambiguous."
+    }
+  },
+  {
+    "id": "gpt3_fewshot_learning",
+    "domain": "ai_ml",
+    "hypothesis": "GPT-3's 175B parameter model can perform few-shot learning across diverse NLP tasks without any gradient updates, matching or exceeding fine-tuned smaller models simply by conditioning on a handful of in-context examples.",
+    "decision_date": "2020-06-01",
+    "expected": "GO",
+    "sources": [
+      "Brown et al. 2020, NeurIPS (Language Models are Few-Shot Learners)",
+      "Srivastava et al. 2022, TMLR (Beyond the Imitation Game: BIG-Bench)",
+      "Liu et al. 2021, arXiv (Pre-train, Prompt, and Predict)"
+    ],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.71,
+      "calibration": 77,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.71 >= 0.65",
+        "replicated (0.70 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.75 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.7,
+      "reasoning": "Mean 0.7 ≥ 0.55."
+    }
+  },
+  {
+    "id": "bert_language_understanding",
+    "domain": "ai_ml",
+    "hypothesis": "BERT's bidirectional transformer pre-training on masked language modeling and next-sentence prediction produces representations that, when fine-tuned, achieve state-of-the-art performance across virtually all major NLP benchmarks.",
+    "decision_date": "2018-11-01",
+    "expected": "GO",
+    "sources": [
+      "Devlin et al. 2018, arXiv (BERT: Pre-training of Deep Bidirectional Transformers)",
+      "Liu et al. 2019, arXiv (RoBERTa: A Robustly Optimized BERT Pretraining Approach)",
+      "Wang et al. 2018, EMNLP (GLUE: A Multi-Task Benchmark)"
+    ],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.76,
+      "calibration": 80,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.76 >= 0.65",
+        "replicated (0.75 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.80 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.75,
+      "reasoning": "Mean 0.75 ≥ 0.55."
+    }
+  },
+  {
+    "id": "alphafold2_protein_prediction",
+    "domain": "ai_ml",
+    "hypothesis": "AlphaFold2's deep learning approach using multiple sequence alignments and equivariant transformer networks can predict 3D protein structures from amino acid sequences at accuracy rivaling experimental methods (TM-score > 0.9).",
+    "decision_date": "2020-12-01",
+    "expected": "GO",
+    "sources": [
+      "Jumper et al. 2021, Nature (Highly accurate protein structure prediction with AlphaFold)",
+      "Kryshtafovych et al. 2021, Proteins (Critical assessment of methods of protein structure prediction at CASP14)",
+      "Varadi et al. 2022, Nucleic Acids Research (AlphaFold Protein Structure Database)"
+    ],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.77,
+      "calibration": 84,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.77 >= 0.65",
+        "replicated (0.65 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.85 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.75,
+      "reasoning": "Mean 0.75 ≥ 0.55."
+    }
+  },
+  {
+    "id": "transformer_over_rnn",
+    "domain": "ai_ml",
+    "hypothesis": "The transformer architecture using self-attention mechanisms (without recurrence or convolution) achieves superior performance to LSTM and GRU-based sequence models on machine translation and language modeling tasks while being more parallelizable.",
+    "decision_date": "2018-06-01",
+    "expected": "GO",
+    "sources": [
+      "Vaswani et al. 2017, NeurIPS (Attention Is All You Need)",
+      "Radford et al. 2018, OpenAI Blog (Improving Language Understanding by Generative Pre-Training)",
+      "Wolf et al. 2020, EMNLP (Transformers: State-of-the-Art NLP)"
+    ],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.72,
+      "calibration": 79,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.72 >= 0.65",
+        "replicated (0.72 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.78 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.7,
+      "reasoning": "Mean 0.7 ≥ 0.55."
+    }
+  },
+  {
+    "id": "diffusion_image_synthesis",
+    "domain": "ai_ml",
+    "hypothesis": "Denoising diffusion probabilistic models (DDPMs) trained on large image datasets can generate photorealistic, high-diversity images that match or exceed the perceptual quality of GAN-based models as measured by FID score and human evaluation.",
+    "decision_date": "2021-12-01",
+    "expected": "GO",
+    "sources": [
+      "Ho et al. 2020, NeurIPS (Denoising Diffusion Probabilistic Models)",
+      "Dhariwal and Nichol 2021, NeurIPS (Diffusion Models Beat GANs on Image Synthesis)",
+      "Rombach et al. 2022, CVPR (High-Resolution Image Synthesis with Latent Diffusion Models)"
+    ],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.72,
+      "calibration": 77,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.72 >= 0.65",
+        "replicated (0.68 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.76 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.7,
+      "reasoning": "Mean 0.7 ≥ 0.55."
+    }
+  },
+  {
+    "id": "av_safety_superhuman_2018",
+    "domain": "ai_ml",
+    "hypothesis": "Autonomous vehicle systems from leading developers (Waymo, Tesla, Uber ATG) will achieve superhuman driving safety on public roads by 2019, with disengagement rates and accident rates below human-driven vehicle baselines.",
+    "decision_date": "2018-01-01",
+    "expected": "KILL",
+    "sources": [
+      "NTSB 2019, Highway Accident Report HAR-19/03 (Uber ATG Tempe crash)",
+      "California DMV 2018, Autonomous Vehicle Disengagement Reports",
+      "Waymo 2018, Safety Report: On the Road to Fully Self-Driving",
+      "NTSB 2020, Highway Accident Report HWY18MH010 (Tesla Model X Mountain View)"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.34,
+      "calibration": 51,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.22 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.28 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.33,
+      "reasoning": "Mean 0.33 ≤ 0.35."
+    }
+  },
+  {
+    "id": "ai_radiology_general_deployment",
+    "domain": "ai_ml",
+    "hypothesis": "Deep learning models for radiology diagnosis (chest X-ray pathology detection, diabetic retinopathy screening) perform at or above the level of specialist radiologists and are ready for general clinical deployment across diverse hospital settings.",
+    "decision_date": "2019-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Rajpurkar et al. 2017, arXiv (CheXNet: Radiologist-Level Pneumonia Detection on Chest X-Rays)",
+      "Zech et al. 2018, PLOS Medicine (Variable generalization performance of a deep learning model to detect pneumonia)",
+      "Oakden-Rayner et al. 2019, arXiv (Hidden Stratification Causes Clinically Meaningful Failures in Machine Learning for Medical Imaging)",
+      "Gulshan et al. 2016, JAMA (Development and Validation of a Deep Learning Algorithm for Detection of DR)"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.4,
+      "calibration": 55,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "explained by an uncontrolled confound (control 0.18 < 0.2)",
+        "claim asserts generality but it does not generalize (gen 0.30 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.36,
+      "reasoning": "Mean 0.36 is ambiguous."
+    }
+  },
+  {
+    "id": "openai_five_dota_superhuman",
+    "domain": "ai_ml",
+    "hypothesis": "OpenAI Five demonstrates that reinforcement learning agents can achieve superhuman performance at Dota 2 under standard competition rules and generalize this performance robustly against diverse human strategies without hand-crafted game knowledge.",
+    "decision_date": "2018-08-01",
+    "expected": "KILL",
+    "sources": [
+      "OpenAI 2018, Blog Post (OpenAI Five)",
+      "OpenAI 2019, arXiv (Dota 2 with Large Scale Deep Reinforcement Learning)",
+      "Berner et al. 2019, arXiv (Dota 2 with Large Scale Deep Reinforcement Learning)"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.33,
+      "calibration": 53,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.20 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.15 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.31,
+      "reasoning": "Mean 0.31 ≤ 0.35."
+    }
+  },
+  {
+    "id": "reward_hacking_rl_brittleness",
+    "domain": "ai_ml",
+    "hypothesis": "Reinforcement learning agents trained on proxy reward functions exhibit systematically negligible task-relevant performance when reward specifications are even slightly misspecified, failing to learn intended behavior rather than exhibiting partial competence.",
+    "decision_date": "2018-06-01",
+    "expected": "KILL",
+    "sources": [
+      "Krakovna et al. 2018, DeepMind Blog (Specification gaming: the flip side of AI ingenuity)",
+      "Leike et al. 2017, arXiv (AI Safety Gridworlds)",
+      "Amodei et al. 2016, arXiv (Concrete Problems in AI Safety)"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.37,
+      "calibration": 64,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "no measurable effect (effect 0.08 < 0.15)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.38,
+      "reasoning": "Mean 0.38 is ambiguous."
+    }
+  },
+  {
+    "id": "nas_full_task_automation",
+    "domain": "ai_ml",
+    "hypothesis": "Neural Architecture Search (NAS) methods (NASNet, DARTS, ENAS) reliably automate architecture design such that they outperform human-designed networks across diverse tasks without requiring significant human-specified search space constraints.",
+    "decision_date": "2019-06-01",
+    "expected": "KILL",
+    "sources": [
+      "Zoph and Le 2017, ICLR (Neural Architecture Search with Reinforcement Learning)",
+      "Yang et al. 2019, arXiv (Evaluation of Neural Architecture Search)",
+      "Li and Talwalkar 2019, arXiv (Random Search and Reproducibility for Neural Architecture Search)",
+      "Liu et al. 2018, arXiv (DARTS: Differentiable Architecture Search)"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.28,
+      "calibration": 47,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.30 < 0.34)",
+        "explained by an uncontrolled confound (control 0.15 < 0.2)",
+        "claim asserts generality but it does not generalize (gen 0.22 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.26,
+      "reasoning": "Mean 0.26 ≤ 0.35."
+    }
+  },
+  {
+    "id": "llm_hallucination_systematic",
+    "domain": "ai_ml",
+    "hypothesis": "Large language models (GPT-3.5, GPT-4, Claude) produce factual hallucinations as a systematic, measurable, and reproducible failure mode that persists under standard prompting regardless of temperature or prompt format, not merely as rare edge cases.",
+    "decision_date": "2023-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Ji et al. 2022, ACM Computing Surveys (Survey of Hallucination in Natural Language Generation)",
+      "Lin et al. 2021, arXiv (TruthfulQA: Measuring How Models Mimic Human Falsehoods)",
+      "Maynez et al. 2020, ACL (On Faithfulness and Factuality in Abstractive Summarization)",
+      "Manakul et al. 2023, arXiv (SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection)"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.55,
+      "calibration": 68,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.55 >= 0.65",
+        "missing: replicated (0.38 >= 0.5)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.53,
+      "reasoning": "Mean 0.53 is ambiguous."
+    }
+  },
+  {
+    "id": "copilot_developer_productivity",
+    "domain": "ai_ml",
+    "hypothesis": "GitHub Copilot AI pair programming assistance meaningfully and measurably improves developer productivity on real-world coding tasks, reducing time to complete tasks by at least 20% compared to working without AI assistance.",
+    "decision_date": "2022-09-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Kalliamvakou 2022, GitHub Blog (Research: quantifying GitHub Copilot's impact on developer productivity and happiness)",
+      "Peng et al. 2023, arXiv (The Impact of AI on Developer Productivity: Evidence from GitHub Copilot)",
+      "Imai 2022, ICSE (Is GitHub Copilot a Substitute for Human Pair-programming?)"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.48,
+      "calibration": 65,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.48 >= 0.65",
+        "missing: replicated (0.38 >= 0.5)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.47,
+      "reasoning": "Mean 0.47 is ambiguous."
+    }
+  },
+  {
+    "id": "self_supervised_learning_scale",
+    "domain": "ai_ml",
+    "hypothesis": "Self-supervised learning methods (contrastive learning, masked autoencoders) trained on unlabeled data at large scale produce visual representations that match or exceed supervised ImageNet pre-training as general-purpose feature extractors for downstream vision tasks.",
+    "decision_date": "2021-06-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Chen et al. 2020, ICML (A Simple Framework for Contrastive Learning of Visual Representations)",
+      "Grill et al. 2020, NeurIPS (Bootstrap Your Own Latent)",
+      "Caron et al. 2021, ICCV (Emerging Properties in Self-Supervised Vision Transformers)",
+      "He et al. 2022, CVPR (Masked Autoencoders Are Scalable Vision Learners)"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.54,
+      "calibration": 67,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.54 >= 0.65",
+        "missing: replicated (0.42 >= 0.5)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.53,
+      "reasoning": "Mean 0.53 is ambiguous."
+    }
+  },
+  {
+    "id": "prompt_injection_llm_security",
+    "domain": "ai_ml",
+    "hypothesis": "Prompt injection attacks constitute a systematic and practically exploitable security vulnerability in LLM-integrated applications, allowing adversarial text in untrusted inputs to reliably override system prompt instructions and exfiltrate data or hijack agent behavior.",
+    "decision_date": "2023-06-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Perez and Ribeiro 2022, arXiv (Ignore Previous Prompt: Attack Techniques For Language Models)",
+      "Greshake et al. 2023, arXiv (Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection)",
+      "OWASP 2023, OWASP Top 10 for Large Language Model Applications",
+      "Willison 2022, simonwillison.net (Prompt injection attacks against GPT-3)"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.56,
+      "calibration": 67,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.56 >= 0.65",
+        "missing: replicated (0.42 >= 0.5)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.55,
+      "reasoning": "Mean 0.55 is ambiguous."
+    }
+  },
+  {
+    "id": "gpt4_multimodal_reasoning",
+    "domain": "ai_ml",
+    "hypothesis": "GPT-4 with vision input achieves expert-level multimodal reasoning — integrating text and image understanding — sufficient to pass professional licensing exams (medical, legal, scientific) that require visual interpretation combined with domain knowledge.",
+    "decision_date": "2023-03-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "OpenAI 2023, arXiv (GPT-4 Technical Report)",
+      "Yang et al. 2023, arXiv (Accuracy of a Vision-Language Model on Challenging Medical Cases)",
+      "Shen et al. 2023, arXiv (ChatGPT and Other Large Language Models as Evolutionary Tools for Generating Medicinal Chemistry Hypotheses)",
+      "Yue et al. 2023, arXiv (MMMU: A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark)"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.59,
+      "calibration": 72,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.59 >= 0.65",
+        "missing: replicated (0.40 >= 0.5)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.58,
+      "reasoning": "Mean 0.58 ≥ 0.55."
+    }
+  },
+  {
+    "id": "grit_predicts_success",
+    "domain": "psychology",
+    "hypothesis": "Grit (passion and perseverance for long-term goals) predicts achievement better than IQ or conscientiousness across diverse domains.",
+    "decision_date": "2016-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Duckworth et al. 2007, Journal of Personality and Social Psychology",
+      "Credé et al. 2017, Journal of Personality and Social Psychology",
+      "Muenks et al. 2017, Journal of Research in Personality",
+      "Duckworth & Gross 2014, Perspectives on Psychological Science"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.35,
+      "calibration": 53,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "claim asserts generality but it does not generalize (gen 0.30 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.34,
+      "reasoning": "Mean 0.34 ≤ 0.35."
+    }
+  },
+  {
+    "id": "iat_training_reduces_bias",
+    "domain": "psychology",
+    "hypothesis": "Implicit Association Test (IAT) scores can be reduced through bias awareness training, and reductions in IAT scores translate into reduced discriminatory behavior in real-world settings.",
+    "decision_date": "2015-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Greenwald et al. 1998, Journal of Personality and Social Psychology",
+      "Oswald et al. 2013, Journal of Personality and Social Psychology",
+      "Forscher et al. 2019, Psychological Bulletin",
+      "Lai et al. 2016, Journal of Experimental Psychology: General"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.3,
+      "calibration": 52,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.28 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.30 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.31,
+      "reasoning": "Mean 0.31 ≤ 0.35."
+    }
+  },
+  {
+    "id": "ten_thousand_hour_rule",
+    "domain": "psychology",
+    "hypothesis": "Achieving world-class expertise in any domain requires approximately 10,000 hours of deliberate practice, and deliberate practice is the dominant predictor of expert performance.",
+    "decision_date": "2012-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Ericsson et al. 1993, Psychological Review",
+      "Gladwell 2008, Outliers (Little, Brown and Company)",
+      "Macnamara et al. 2014, Psychological Science",
+      "Hambrick et al. 2014, Intelligence",
+      "Gobet & Campitelli 2007, in Cambridge Handbook of Expertise and Expert Performance"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.32,
+      "calibration": 49,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "claim asserts generality but it does not generalize (gen 0.20 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.29,
+      "reasoning": "Mean 0.29 ≤ 0.35."
+    }
+  },
+  {
+    "id": "stereotype_threat",
+    "domain": "psychology",
+    "hypothesis": "Informing members of a stereotyped group of a negative stereotype about their group before a test significantly reduces their performance on that test compared to a non-threatened control group.",
+    "decision_date": "2005-01-01",
+    "expected": "GO",
+    "sources": [
+      "Steele & Aronson 1995, Journal of Personality and Social Psychology",
+      "Nguyen & Ryan 2008, Psychological Bulletin (meta-analysis, k=116)",
+      "Flore & Wicherts 2015, Journal of Experimental Social Psychology",
+      "Spencer et al. 1999, Journal of Experimental Social Psychology"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "GO",
+      "support": 0.65,
+      "calibration": 76,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": "GO downgraded to UNRESOLVED: 1 hostile attack(s) landed on the evidence/verdict.",
+      "reasons": [
+        "support 0.65 >= 0.65",
+        "replicated (0.65 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.65 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.65,
+      "reasoning": "Mean 0.65 ≥ 0.55."
+    }
+  },
+  {
+    "id": "cbt_anxiety_superiority",
+    "domain": "psychology",
+    "hypothesis": "Cognitive behavioral therapy (CBT) is more effective than other active therapies (pharmacotherapy, psychodynamic therapy, supportive counseling) for anxiety disorders.",
+    "decision_date": "2010-01-01",
+    "expected": "GO",
+    "sources": [
+      "Hofmann & Smits 2008, Journal of Clinical Psychiatry",
+      "Cuijpers et al. 2019, Psychological Medicine",
+      "Norton & Price 2007, Journal of Nervous and Mental Disease (meta-analysis)",
+      "NICE Clinical Guidelines CG113 2011"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "GO",
+      "support": 0.67,
+      "calibration": 79,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": "GO downgraded to UNRESOLVED: 1 hostile attack(s) landed on the evidence/verdict.",
+      "reasons": [
+        "support 0.67 >= 0.65",
+        "replicated (0.70 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.75 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.68,
+      "reasoning": "Mean 0.68 ≥ 0.55."
+    }
+  },
+  {
+    "id": "infant_attachment_adult_outcomes",
+    "domain": "psychology",
+    "hypothesis": "Infant attachment style (secure vs. insecure, as measured by the Strange Situation) reliably predicts adult romantic relationship quality and functioning.",
+    "decision_date": "2000-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Ainsworth et al. 1978, Patterns of Attachment (Lawrence Erlbaum)",
+      "Waters et al. 2000, Child Development",
+      "Fraley 2002, Developmental Psychology",
+      "Hazan & Shaver 1987, Journal of Personality and Social Psychology",
+      "Roisman et al. 2005, Developmental Psychology"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.42,
+      "calibration": 58,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.42 >= 0.65",
+        "missing: replicated (0.45 >= 0.5)",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.42,
+      "reasoning": "Mean 0.42 is ambiguous."
+    }
+  },
+  {
+    "id": "intrinsic_motivation_undermining",
+    "domain": "psychology",
+    "hypothesis": "Providing external rewards for an intrinsically motivated activity undermines subsequent intrinsic motivation for that activity (the overjustification effect), and intrinsic motivation dominates performance on complex tasks once basic material needs are met.",
+    "decision_date": "2000-01-01",
+    "expected": "GO",
+    "sources": [
+      "Deci 1971, Journal of Personality and Social Psychology",
+      "Deci, Koestner & Ryan 1999, Psychological Bulletin (meta-analysis, k=128)",
+      "Cameron & Pierce 1994, Review of Educational Research",
+      "Cerasoli et al. 2014, Psychological Bulletin",
+      "Pink 2009, Drive (Riverhead Books) — popularization of Deci framework"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "GO",
+      "support": 0.69,
+      "calibration": 78,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": "GO downgraded to UNRESOLVED: 1 hostile attack(s) landed on the evidence/verdict.",
+      "reasons": [
+        "support 0.69 >= 0.65",
+        "replicated (0.68 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.65 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.68,
+      "reasoning": "Mean 0.68 ≥ 0.55."
+    }
+  },
+  {
+    "id": "mindfulness_depression_relapse",
+    "domain": "psychology",
+    "hypothesis": "Mindfulness-Based Cognitive Therapy (MBCT) significantly reduces the rate of depression relapse in patients with three or more prior episodes compared to treatment as usual.",
+    "decision_date": "2008-01-01",
+    "expected": "GO",
+    "sources": [
+      "Teasdale et al. 2000, Journal of Consulting and Clinical Psychology",
+      "Ma & Teasdale 2004, Journal of Consulting and Clinical Psychology",
+      "Piet & Hougaard 2011, Clinical Psychology Review (meta-analysis)",
+      "Kuyken et al. 2016, The Lancet",
+      "NICE Clinical Guideline CG23 2004"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "GO",
+      "support": 0.69,
+      "calibration": 79,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": "GO downgraded to UNRESOLVED: 1 hostile attack(s) landed on the evidence/verdict.",
+      "reasons": [
+        "support 0.69 >= 0.65",
+        "replicated (0.68 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.68 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.68,
+      "reasoning": "Mean 0.68 ≥ 0.55."
+    }
+  },
+  {
+    "id": "agile_vs_waterfall",
+    "domain": "software",
+    "hypothesis": "Agile methodologies (Scrum, XP, Kanban) outperform Waterfall for software delivery speed, quality, and customer satisfaction across project types.",
+    "decision_date": "2008-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Dybaa & Dingsoyr 2008, Empirical Software Engineering (systematic review of XP and Scrum studies)",
+      "Standish Group CHAOS Report 2001-2015",
+      "VersionOne State of Agile Annual Survey 2007-2008"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.46,
+      "calibration": 59,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.46 >= 0.65",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.44,
+      "reasoning": "Mean 0.44 is ambiguous."
+    }
+  },
+  {
+    "id": "nosql_all_usecases",
+    "domain": "software",
+    "hypothesis": "NoSQL databases (MongoDB, Cassandra, CouchDB) are superior to relational databases for all web-scale use cases due to their horizontal scalability and schema flexibility.",
+    "decision_date": "2011-01-01",
+    "expected": "KILL",
+    "sources": [
+      "DeCandia et al. 2007, Dynamo: Amazon Highly Available Key-Value Store, SOSP",
+      "Chang et al. 2006, Bigtable: Distributed Storage System, OSDI",
+      "Stonebraker 2010, SQL Databases v. NoSQL Databases, Communications of the ACM",
+      "Brewer 2012, CAP Twelve Years Later: How the Rules Have Changed, IEEE Computer"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.38,
+      "calibration": 55,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.25 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.20 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.35,
+      "reasoning": "Mean 0.35 ≤ 0.35."
+    }
+  },
+  {
+    "id": "microservices_always_better",
+    "domain": "software",
+    "hypothesis": "Microservices architectures always outperform monolithic architectures in scalability, deployment velocity, and team autonomy for software systems.",
+    "decision_date": "2016-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Newman 2015, Building Microservices, O'Reilly Media",
+      "Fowler 2015, Microservices Premium, martinfowler.com",
+      "Segment Engineering Blog 2020, Goodbye Microservices: From 100s of problem children to 1 superstar",
+      "Amazon Prime Video Tech Blog 2023, Scaling up the Prime Video audio/video monitoring service"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.38,
+      "calibration": 56,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "claim asserts generality but it does not generalize (gen 0.20 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.35,
+      "reasoning": "Mean 0.35 ≤ 0.35."
+    }
+  },
+  {
+    "id": "static_typing_fewer_bugs",
+    "domain": "software",
+    "hypothesis": "Static type systems significantly reduce the number of bugs reaching production compared to dynamically typed languages, as the compiler catches type errors before runtime.",
+    "decision_date": "2017-01-01",
+    "expected": "GO",
+    "sources": [
+      "Ray et al. 2014, A Large Scale Study of Programming Languages and Code Quality in GitHub, FSE",
+      "Gao et al. 2017, To Type or Not to Type: Quantifying Detectable Bugs in JavaScript, ICSE",
+      "Bhattacharya & Neamtiu 2011, Assessing and Improving an Empirical Study of Language Comparison, ASE",
+      "Hanenberg et al. 2014, An Empirical Study on the Impact of Static Typing on Software Maintainability, EMSE"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "GO",
+      "support": 0.67,
+      "calibration": 76,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": "GO downgraded to UNRESOLVED: 1 hostile attack(s) landed on the evidence/verdict.",
+      "reasons": [
+        "support 0.67 >= 0.65",
+        "replicated (0.70 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.62 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.66,
+      "reasoning": "Mean 0.66 ≥ 0.55."
+    }
+  },
+  {
+    "id": "tdd_quality_and_speed",
+    "domain": "software",
+    "hypothesis": "Test-driven development (TDD) simultaneously improves both code quality (fewer defects) and development speed compared to test-after or no-test development practices.",
+    "decision_date": "2010-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Nagappan et al. 2008, Realizing Quality Improvement Through Test Driven Development, EMSE",
+      "Erdogmus et al. 2005, On the Effectiveness of Test-First Approach to Programming, IEEE TSE",
+      "George & Williams 2003, An Initial Investigation of Test Driven Development in Industry, SAC",
+      "Rafique & Misic 2013, The Effects of Test-Driven Development on External Quality and Productivity, IEEE TSE"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.49,
+      "calibration": 60,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.48 >= 0.65",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.47,
+      "reasoning": "Mean 0.47 is ambiguous."
+    }
+  },
+  {
+    "id": "remote_work_reduces_dev_productivity",
+    "domain": "software",
+    "hypothesis": "Remote work significantly reduces software developer productivity, measured by output and collaboration quality, compared to in-office work.",
+    "decision_date": "2021-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Yang et al. 2021, The Effects of Remote Work on Collaboration Among Information Workers, Nature Human Behaviour",
+      "Bloom et al. 2015, Does Working from Home Work?, Quarterly Journal of Economics",
+      "GitHub Octoverse Report 2020, State of the Octoverse",
+      "Stack Overflow Developer Survey 2020, Remote Work Productivity Section"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.22,
+      "calibration": 48,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "no measurable effect (effect 0.10 < 0.15)",
+        "fails hostile/confound tests (survival 0.25 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.30 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.24,
+      "reasoning": "Mean 0.24 ≤ 0.35."
+    }
+  },
+  {
+    "id": "graphql_replaces_rest",
+    "domain": "software",
+    "hypothesis": "GraphQL will replace REST as the dominant API paradigm for web services within five years of its public release, due to superior query flexibility and reduced over-fetching.",
+    "decision_date": "2017-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Facebook 2015, GraphQL: A Data Query Language, Engineering Blog",
+      "GitHub 2016, The GitHub GraphQL API, Engineering Blog",
+      "Stack Overflow Developer Survey 2022, Most Popular Technologies: Databases and APIs",
+      "Wittern et al. 2019, An Empirical Study of GraphQL Schemas, ICSME"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.37,
+      "calibration": 54,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "claim asserts generality but it does not generalize (gen 0.25 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.35,
+      "reasoning": "Mean 0.35 ≤ 0.35."
+    }
+  },
+  {
+    "id": "opensource_security_stronger",
+    "domain": "software",
+    "hypothesis": "Open source software has a stronger security model than proprietary closed-source software because public code review enables faster vulnerability discovery and remediation (Linus's Law).",
+    "decision_date": "2005-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Raymond 1999, The Cathedral and the Bazaar, O'Reilly Media",
+      "Anderson 2002, Security in Open versus Closed Systems, Cambridge University",
+      "Hoepman & Jacobs 2007, Increased Security Through Open Source, Communications of the ACM",
+      "Schryen 2011, Is Open Source Security a Myth?, Communications of the ACM"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.42,
+      "calibration": 58,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.42 >= 0.65",
+        "missing: replicated (0.45 >= 0.5)",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.42,
+      "reasoning": "Mean 0.42 is ambiguous."
+    }
+  },
+  {
+    "id": "serverless_cost_reduction_at_scale",
+    "domain": "software",
+    "hypothesis": "Serverless architecture (AWS Lambda, Azure Functions) reduces total operational costs compared to server-based deployments for applications at significant production scale.",
+    "decision_date": "2018-01-01",
+    "expected": "KILL",
+    "sources": [
+      "AWS Lambda Announcement 2014, Amazon Web Services Blog",
+      "Baldini et al. 2017, Serverless Computing: Current Trends and Open Problems, Research Advances in Cloud Computing",
+      "Amazon Prime Video Tech Blog 2023, Scaling up the Prime Video audio/video monitoring service",
+      "Leitner et al. 2019, A Mixed-Method Empirical Study of Function-as-a-Service Software Development, JSEP"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.37,
+      "calibration": 51,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.30 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.30 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.35,
+      "reasoning": "Mean 0.35 ≤ 0.35."
+    }
+  },
+  {
+    "id": "blockchain_supply_chain",
+    "domain": "software",
+    "hypothesis": "Blockchain technology improves supply chain transparency, traceability, and trust between participants compared to traditional centralized database systems.",
+    "decision_date": "2018-06-01",
+    "expected": "KILL",
+    "sources": [
+      "IBM and Maersk TradeLens 2018, Blockchain for Global Trade Platform Announcement",
+      "Saberi et al. 2019, Blockchain Technology and Its Relationships to Sustainable Supply Chain Management, International Journal of Production Research",
+      "Cole et al. 2019, The Use of Blockchain Technology in Logistics and Supply Chain Management, Transportation Research",
+      "Gartner Hype Cycle for Blockchain 2021",
+      "IBM and Maersk 2022, TradeLens Discontinuation Announcement"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.24,
+      "calibration": 47,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.30 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.25 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.24,
+      "reasoning": "Mean 0.24 ≤ 0.35."
+    }
+  },
+  {
+    "id": "platform_vs_pipeline_scaling",
+    "domain": "business_strategy",
+    "hypothesis": "Platform business models scale better than pipeline businesses, generating superior returns as they grow",
+    "decision_date": "2016-01-01",
+    "expected": "GO",
+    "sources": [
+      "Parker, Van Alstyne & Choudary 2016, Platform Revolution (Harvard Business Review Press)",
+      "Eisenmann, Parker & Van Alstyne 2006, Harvard Business Review, 'Strategies for Two-Sided Markets'",
+      "Cusumano, Gawer & Yoffie 2019, The Business of Platforms (Harper Business)"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.54,
+      "calibration": 64,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.54 >= 0.65"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.52,
+      "reasoning": "Mean 0.52 is ambiguous."
+    }
+  },
+  {
+    "id": "first_mover_advantage_digital",
+    "domain": "business_strategy",
+    "hypothesis": "First-mover advantage creates durable competitive moats in digital markets",
+    "decision_date": "2005-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Lieberman & Montgomery 1988, Strategic Management Journal, 'First-Mover Advantages'",
+      "Tellis & Golder 2002, MIT Sloan Management Review, 'First to Market, First to Fail?'",
+      "Suarez & Lanzolla 2005, Harvard Business Review, 'The Half-Truth of First-Mover Advantage'"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.34,
+      "calibration": 54,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "claim asserts generality but it does not generalize (gen 0.28 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.33,
+      "reasoning": "Mean 0.33 ≤ 0.35."
+    }
+  },
+  {
+    "id": "lean_startup_mvp_success",
+    "domain": "business_strategy",
+    "hypothesis": "Lean Startup methodology (MVP plus rapid iteration) significantly improves startup survival and success rates",
+    "decision_date": "2014-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Ries 2011, The Lean Startup (Crown Business)",
+      "Camuffo et al. 2020, Science, 'A Scientific Approach to Entrepreneurial Decision Making'",
+      "Blank 2013, Harvard Business Review, 'Why the Lean Start-Up Changes Everything'"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.28,
+      "calibration": 48,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "explained by an uncontrolled confound (control 0.14 < 0.2)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.28,
+      "reasoning": "Mean 0.28 ≤ 0.35."
+    }
+  },
+  {
+    "id": "network_effects_winner_take_all",
+    "domain": "business_strategy",
+    "hypothesis": "Network effects create winner-take-all dynamics in most technology markets",
+    "decision_date": "2010-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Shapiro & Varian 1999, Information Rules (Harvard Business School Press)",
+      "Eisenmann 2007, Harvard Business Review, 'Managing Networked Businesses'",
+      "Evans & Schmalensee 2016, Matchmakers: The New Economics of Multisided Platforms (Harvard Business Review Press)"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.43,
+      "calibration": 57,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "claim asserts generality but it does not generalize (gen 0.30 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.41,
+      "reasoning": "Mean 0.41 is ambiguous."
+    }
+  },
+  {
+    "id": "csr_financial_performance",
+    "domain": "business_strategy",
+    "hypothesis": "Corporate social responsibility (CSR) spending improves long-run financial performance",
+    "decision_date": "2012-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Margolis & Walsh 2001, People and Profits? (Lawrence Erlbaum Associates)",
+      "Friede, Busch & Bassen 2015, Journal of Sustainable Finance & Investment, 'ESG and Financial Performance'",
+      "Orlitzky, Schmidt & Rynes 2003, Organization Studies, 'Corporate Social and Financial Performance'"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.36,
+      "calibration": 55,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.36 >= 0.65",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.38,
+      "reasoning": "Mean 0.38 is ambiguous."
+    }
+  },
+  {
+    "id": "conglomerate_diversification_premium",
+    "domain": "business_strategy",
+    "hypothesis": "Diversified conglomerates outperform focused competitors through internal capital markets and risk diversification",
+    "decision_date": "1975-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Williamson 1975, Markets and Hierarchies (Free Press)",
+      "Lang & Stulz 1994, Journal of Political Economy, 'Tobin's Q, Corporate Diversification, and Firm Performance'",
+      "Berger & Ofek 1995, Journal of Financial Economics, 'Diversification's Effect on Firm Value'"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.23,
+      "calibration": 48,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "no measurable effect (effect 0.10 < 0.15)",
+        "fails hostile/confound tests (survival 0.28 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.26,
+      "reasoning": "Mean 0.26 ≤ 0.35."
+    }
+  },
+  {
+    "id": "pay_for_performance_ceo",
+    "domain": "business_strategy",
+    "hypothesis": "Performance-linked CEO compensation (stock options and equity) improves firm financial outcomes",
+    "decision_date": "1995-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Jensen & Murphy 1990, Journal of Political Economy, 'Performance Pay and Top-Management Incentives'",
+      "Jensen & Meckling 1976, Journal of Financial Economics, 'Theory of the Firm'",
+      "Bebchuk & Fried 2004, Pay Without Performance (Harvard University Press)"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.35,
+      "calibration": 54,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.34 >= 0.65",
+        "missing: replicated (0.46 >= 0.5)",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.36,
+      "reasoning": "Mean 0.36 is ambiguous."
+    }
+  },
+  {
+    "id": "vertical_integration_quality_control",
+    "domain": "business_strategy",
+    "hypothesis": "Vertical integration outperforms outsourcing for quality control and cost efficiency in manufacturing",
+    "decision_date": "1985-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Williamson 1985, The Economic Institutions of Capitalism (Free Press)",
+      "Harrigan 1985, Strategic Management Journal, 'Vertical Integration and Corporate Strategy'",
+      "Gilley & Rasheed 2000, Journal of Management, 'Making More by Doing Less: An Analysis of Outsourcing'"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.31,
+      "calibration": 53,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.31 >= 0.65",
+        "missing: replicated (0.42 >= 0.5)",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.32,
+      "reasoning": "Mean 0.32 ≤ 0.35."
+    }
+  },
+  {
+    "id": "loyalty_programs_retention",
+    "domain": "business_strategy",
+    "hypothesis": "Customer loyalty programs (points, miles, rewards) significantly increase customer retention and revenue per customer",
+    "decision_date": "2000-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Reichheld 1996, The Loyalty Effect (Harvard Business School Press)",
+      "Dowling & Uncles 1997, Sloan Management Review, 'Do Customer Loyalty Programs Really Work?'",
+      "Sharp & Sharp 1997, Journal of Marketing Management, 'Loyalty Programs and Their Impact'"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.36,
+      "calibration": 54,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.36 >= 0.65",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.37,
+      "reasoning": "Mean 0.37 is ambiguous."
+    }
+  },
+  {
+    "id": "blue_ocean_strategy_advantage",
+    "domain": "business_strategy",
+    "hypothesis": "Blue Ocean Strategy (creating uncontested market space by making competition irrelevant) creates sustainable competitive advantage",
+    "decision_date": "2008-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Kim & Mauborgne 2005, Blue Ocean Strategy (Harvard Business School Press)",
+      "Burke, van Stel & Thurik 2010, Strategic Management Journal, 'Blue Ocean vs. Five Forces'",
+      "Posen, Lee & Yi 2013, Strategic Management Journal, 'The Power of Imperfect Imitation'"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.27,
+      "calibration": 47,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "explained by an uncontrolled confound (control 0.16 < 0.2)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.27,
+      "reasoning": "Mean 0.27 ≤ 0.35."
+    }
+  },
+  {
+    "id": "5g_replaces_wifi",
+    "domain": "technology",
+    "hypothesis": "5G will replace indoor WiFi as the primary home and office connectivity standard by 2025, making WiFi routers obsolete for most consumers.",
+    "decision_date": "2019-06-01",
+    "expected": "KILL",
+    "sources": [
+      "Rangan et al. 2014, IEEE Proceedings (mmWave channel modeling and indoor attenuation)",
+      "Gartner Hype Cycle for Emerging Technologies 2019",
+      "Wi-Fi Alliance Annual Report 2024",
+      "T-Mobile 5G Home Internet rollout data 2021-2024",
+      "IEEE 802.11ax (WiFi 6) Standard Ratification 2019"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.3,
+      "calibration": 55,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "claim asserts generality but it does not generalize (gen 0.20 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.3,
+      "reasoning": "Mean 0.3 ≤ 0.35."
+    }
+  },
+  {
+    "id": "vr_mass_adoption_2025",
+    "domain": "technology",
+    "hypothesis": "Consumer VR/AR headsets will achieve mass-market adoption exceeding 10% household penetration in developed markets by 2025.",
+    "decision_date": "2018-01-01",
+    "expected": "KILL",
+    "sources": [
+      "SuperData Research, VR/AR Annual Report 2017",
+      "IDC Worldwide Quarterly Augmented and Virtual Reality Headset Tracker 2018-2024",
+      "LaViola 2000, Presence: Teleoperators and Virtual Environments (cybersickness review)",
+      "Statista, VR/AR headset installed base 2016-2024",
+      "Meta Quest 2 cumulative sales reports 2020-2024"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.28,
+      "calibration": 53,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.28 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.20 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.29,
+      "reasoning": "Mean 0.29 ≤ 0.35."
+    }
+  },
+  {
+    "id": "ev_50pct_market_share_2025",
+    "domain": "technology",
+    "hypothesis": "Electric vehicles will reach 50% of all new passenger car sales in major automotive markets (US, EU, China) by 2025.",
+    "decision_date": "2020-01-01",
+    "expected": "KILL",
+    "sources": [
+      "BloombergNEF Electric Vehicle Outlook 2019 and 2020",
+      "IEA Global EV Outlook 2020 and 2024",
+      "Norwegian Road Federation (OFV) annual sales data 2019",
+      "BNEF Battery Price Survey 2019 (Benchmark Price $156/kWh)",
+      "Goldman Sachs Carbonomics Report 2019",
+      "International Council on Clean Transportation (ICCT) EV Consumer Survey 2019"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.5,
+      "calibration": 68,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "claim asserts generality but it does not generalize (gen 0.25 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.47,
+      "reasoning": "Mean 0.47 is ambiguous."
+    }
+  },
+  {
+    "id": "autonomous_vehicles_level5_2021",
+    "domain": "technology",
+    "hypothesis": "Autonomous vehicles will achieve SAE Level 5 (full self-driving in any condition without human oversight) capability in urban environments by 2021.",
+    "decision_date": "2017-01-01",
+    "expected": "KILL",
+    "sources": [
+      "RAND Corporation 2016, 'Autonomous Vehicle Technology: A Guide for Policymakers' (Kalra & Paddock)",
+      "California DMV Autonomous Vehicle Disengagement Reports 2016-2021",
+      "SAE International J3016 Level of Driving Automation Standard (2016 revision)",
+      "Waymo Safety Report 2020 — Waymo One Phoenix launch documentation",
+      "NHTSA Standing General Order AV Crash Reporting 2021-2024",
+      "Musk Tesla Autonomy Investor Day prediction (October 2016, cited widely)"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.32,
+      "calibration": 53,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.22 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.20 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.31,
+      "reasoning": "Mean 0.31 ≤ 0.35."
+    }
+  },
+  {
+    "id": "blockchain_supply_chain_mainstream",
+    "domain": "technology",
+    "hypothesis": "Blockchain-based supply chain tracking will achieve mainstream enterprise adoption (>30% of Fortune 500 companies using it operationally) by 2023.",
+    "decision_date": "2019-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "IBM Food Trust launch announcement and Walmart collaboration 2018 (IBM Press Release)",
+      "Maersk-IBM TradeLens launch 2018 and shutdown announcement December 2022",
+      "Gartner Hype Cycle for Blockchain Business 2018 and 2020",
+      "Deloitte Global Blockchain Survey 2018",
+      "Gartner Enterprise Blockchain Survey 2023",
+      "Wust & Gervais 2018, '2nd Crypto Valley Conference on Blockchain Technology' (when blockchain?)"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.43,
+      "calibration": 59,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.43 >= 0.65",
+        "missing: replicated (0.35 >= 0.5)",
+        "missing: interval excludes the null",
+        "missing: adequate power (0.38 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.42,
+      "reasoning": "Mean 0.42 is ambiguous."
+    }
+  },
+  {
+    "id": "cloud_gaming_replaces_console",
+    "domain": "technology",
+    "hypothesis": "Cloud gaming services (game streaming) will largely replace dedicated gaming consoles, capturing majority market share of gaming hardware spend by 2023.",
+    "decision_date": "2019-06-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Newzoo Cloud Gaming Revenue Forecast 2019",
+      "Google Stadia announcement GDC March 2019 and shutdown January 2023 (Google Blog)",
+      "Microsoft xCloud beta launch 2019",
+      "Sony PlayStation Now subscriber count Q4 2019 (Sony Investor Relations)",
+      "Xbox Game Pass subscriber data 2023 (Microsoft)",
+      "IDC Worldwide Quarterly Gaming Tracker 2019-2023"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.37,
+      "calibration": 59,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.37 >= 0.65",
+        "missing: replicated (0.30 >= 0.5)",
+        "missing: interval excludes the null",
+        "missing: adequate power (0.35 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.38,
+      "reasoning": "Mean 0.38 is ambiguous."
+    }
+  },
+  {
+    "id": "solid_state_battery_ev_2023",
+    "domain": "technology",
+    "hypothesis": "Solid-state lithium batteries will achieve commercial-scale production for electric vehicles by 2023, delivering energy density >400 Wh/kg and enabling 500+ mile EV range at mainstream price points.",
+    "decision_date": "2020-06-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "QuantumScape S-1 filing and 2020 technical results presentation (SEC EDGAR 2020)",
+      "Toyota Motor Corporation Press Release on solid-state battery roadmap 2020",
+      "Janek & Zeier 2016, Nature Energy (solid-state battery challenges review)",
+      "CATL and Samsung SDI solid-state battery announcements 2020 (Reuters/Nikkei)",
+      "BloombergNEF Battery Price Survey 2020 (lithium-ion cost trajectory)",
+      "Solid Power and BMW partnership announcement 2020"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.5,
+      "calibration": 62,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.50 >= 0.65",
+        "missing: replicated (0.40 >= 0.5)",
+        "missing: interval excludes the null",
+        "missing: adequate power (0.35 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.5,
+      "reasoning": "Mean 0.5 is ambiguous."
+    }
+  },
+  {
+    "id": "fiber_broadband_superior_to_cable",
+    "domain": "technology",
+    "hypothesis": "Fiber-to-the-premises (FTTP) broadband delivers substantially superior reliability, speed, and latency compared to coaxial cable (HFC) networks for residential internet, making it the preferred infrastructure technology.",
+    "decision_date": "2015-01-01",
+    "expected": "GO",
+    "sources": [
+      "FCC Measuring Broadband America Fixed Broadband Report 2014",
+      "Ofcom Connected Nations Report 2014 (UK broadband performance)",
+      "Google Fiber technical performance data 2013-2015 (FCC filing)",
+      "Stocker et al. 2017, Telecommunications Policy (FTTP vs HFC comparative analysis)",
+      "ARCEP 2014 Annual Broadband Barometer (France fiber vs. cable measurements)",
+      "Akamai State of the Internet Report Q4 2014 (fiber ISP performance rankings)"
+    ],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.78,
+      "calibration": 85,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.78 >= 0.65",
+        "replicated (0.80 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.80 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.77,
+      "reasoning": "Mean 0.77 ≥ 0.55."
+    }
+  },
+  {
+    "id": "juicero_hardware",
+    "domain": "startups",
+    "hypothesis": "Juicero's proprietary $699 connected juice-pressing hardware provides sufficient value over hand-squeezing its own pre-packaged produce packs to command premium consumer adoption at scale.",
+    "decision_date": "2017-03-01",
+    "expected": "KILL",
+    "sources": [
+      "Evans & Ramsey 2017, Bloomberg ('Juicero's Press Doesn't Actually Squeeze the Juice')",
+      "Primack 2017, Fortune ('Juicero Is Shutting Down')",
+      "Griffith 2017, New York Times (Juicero shutdown coverage)"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.17,
+      "calibration": 42,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "no measurable effect (effect 0.10 < 0.15)",
+        "fails hostile/confound tests (survival 0.20 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.14,
+      "reasoning": "Mean 0.14 ≤ 0.35."
+    }
+  },
+  {
+    "id": "segway_urban_transport",
+    "domain": "startups",
+    "hypothesis": "The Segway personal transporter will transform urban transportation by replacing walking and short-distance driving, achieving mass adoption as a primary first/last-mile vehicle.",
+    "decision_date": "2001-12-01",
+    "expected": "KILL",
+    "sources": [
+      "Kemper 2003, 'Code Name Ginger' (Harvard Business School Press)",
+      "Naughton 2020, Newsweek ('Why the Segway Failed')",
+      "Stewart 2015, The New Yorker ('Reinventing the Wheel')"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.18,
+      "calibration": 44,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "no measurable effect (effect 0.12 < 0.15)",
+        "fails hostile/confound tests (survival 0.28 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.15 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.24,
+      "reasoning": "Mean 0.24 ≤ 0.35."
+    }
+  },
+  {
+    "id": "clubhouse_social_audio",
+    "domain": "startups",
+    "hypothesis": "Clubhouse's live audio drop-in social platform represents durable product-market fit and will sustain user engagement and growth beyond pandemic-era conditions.",
+    "decision_date": "2021-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Newton 2021, The Verge ('What happened to Clubhouse?')",
+      "Frier 2021, Bloomberg (Clubhouse growth reversal coverage)",
+      "Perez 2021, TechCrunch ('Clubhouse downloads have fallen 72% since February peak')"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.3,
+      "calibration": 46,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.22 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.25 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.34,
+      "reasoning": "Mean 0.34 ≤ 0.35."
+    }
+  },
+  {
+    "id": "peloton_connected_fitness",
+    "domain": "startups",
+    "hypothesis": "Pandemic-era demand for Peloton connected fitness hardware represents a durable structural shift in consumer exercise behavior that will sustain elevated revenue post-pandemic.",
+    "decision_date": "2021-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Thomas & Cao 2022, Wall Street Journal ('Peloton CEO Steps Down')",
+      "Fitzgerald 2022, CNBC (Peloton demand collapse reporting)",
+      "Del Rey 2021, Vox/Recode ('The Peloton bubble')"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.13,
+      "calibration": 40,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "no measurable effect (effect 0.08 < 0.15)",
+        "fails hostile/confound tests (survival 0.20 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.20 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.18,
+      "reasoning": "Mean 0.18 ≤ 0.35."
+    }
+  },
+  {
+    "id": "snapchat_stories_adoption",
+    "domain": "startups",
+    "hypothesis": "Snapchat's Stories feature (chronological 24-hour photo/video sequences visible to all followers) will drive a meaningful increase in daily active engagement and content creation volume on the platform.",
+    "decision_date": "2013-10-01",
+    "expected": "GO",
+    "sources": [
+      "Gallagher 2018, 'How to Turn Down a Billion Dollars: The Snapchat Story' (St. Martin's Press)",
+      "Systrom 2016, Instagram blog post ('Instagram Stories')",
+      "Kokalitcheva 2016, Fortune ('Snapchat is about to reveal some important data about its users')"
+    ],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.74,
+      "calibration": 81,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.74 >= 0.65",
+        "replicated (0.70 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.75 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.72,
+      "reasoning": "Mean 0.72 ≥ 0.55."
+    }
+  },
+  {
+    "id": "doordash_unit_economics",
+    "domain": "startups",
+    "hypothesis": "DoorDash's marketplace model can achieve sustainable unit economics at scale, with contribution margin turning positive as order volume grows and operational density increases in key markets.",
+    "decision_date": "2019-06-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "DoorDash S-1 Filing 2020, SEC EDGAR",
+      "Dignan 2019, TechCrunch ('DoorDash raises $600 million at $12.6 billion valuation')",
+      "Creswell 2020, New York Times ('How DoorDash's road to an IPO is paved with restaurant fees')"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.4,
+      "calibration": 52,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.40 >= 0.65",
+        "missing: replicated (0.00 >= 0.5)",
+        "missing: interval excludes the null",
+        "missing: adequate power (0.35 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.49,
+      "reasoning": "Mean 0.49 is ambiguous."
+    }
+  },
+  {
+    "id": "zoom_enterprise_scale",
+    "domain": "startups",
+    "hypothesis": "Zoom's cloud-native video conferencing architecture can reliably serve enterprise-scale deployments with superior reliability, ease of use, and cross-platform performance compared to incumbent solutions (Cisco WebEx, Microsoft Skype).",
+    "decision_date": "2019-04-01",
+    "expected": "GO",
+    "sources": [
+      "Zoom Video Communications S-1 IPO Filing 2019, SEC EDGAR",
+      "Gartner Magic Quadrant for Meeting Solutions 2018 (Zoom leader ranking)",
+      "Yuan 2020, Zoom Blog ('A Message to Our Users') — architecture scaling documentation"
+    ],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.79,
+      "calibration": 85,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.79 >= 0.65",
+        "replicated (0.75 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.82 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.78,
+      "reasoning": "Mean 0.78 ≥ 0.55."
+    }
+  },
+  {
+    "id": "slack_enterprise_comms",
+    "domain": "startups",
+    "hypothesis": "Slack's channel-based team messaging platform will displace email as the primary internal communication tool in software-driven enterprises, achieving durable enterprise stickiness and expanding net dollar retention.",
+    "decision_date": "2016-01-01",
+    "expected": "GO",
+    "sources": [
+      "Griffith 2015, Wired ('The Most Fascinating Profile You'll Ever Read About a Guy and His Boring Startup')",
+      "Slack S-1 Filing 2019, SEC EDGAR (historical ARR and retention data)",
+      "Salesforce press release July 2021 (Slack acquisition close)"
+    ],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.71,
+      "calibration": 79,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.71 >= 0.65",
+        "replicated (0.65 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.72 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.69,
+      "reasoning": "Mean 0.69 ≥ 0.55."
+    }
+  },
+  {
+    "id": "airbnb_shared_economy",
+    "domain": "startups",
+    "hypothesis": "Airbnb's peer-to-peer home-sharing marketplace can achieve sustainable demand at scale by providing travelers with authentic, affordable accommodation alternatives while giving hosts meaningful supplemental income — overcoming the trust barrier to staying in strangers' homes.",
+    "decision_date": "2012-01-01",
+    "expected": "GO",
+    "sources": [
+      "Andreessen 2011, Andreessen Horowitz blog (Airbnb investment thesis)",
+      "Gallagher 2017, 'The Airbnb Story' (Houghton Mifflin Harcourt)",
+      "Airbnb IPO S-1 Filing 2020, SEC EDGAR"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "GO",
+      "support": 0.67,
+      "calibration": 76,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": "GO downgraded to UNRESOLVED: 1 hostile attack(s) landed on the evidence/verdict.",
+      "reasons": [
+        "support 0.67 >= 0.65",
+        "replicated (0.60 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.68 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.66,
+      "reasoning": "Mean 0.66 ≥ 0.55."
+    }
+  },
+  {
+    "id": "dropbox_cloud_storage",
+    "domain": "startups",
+    "hypothesis": "Dropbox's freemium cloud file-sync product can convert a large fraction of free users to paid plans in both consumer and enterprise segments, creating durable ARR growth through viral bottom-up adoption.",
+    "decision_date": "2012-01-01",
+    "expected": "GO",
+    "sources": [
+      "Houston 2010, Dropbox blog ('How we grew Dropbox to 4 million users in 15 months')",
+      "Dropbox S-1 Filing 2018, SEC EDGAR",
+      "Olsen 2015, 'The Lean Product Playbook' (Wiley) — Dropbox case study"
+    ],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.72,
+      "calibration": 80,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.72 >= 0.65",
+        "replicated (0.65 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.75 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.71,
+      "reasoning": "Mean 0.71 ≥ 0.55."
+    }
+  },
+  {
+    "id": "robinhood_investing_access",
+    "domain": "startups",
+    "hypothesis": "Robinhood's commission-free mobile-first brokerage will successfully democratize stock market investing by drawing in previously excluded young and lower-income retail investors who were deterred by trading fees.",
+    "decision_date": "2016-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Wurgler & Welch 2022, NBER Working Paper ('The Reddit Rebellion')",
+      "Robinhood S-1 Filing 2021, SEC EDGAR",
+      "Bhattacharya et al. 2021, Journal of Finance (retail investor trading behavior study)"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.43,
+      "calibration": 58,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.42 >= 0.65",
+        "missing: replicated (0.00 >= 0.5)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.53,
+      "reasoning": "Mean 0.53 is ambiguous."
+    }
+  },
+  {
+    "id": "twitter_no_moderation_advertisers",
+    "domain": "startups",
+    "hypothesis": "Twitter under Elon Musk's ownership can retain major brand advertiser revenue while significantly reducing content moderation, on the theory that advertisers prioritize reach and engagement over brand safety concerns.",
+    "decision_date": "2022-11-01",
+    "expected": "KILL",
+    "sources": [
+      "Vranica & Tilley 2022, Wall Street Journal ('Twitter Advertisers Flee After Musk Takeover')",
+      "Musk 2022, Twitter post (advertiser retention claims, Nov 2022)",
+      "Frenkel & Conger 2022, New York Times (Twitter advertiser exodus reporting)"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.18,
+      "calibration": 42,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "no measurable effect (effect 0.10 < 0.15)",
+        "fails hostile/confound tests (survival 0.18 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.21,
+      "reasoning": "Mean 0.21 ≤ 0.35."
+    }
+  },
+  {
+    "id": "pinterest_ecommerce_platform",
+    "domain": "startups",
+    "hypothesis": "Pinterest can successfully convert its high purchase-intent visual discovery user base into a meaningful e-commerce platform generating substantial transaction or advertising revenue from product-linked content.",
+    "decision_date": "2020-06-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Pinterest S-1 Filing 2019, SEC EDGAR",
+      "Frier 2020, Bloomberg ('Pinterest Wants to Be the Next Big Commerce Platform')",
+      "Pinterest Q1 2020 Earnings Release (revenue and MAU data)"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.38,
+      "calibration": 51,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.38 >= 0.65",
+        "missing: replicated (0.00 >= 0.5)",
+        "missing: interval excludes the null",
+        "missing: adequate power (0.38 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.46,
+      "reasoning": "Mean 0.46 is ambiguous."
+    }
+  },
+  {
+    "id": "snap_spectacles_consumer",
+    "domain": "startups",
+    "hypothesis": "Snap's Spectacles camera-equipped sunglasses will achieve meaningful consumer adoption as a wearable social content creation device, establishing Snap as a hardware company alongside its software platform.",
+    "decision_date": "2016-11-01",
+    "expected": "KILL",
+    "sources": [
+      "Snap Inc. Q3 2017 Earnings Call (inventory write-down disclosure)",
+      "Kastrenakes 2017, The Verge ('Snap is stuck with $40 million worth of unsold Spectacles')",
+      "Kuchler 2017, Financial Times (Spectacles commercial failure reporting)"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.17,
+      "calibration": 44,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "no measurable effect (effect 0.12 < 0.15)",
+        "fails hostile/confound tests (survival 0.20 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.25 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.25,
+      "reasoning": "Mean 0.25 ≤ 0.35."
+    }
+  },
+  {
+    "id": "getaround_car_sharing",
+    "domain": "startups",
+    "hypothesis": "Getaround's peer-to-peer car sharing marketplace (renting personal vehicles by the hour) can achieve sufficient liquidity and utilization in urban markets to create a viable alternative to traditional car rental and car ownership for urban residents.",
+    "decision_date": "2018-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Kokalitcheva 2016, Fortune ('Toyota invests in car-sharing startup Getaround')",
+      "Lomas 2019, TechCrunch ('Getaround acquires European rival Drivy')",
+      "Slotnick 2023, Business Insider (Getaround bankruptcy filing coverage)"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.35,
+      "calibration": 49,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.35 >= 0.65",
+        "missing: replicated (0.00 >= 0.5)",
+        "missing: interval excludes the null",
+        "missing: adequate power (0.30 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.43,
+      "reasoning": "Mean 0.43 is ambiguous."
+    }
+  },
+  {
+    "id": "spac_investor_outperformance",
+    "domain": "finance",
+    "hypothesis": "SPACs (Special Purpose Acquisition Companies) outperform traditional IPOs for retail investors on a 1-year post-merger return basis.",
+    "decision_date": "2020-06-01",
+    "expected": "KILL",
+    "sources": [
+      "Klausner, Ohlrogge & Ruan 2022, Journal of Finance — A Sober Look at SPACs",
+      "Gahng, Ritter & Zhang 2021, SSRN — SPACs",
+      "SEC Staff Bulletin 2022, Special Purpose Acquisition Companies"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.3,
+      "calibration": 59,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "no measurable effect (effect 0.08 < 0.15)",
+        "fails hostile/confound tests (survival 0.30 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.34,
+      "reasoning": "Mean 0.34 ≤ 0.35."
+    }
+  },
+  {
+    "id": "passive_index_beats_active",
+    "domain": "finance",
+    "hypothesis": "Passive index funds outperform actively managed funds on net risk-adjusted returns for retail investors over 10+ year periods.",
+    "decision_date": "2000-01-01",
+    "expected": "GO",
+    "sources": [
+      "Sharpe 1991, Financial Analysts Journal — The Arithmetic of Active Management",
+      "Jensen 1968, Journal of Finance — The Performance of Mutual Funds",
+      "Gruber 1996, Journal of Finance — Another Puzzle: The Growth in Actively Managed Mutual Funds",
+      "S&P SPIVA U.S. Scorecard 2022",
+      "Morningstar 2023, US Active-Passive Barometer"
+    ],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.77,
+      "calibration": 85,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.77 >= 0.65",
+        "replicated (0.90 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.90 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.77,
+      "reasoning": "Mean 0.77 ≥ 0.55."
+    }
+  },
+  {
+    "id": "esg_risk_adjusted_outperformance",
+    "domain": "finance",
+    "hypothesis": "ESG-screened equity portfolios deliver superior risk-adjusted returns (higher Sharpe ratio) compared to conventional portfolios over 5+ year periods.",
+    "decision_date": "2018-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Friede, Busch & Bassen 2015, Journal of Sustainable Finance & Investment",
+      "Berg, Koelbel & Rigobon 2022, Review of Finance — Aggregate Confusion",
+      "Pedersen, Fitzgibbons & Pomorski 2021, Journal of Financial Economics",
+      "GSIA 2018 Global Sustainable Investment Review"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.42,
+      "calibration": 61,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.42 >= 0.65",
+        "missing: replicated (0.40 >= 0.5)",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.43,
+      "reasoning": "Mean 0.43 is ambiguous."
+    }
+  },
+  {
+    "id": "venture_capital_power_law",
+    "domain": "finance",
+    "hypothesis": "Venture capital returns follow a power law: the top decile of investments returns more than the entire rest of a fund's portfolio combined.",
+    "decision_date": "2000-01-01",
+    "expected": "GO",
+    "sources": [
+      "Sahlman 1990, Journal of Financial Economics — The Structure and Governance of Venture Capital",
+      "Gompers & Lerner 1997, Journal of Finance — Risk and Reward in Private Equity Investments",
+      "Andreessen 2012, WSJ — In Defense of the Wounded Startup",
+      "Cambridge Associates 2021, US Venture Capital Index and Selected Benchmark Statistics",
+      "Horsley Bridge Partners LP data (cited in Thiel 2014, Zero to One)"
+    ],
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.7,
+      "calibration": 77,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.70 >= 0.65",
+        "replicated (0.70 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.75 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.68,
+      "reasoning": "Mean 0.68 ≥ 0.55."
+    }
+  },
+  {
+    "id": "nft_store_of_value",
+    "domain": "finance",
+    "hypothesis": "NFTs (Non-Fungible Tokens) represent a durable store of value and a robust digital ownership mechanism for creators and collectors.",
+    "decision_date": "2021-06-01",
+    "expected": "KILL",
+    "sources": [
+      "DappRadar 2022, NFT Market Report",
+      "Chainalysis 2022, Crypto Crime Report — Wash Trading in NFTs",
+      "dappGambl 2023, Dead NFTs: The Evolving Landscape of the NFT Market",
+      "Nadini et al. 2021, Scientific Reports — Mapping the NFT Revolution"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.32,
+      "calibration": 51,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.20 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.15 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.28,
+      "reasoning": "Mean 0.28 ≤ 0.35."
+    }
+  },
+  {
+    "id": "value_investing_market_outperformance",
+    "domain": "finance",
+    "hypothesis": "A systematic value investing strategy (buying stocks with low price-to-book ratios) consistently beats the market over rolling 10-year periods in the post-2010 environment.",
+    "decision_date": "2012-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Fama & French 1992, Journal of Finance — The Cross-Section of Expected Stock Returns",
+      "Lakonishok, Shleifer & Vishny 1994, Journal of Finance — Contrarian Investment, Extrapolation, and Risk",
+      "Asness et al. 2020, Journal of Portfolio Management — Is (Systematic) Value Investing Dead?",
+      "Fama & French 2020, Critical Finance Review — The Value Premium"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.43,
+      "calibration": 63,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.43 >= 0.65",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.44,
+      "reasoning": "Mean 0.44 is ambiguous."
+    }
+  },
+  {
+    "id": "hft_net_market_benefit",
+    "domain": "finance",
+    "hypothesis": "High-frequency trading (HFT) generates net benefits for markets through improved liquidity provision, tighter bid-ask spreads, and faster price discovery.",
+    "decision_date": "2012-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Hendershott, Jones & Menkveld 2011, Journal of Finance — Does Algorithmic Trading Improve Liquidity?",
+      "Kirilenko et al. 2011, CFTC Working Paper — The Flash Crash",
+      "Jones 2013, Columbia Business School Working Paper — What Do We Know About HFT?",
+      "SEC 2014, Equity Market Structure Literature Review"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.39,
+      "calibration": 57,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.39 >= 0.65",
+        "missing: replicated (0.35 >= 0.5)",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.39,
+      "reasoning": "Mean 0.39 is ambiguous."
+    }
+  },
+  {
+    "id": "bitcoin_inflation_hedge",
+    "domain": "finance",
+    "hypothesis": "Bitcoin functions as a reliable hedge against inflation, maintaining or increasing purchasing power when consumer price indices rise.",
+    "decision_date": "2021-01-01",
+    "expected": "KILL",
+    "sources": [
+      "Klein, Thu & Walther 2018, Journal of International Financial Markets — Bitcoin is Not the New Gold",
+      "Baur & Hoang 2021, Finance Research Letters — Bitcoin and Gold in the Age of COVID-19",
+      "Tudor Jones 2020, BVI Market Outlook — The Great Monetary Inflation",
+      "Coinmetrics 2022, State of the Network — Bitcoin Correlation Study"
+    ],
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.27,
+      "calibration": 50,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.22 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.25 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.27,
+      "reasoning": "Mean 0.27 ≤ 0.35."
+    }
+  },
+  {
+    "id": "quant_alpha_persistence",
+    "domain": "finance",
+    "hypothesis": "Systematic quantitative/algorithmic trading strategies generate persistent, statistically significant alpha (excess returns above risk-adjusted benchmarks) over multi-year periods.",
+    "decision_date": "2010-01-01",
+    "expected": "UNRESOLVED",
+    "sources": [
+      "Jegadeesh & Titman 1993, Journal of Finance — Returns to Buying Winners and Selling Losers",
+      "Harvey, Liu & Zhu 2016, Review of Financial Studies — ...and the Cross-Section of Expected Returns",
+      "Arnott et al. 2019, Financial Analysts Journal — Reports of Value's Death May Be Greatly Exaggerated",
+      "Zuckerman 2019, The Man Who Solved the Market (Renaissance Technologies data)"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.44,
+      "calibration": 65,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.44 >= 0.65",
+        "missing: replicated (0.45 >= 0.5)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.43,
+      "reasoning": "Mean 0.43 is ambiguous."
+    }
+  },
+  {
+    "id": "prediction_markets_beat_polls",
+    "domain": "finance",
+    "hypothesis": "Financial prediction markets (e.g., Intrade, PredictIt) produce probability estimates that are more accurate than expert surveys and traditional polls for political and economic events.",
+    "decision_date": "2008-01-01",
+    "expected": "GO",
+    "sources": [
+      "Berg, Nelson & Rietz 2008, Journal of Economic Perspectives — Prediction Market Accuracy in the Long Run",
+      "Wolfers & Zitzewitz 2004, Journal of Economic Perspectives — Prediction Markets",
+      "Arrow et al. 2008, Science — The Promise of Prediction Markets",
+      "Tetlock 2005, Expert Political Judgment (Princeton University Press)",
+      "Tetlock & Gardner 2015, Superforecasting (Crown Publishers)"
+    ],
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "GO",
+      "support": 0.66,
+      "calibration": 76,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": "GO downgraded to UNRESOLVED: 1 hostile attack(s) landed on the evidence/verdict.",
+      "reasons": [
+        "support 0.66 >= 0.65",
+        "replicated (0.65 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.65 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.64,
+      "reasoning": "Mean 0.64 ≥ 0.55."
+    }
+  }
+]

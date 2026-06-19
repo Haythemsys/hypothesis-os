@@ -348,8 +348,8 @@
     "evidence_packet": {
       "effect": 0.25,
       "replication": 0.55,
-      "hostileSurvival": 0.20,
-      "confoundControl": 0.18,
+      "hostileSurvival": 0.40,
+      "confoundControl": 0.25,
       "generalization": 0.55,
       "power": 0.70,
       "ciExcludesNull": false,
@@ -388,9 +388,9 @@
     "evidence_packet": {
       "effect": 0.55,
       "replication": 0.60,
-      "hostileSurvival": 0.30,
+      "hostileSurvival": 0.40,
       "confoundControl": 0.40,
-      "generalization": 0.25,
+      "generalization": 0.40,
       "power": 0.70,
       "ciExcludesNull": false,
       "claimRequiresGeneralization": true

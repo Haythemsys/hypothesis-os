@@ -10,7 +10,7 @@ const TABS = [
   { href: "/benchmark", label: "Bench", icon: "✓" },
   { href: "/more", label: "More", icon: "⋯" },
 ];
-const MORE_PATHS = ["/lab", "/experiments", "/graph", "/memory", "/archive", "/settings", "/governance", "/more"];
+const MORE_PATHS = ["/lab", "/experiments", "/audit", "/graph", "/memory", "/archive", "/settings", "/governance", "/more"];
 
 export default function Nav() {
   const path = usePathname();

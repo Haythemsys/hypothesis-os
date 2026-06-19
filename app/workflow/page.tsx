@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { api, getProviderConfig } from "@/lib/client";
 import { VerdictPill, Bar } from "@/components/Verdict";
 import type { Evidence } from "@/lib/core";
@@ -170,7 +171,14 @@ export default function Workflow() {
         <section className="card space-y-2">
           <div className="label">5 · Report {report.aiAssisted ? "· AI-assisted summary included" : "· deterministic"}</div>
           <pre className="table-scroll whitespace-pre-wrap rounded-xl bg-black/40 p-3 text-xs text-gray-300">{report.markdown}</pre>
-          <button className="btn" onClick={reset}>Start another</button>
+          <div className="flex gap-2">
+            <button className="btn flex-1" onClick={reset}>Start another</button>
+            {hyp && (
+              <Link href={`/audit/${hyp.id}`} className="btn flex-1 text-center bg-white/5 text-sm">
+                View audit trail
+              </Link>
+            )}
+          </div>
         </section>
       )}
     </div>

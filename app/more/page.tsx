@@ -3,6 +3,7 @@ import Link from "next/link";
 const TOOLS = [
   { href: "/lab", t: "Hypothesis Lab", d: "Decompose a claim into assumptions & confounds", icon: "⚗" },
   { href: "/experiments", t: "Experiment Engine", d: "Cheap / strong / hostile test plans", icon: "⚙" },
+  { href: "/audit", t: "Decision Audit Trail", d: "Traceable timeline: hypothesis → evidence → verdict → report", icon: "⌗" },
   { href: "/graph", t: "Knowledge Graph", d: "Dependencies & auto-detected contradictions", icon: "◉" },
   { href: "/memory", t: "Research Memory", d: "Versioned, traceable hypothesis history", icon: "⎘" },
   { href: "/archive", t: "Research Archive", d: "Indexed local research files", icon: "▤" },
