@@ -206,9 +206,9 @@ export default function MissionControl() {
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-6">
             {([
               ["/workflow",  "⚡", "New Decision"],
+              ["/portfolio", "◉", "Portfolio"],
+              ["/executive", "▣", "Executive"],
               ["/library",   "⊟", "Library"],
-              ["/evidence",  "⚖", "Analyze"],
-              ["/compare",   "⇄", "Compare"],
               ["/import",    "↑",  "Import"],
               ["/export",    "↗",  "Export"],
             ] as [string, string, string][]).map(([href, icon, label]) => (

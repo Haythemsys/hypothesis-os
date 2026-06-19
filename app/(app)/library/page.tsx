@@ -245,6 +245,13 @@ export default function DecisionLibrary() {
                 >
                   Export ↗
                 </Link>
+                <Link
+                  href={`/premortem/${e.id}`}
+                  onClick={(ev) => ev.stopPropagation()}
+                  className="text-[11px] text-slate hover:text-kill"
+                >
+                  Premortem
+                </Link>
               </div>
             </div>
           </Link>

@@ -9,6 +9,8 @@ import {
 } from "@/lib/core";
 import { VerdictPill, Bar } from "@/components/Verdict";
 import { Mark } from "@/components/logo/Mark";
+import { CostEstimator } from "@/components/CostEstimator";
+import { EvidenceAssistant } from "@/components/EvidenceAssistant";
 
 type HypDetail = {
   hypothesis: any;
@@ -551,6 +553,24 @@ export default function ExecutiveReport({ params }: { params: Promise<{ id: stri
           </div>
         </div>
       </Section>
+
+      {/* ══════════════════════════════════════════════════════════════════
+          §11  DECISION COST ESTIMATOR
+      ══════════════════════════════════════════════════════════════════ */}
+      {debt && eff && nav && risk && (
+        <Section n="11" title="Decision Cost Analysis">
+          <CostEstimator verdict={verdict} debt={debt} effort={eff} nav={nav} risk={risk} />
+        </Section>
+      )}
+
+      {/* ══════════════════════════════════════════════════════════════════
+          §12  EVIDENCE COLLECTION ROADMAP
+      ══════════════════════════════════════════════════════════════════ */}
+      {nav && verdict !== "GO" && (
+        <Section n="12" title="Evidence Collection Roadmap">
+          <EvidenceAssistant nav={nav} verdict={verdict} />
+        </Section>
+      )}
 
       {/* Footer */}
       <footer className="mt-6 border-t border-border-hair pt-5 text-center text-xs text-slate print:mt-12">

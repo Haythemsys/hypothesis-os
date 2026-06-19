@@ -12,12 +12,17 @@ export const NAV_ITEMS: NavItem[] = [
 // Extra desktop-sidebar destinations (not in the mobile dock)
 export const SIDEBAR_EXTRA: NavItem[] = [
   { href: "/library",     label: "Library",     icon: "⊟" },
+  { href: "/portfolio",   label: "Portfolio",   icon: "◉" },
+  { href: "/executive",   label: "Executive",   icon: "▣" },
+  { href: "/memory",      label: "Timeline",    icon: "⟳" },
+  { href: "/premortem",   label: "Premortem",   icon: "⚑" },
+  { href: "/cases",       label: "Case Studies",icon: "⊡" },
   { href: "/audit",       label: "Audit",       icon: "⌗" },
   { href: "/vault",       label: "Vault",       icon: "⊞" },
   { href: "/import",      label: "Import",      icon: "↑" },
   { href: "/export",      label: "Export",      icon: "↗" },
+  { href: "/analytics",   label: "Analytics",   icon: "⊿" },
   { href: "/lab",         label: "Lab",         icon: "⚗" },
-  { href: "/experiments", label: "Experiments", icon: "⚙" },
   { href: "/settings",    label: "Settings",    icon: "⚙" },
 ];
 
