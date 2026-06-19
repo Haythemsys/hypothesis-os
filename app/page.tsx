@@ -10,13 +10,22 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-4">
-      <section className="card">
-        <h1 className="text-xl font-bold">Research cockpit</h1>
-        <p className="mt-1 text-sm text-gray-400">
-          Input a hypothesis → get a verdict with evidence, calibration, and a self-critique it had
-          to survive. The deterministic engine decides; AI only assists.
-        </p>
-        <div className="mt-3 grid grid-cols-2 gap-2">
+      <section className="card space-y-3">
+        <div>
+          <div className="label mb-1">HypothesisOS</div>
+          <h1 className="text-xl font-bold leading-snug">
+            Should you GO or KILL this decision?
+          </h1>
+          <p className="mt-1.5 text-sm text-gray-400 leading-relaxed">
+            Input your evidence. Get a structured GO / KILL / UNRESOLVED verdict with kill gates,
+            calibration, and a path to the next study — not a confident-sounding guess.
+          </p>
+          <p className="mt-1 text-xs text-gray-500">
+            For founders, analysts, and researchers deciding under uncertainty.
+            The engine is deterministic — same evidence, same verdict, every time.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-2">
           <Link href="/workflow" className="btn bg-white/15 text-center">Start a workflow ›</Link>
           <Link href="/evidence" className="btn text-center">Analyze evidence ›</Link>
         </div>
