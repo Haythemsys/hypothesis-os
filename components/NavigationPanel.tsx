@@ -27,6 +27,15 @@ function GapBar({ current, goal }: { current: number; goal: number }) {
   );
 }
 
+const HARD_DISTANCES = new Set(["1 evidence move", "2 evidence moves", "2–3 evidence moves"]);
+
+function navStatusLabel(distanceToGo: string | null): { label: string; sub: string; cls: string } {
+  if (!distanceToGo) return { label: "Honest unresolved", sub: "", cls: "text-gray-400" };
+  if (HARD_DISTANCES.has(distanceToGo))
+    return { label: "Recommended next evidence", sub: distanceToGo, cls: "text-unresolved" };
+  return { label: "Requires substantial evidence", sub: distanceToGo, cls: "text-gray-400" };
+}
+
 export function NavigationPanel({ nav }: { nav: Navigation }) {
   if (nav.verdict === "GO") return null;
 
@@ -117,26 +126,29 @@ export function NavigationPanel({ nav }: { nav: Navigation }) {
             </div>
           )}
 
-          {/* Distance */}
-          <div className="flex items-center gap-2 rounded-lg bg-white/5 px-3 py-2">
-            <span className="text-unresolved text-sm">⟳</span>
-            <div>
-              <div className="text-xs text-gray-400">Navigation status</div>
-              <div className="text-sm font-semibold text-white">
-                Navigable in {nav.distanceToGo}
+          {/* Distance / status label */}
+          {(() => {
+            const { label, sub, cls } = navStatusLabel(nav.distanceToGo);
+            return (
+              <div className="flex items-center gap-2 rounded-lg bg-white/5 px-3 py-2">
+                <span className={`${cls} text-sm`}>⟳</span>
+                <div>
+                  <div className={`text-sm font-semibold ${cls}`}>{label}</div>
+                  {sub && <div className="text-xs text-gray-500">{sub}</div>}
+                </div>
               </div>
-            </div>
-          </div>
+            );
+          })()}
         </>
       )}
 
       {/* Not navigable */}
-      {!nav.navigable && nav.impossibleReason && (
+      {!nav.navigable && (
         <div className="rounded-lg bg-white/5 border border-white/10 p-3">
-          <div className="text-xs font-semibold text-gray-400 mb-1">
-            Why UNRESOLVED is the honest answer
-          </div>
-          <p className="text-sm text-gray-300">{nav.impossibleReason}</p>
+          <div className="text-xs font-semibold text-gray-400 mb-1">Honest unresolved</div>
+          {nav.impossibleReason && (
+            <p className="text-sm text-gray-300">{nav.impossibleReason}</p>
+          )}
         </div>
       )}
     </section>

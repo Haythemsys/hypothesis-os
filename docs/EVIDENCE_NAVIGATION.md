@@ -68,6 +68,48 @@ A case is **not navigable** if any of these conditions hold:
 
 ---
 
+## Navigation Status Labels
+
+The UI distinguishes four states based on `navigable` and `distanceToGo`:
+
+### Recommended next evidence
+`distanceToGo` ∈ `"1 evidence move"` | `"2 evidence moves"` | `"2–3 evidence moves"`
+
+The support gap is closeable in 1–3 study cycles. The highest-leverage dimension is identified and an action is provided. Collecting that evidence is the clear next step.
+
+### Requires substantial evidence
+`distanceToGo = "3+ evidence moves"`
+
+The case is structurally navigable (no kill gate fired, signal is not absent) but closing the support gap requires rebuilding evidence across multiple dimensions. The case is not urgently actionable; it needs a substantial new evidence program.
+
+### Honest unresolved
+`navigable = false`
+
+One of the non-navigable conditions is met: the measured effect is near the kill-gate floor, or overall support is near-zero, or all four GO criteria are unmet with a large gap. In these cases UNRESOLVED is the correct final state with available evidence. Additional evidence *could* resolve it, but the hypothesis has not yet produced a positive enough signal to treat as actionable.
+
+### (GO — navigation complete)
+`verdict = GO`
+
+`navigate()` returns immediately. No panel is shown.
+
+---
+
+### Soft vs Hard Navigable (Design Rationale)
+
+The internal navigability check (`navigable = true/false`) is a **soft** structural gate: it fires on near-absent or near-kill evidence. It does not guarantee that GO is reachable in a small number of studies.
+
+The UI label system adds a **hard** overlay: even among structurally navigable cases, those requiring 3+ study cycles are presented differently. On the Skywork blind validation dataset (67 UNRESOLVED cases), the split was:
+
+| UI label | Count | % |
+|---|---|---|
+| Recommended next evidence (≤ 3 moves) | 47 | 70% |
+| Requires substantial evidence (3+ moves) | 20 | 30% |
+| Honest unresolved (not navigable) | 0 | 0% |
+
+The 0% honest-unresolved in Skywork reflects the dataset selection: Skywork cases all had measurable positive signals. In production use, "Honest unresolved" will appear when users enter hypotheses with weak or near-absent evidence.
+
+---
+
 ## Highest Leverage Dimension
 
 The dimension with the most potential support gain is:
