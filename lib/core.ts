@@ -56,6 +56,7 @@ export interface Calibration {
 export interface Critique {
   baseVerdict: Verdict; finalVerdict: Verdict; downgrade: string | null;
   calibration: Calibration; landed: number; survived: number;
+  reasons: string[];
   attacks: { target: string; attack: string; survives: boolean; note: string }[];
 }
 export interface Contradiction {

@@ -63,9 +63,9 @@ export default function Memory() {
         const open = openId === rec.id;
         return (
           <section key={rec.id} className="card">
-            <button className="flex w-full items-center gap-2 text-left" onClick={() => setOpenId(open ? null : rec.id)}>
-              {fv ? <VerdictPill verdict={fv.verdict} /> : <span className="pill bg-white/10">new</span>}
-              <span className="truncate font-semibold">{rec.title}</span>
+            <button className="flex w-full items-start gap-2 text-left" onClick={() => setOpenId(open ? null : rec.id)}>
+              {fv ? <VerdictPill verdict={fv.verdict} /> : <span className="pill bg-white/10 shrink-0">new</span>}
+              <span className="font-semibold">{rec.title}</span>
               <span className="ml-auto shrink-0 text-xs text-gray-500">
                 {rec.versions.length} rev{verdictFlipped(rec) ? " · flipped" : ""}
               </span>

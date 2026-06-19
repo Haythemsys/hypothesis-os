@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <span className="label ml-auto">decision engine</span>
           </div>
         </header>
-        <main className="mx-auto max-w-3xl px-4 pb-24 pt-4">{children}</main>
+        <main className="mx-auto max-w-3xl px-4 pb-32 pt-4">{children}</main>
         <Nav />
       </body>
     </html>

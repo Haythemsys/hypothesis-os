@@ -6,22 +6,27 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "benchmark": "node scripts/run-benchmark.mjs"
+    "start": "next start -p ${PORT:-3000}",
+    "lint": "eslint .",
+    "benchmark": "node scripts/run-benchmark.mjs",
+    "benchmark:all": "node scripts/run-all-benchmarks.mjs"
   },
   "dependencies": {
+    "better-sqlite3": "^12.11.1",
     "next": "15.5.19",
     "react": "19.0.0",
     "react-dom": "19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.7.3",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^22.10.7",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
-    "tailwindcss": "^3.4.17",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.9",
     "postcss": "^8.5.1",
-    "autoprefixer": "^10.4.20"
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3"
   }
 }

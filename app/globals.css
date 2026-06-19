@@ -6,7 +6,9 @@
 html { -webkit-text-size-adjust: 100%; }
 html, body { background: #0b0f17; color: #e5e7eb; overscroll-behavior-y: none; }
 body { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
-input[type="range"] { touch-action: pan-x; }
+input[type="range"] { touch-action: pan-x; min-height: 36px; }
+input[type="range"]::-webkit-slider-thumb { width: 24px; height: 24px; }
+input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; }
 
 /* Hide scrollbars on the horizontal nav (one-handed friendly). */
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

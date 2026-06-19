@@ -55,7 +55,7 @@ export default function Graph() {
             <li key={h.id} className="flex items-center gap-2 text-sm">
               <VerdictPill verdict={verdict(h.id)} />
               <span className="font-mono text-xs text-gray-500">{h.id}</span>
-              <span className="truncate text-gray-300">{h.title}</span>
+              <span className="text-gray-300">{h.title}</span>
             </li>
           ))}
         </ul>
