@@ -9,13 +9,16 @@ import {
 import { VerdictPill, Bar } from "@/components/Verdict";
 import { NavigationPanel } from "@/components/NavigationPanel";
 import {
-  ExecutiveSummaryCard, GoBlockersPanel, EvidenceDebtPanel,
+  GoBlockersPanel, EvidenceDebtPanel,
   EffortPanel, PathToGoPanel, ConfidenceExplanationPanel,
 } from "@/components/DecisionIntelligence";
 import {
   DecisionRiskCard, ResolutionTimelinePanel, CostToResolvePanel,
   InvestorViewCard, WhatIfSimulator,
 } from "@/components/CommercialIntelligence";
+import { Card } from "@/components/ui/Card";
+import { Slider, Toggle } from "@/components/ui/Slider";
+import { Counter } from "@/components/ui/Counter";
 
 const FIELDS: { key: keyof Evidence; label: string; hint: string }[] = [
   { key: "effect",          label: "Effect size",       hint: "strength of the measured effect" },
@@ -25,6 +28,10 @@ const FIELDS: { key: keyof Evidence; label: string; hint: string }[] = [
   { key: "generalization",  label: "Generalization",    hint: "holds out-of-sample / cross-context" },
   { key: "power",           label: "Power",             hint: "data sufficiency / n / CI width" },
 ];
+
+const VERDICT_BORDER: Record<string, string> = {
+  GO: "border-go/40", KILL: "border-kill/40", UNRESOLVED: "border-amber-dim",
+};
 
 export default function EvidenceEngine() {
   const [hypothesis, setHypothesis] = useState("");
@@ -48,93 +55,109 @@ export default function EvidenceEngine() {
   const cost  = useMemo(() => costToResolve(eff, nav),            [eff, nav]);
   const inv   = useMemo(() => investorView(debt, risk, nav),      [debt, risk, nav]);
 
-  const isUnresolved = crit.finalVerdict === "UNRESOLVED";
-  const isNotGo      = crit.finalVerdict !== "GO";
+  const v = crit.finalVerdict;
+  const isUnresolved = v === "UNRESOLVED";
+  const isNotGo      = v !== "GO";
 
   return (
     <div className="space-y-4">
-
-      {/* ── Executive Summary (top card) ─────────────────────────────── */}
-      <ExecutiveSummaryCard summary={exec} verdict={crit.finalVerdict} />
-
-      {/* ── GO Blockers ──────────────────────────────────────────────── */}
-      {isUnresolved && <GoBlockersPanel nav={nav} />}
-
-      {/* ── Navigation panel (gap bar + status label) ────────────────── */}
-      {isNotGo && <NavigationPanel nav={nav} />}
-
-      {/* ── Hypothesis input ─────────────────────────────────────────── */}
-      <section className="card">
-        <label className="label">Hypothesis (optional — enables assumptions & confounds)</label>
-        <textarea className="input mt-1 min-h-[60px]" value={hypothesis}
-          placeholder="State the claim…" onChange={(ev) => setHypothesis(ev.target.value)} />
-      </section>
-
-      {/* ── Evidence sliders ─────────────────────────────────────────── */}
-      <section className="card space-y-4">
-        <div className="label">Evidence</div>
-        {FIELDS.map((f) => (
-          <div key={f.key}>
-            <Bar value={e[f.key] as number} label={`${f.label} — ${f.hint}`} />
-            <input type="range" min={0} max={1} step={0.01}
-              className="mt-1 h-6 w-full accent-white"
-              value={e[f.key] as number}
-              onChange={(ev) => set(f.key, parseFloat(ev.target.value))} />
-          </div>
-        ))}
-        <div className="flex flex-col gap-2 pt-1">
-          <Toggle on={e.ciExcludesNull} label="Interval excludes the null"
-            onClick={() => set("ciExcludesNull", !e.ciExcludesNull)} />
-          <Toggle on={e.claimRequiresGeneralization} label="Claim asserts it holds across contexts"
-            onClick={() => set("claimRequiresGeneralization", !e.claimRequiresGeneralization)} />
-        </div>
-      </section>
-
-      {/* ── Path to GO (when navigable UNRESOLVED) ───────────────────── */}
-      {isUnresolved && path.length > 0 && <PathToGoPanel steps={path} />}
-
-      {/* ── Evidence Debt + Effort (side by side on wider screens) ───── */}
-      {isNotGo && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <EvidenceDebtPanel debt={debt} />
-          <EffortPanel effort={eff} />
-        </div>
-      )}
-
-      {/* ── Confidence explanation ───────────────────────────────────── */}
-      <ConfidenceExplanationPanel breakdown={conf} />
-
-      {/* ── Commercial Intelligence ──────────────────────────────────── */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <DecisionRiskCard risk={risk} />
-        <InvestorViewCard inv={inv} />
+      <div>
+        <div className="label">Evidence Engine</div>
+        <h1 className="text-2xl font-bold tracking-tight">Analyze a hypothesis</h1>
       </div>
-      {tline && <ResolutionTimelinePanel timeline={tline} />}
-      <CostToResolvePanel cost={cost} />
-      {crit.finalVerdict !== "GO" && (
-        <WhatIfSimulator evidence={e} currentVerdict={crit.finalVerdict} currentSupport={nav.currentSupport} />
-      )}
 
-      {/* ── Why this verdict ─────────────────────────────────────────── */}
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start">
+        {/* ── LEFT: encode evidence (sticky on desktop) ─────────────── */}
+        <div className="space-y-4 lg:sticky lg:top-16">
+          <Card className="space-y-1.5">
+            <label className="label">Hypothesis (optional — enables assumptions &amp; confounds)</label>
+            <textarea className="input min-h-[60px]" value={hypothesis}
+              placeholder="State the claim…" onChange={(ev) => setHypothesis(ev.target.value)} />
+          </Card>
+
+          <Card className="space-y-4">
+            <div className="label">Encode evidence</div>
+            {FIELDS.map((f) => (
+              <Slider key={f.key} label={f.label} hint={f.hint}
+                value={e[f.key] as number} onChange={(val) => set(f.key, val)} />
+            ))}
+            <div className="flex flex-col gap-2 pt-1">
+              <Toggle on={e.ciExcludesNull} label="Interval excludes the null"
+                onClick={() => set("ciExcludesNull", !e.ciExcludesNull)} />
+              <Toggle on={e.claimRequiresGeneralization} label="Claim asserts it holds across contexts"
+                onClick={() => set("claimRequiresGeneralization", !e.claimRequiresGeneralization)} />
+            </div>
+          </Card>
+        </div>
+
+        {/* ── RIGHT: verdict-first output ───────────────────────────── */}
+        <div className="space-y-4">
+          {/* Verdict hero */}
+          <Card variant="base" className={`border-2 ${VERDICT_BORDER[v] ?? "border-border-hair"} space-y-2`}>
+            <div className="flex items-center justify-between">
+              <div className="label">Verdict</div>
+              <VerdictPill verdict={v} size="md" />
+            </div>
+            <div className="flex items-end gap-4">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-slate">Support</div>
+                <Counter value={nav.currentSupport} className="text-4xl font-bold text-ivory" />
+              </div>
+              <div className="pb-1">
+                <div className="text-[10px] uppercase tracking-wide text-slate">Calibration</div>
+                <span className="data text-lg text-steel">{cal.score}<span className="text-slate">/100</span></span>
+              </div>
+              <div className="pb-1">
+                <div className="text-[10px] uppercase tracking-wide text-slate">Debt</div>
+                <span className="data text-lg text-steel">{debt.pct}%</span>
+              </div>
+            </div>
+            <p className="text-sm text-steel">{exec.reason}</p>
+          </Card>
+
+          {isUnresolved && <GoBlockersPanel nav={nav} />}
+          {isNotGo && <NavigationPanel nav={nav} />}
+          {isUnresolved && path.length > 0 && <PathToGoPanel steps={path} />}
+
+          {isNotGo && (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <EvidenceDebtPanel debt={debt} />
+              <EffortPanel effort={eff} />
+            </div>
+          )}
+
+          <ConfidenceExplanationPanel breakdown={conf} />
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <DecisionRiskCard risk={risk} />
+            <InvestorViewCard inv={inv} />
+          </div>
+          {tline && <ResolutionTimelinePanel timeline={tline} />}
+          <CostToResolvePanel cost={cost} />
+          {isNotGo && (
+            <WhatIfSimulator evidence={e} currentVerdict={v} currentSupport={nav.currentSupport} />
+          )}
+        </div>
+      </div>
+
+      {/* ── Full-width reasoning ─────────────────────────────────────── */}
       <Panel title="Why this verdict" tone="neutral">
-        <Group label="Evidence FOR"    items={ex.supporting} cls="text-go" />
-        <Group label="Evidence AGAINST" items={ex.against}   cls="text-kill" />
-        <Group label="Missing evidence" items={ex.missing}   cls="text-unresolved" />
+        <Group label="Evidence FOR"     items={ex.supporting} cls="text-go" />
+        <Group label="Evidence AGAINST" items={ex.against}    cls="text-kill" />
+        <Group label="Missing evidence" items={ex.missing}    cls="text-unresolved" />
       </Panel>
 
-      {/* ── Rejected alternatives ────────────────────────────────────── */}
       <Panel title="Why alternatives were rejected" tone="neutral">
         <ul className="space-y-1 text-sm">
           {ex.rejectedAlternatives.map((a) => (
             <li key={a.verdict}>
               <span className="font-semibold">not {a.verdict}:</span>{" "}
-              <span className="text-gray-400">{a.why}</span>
+              <span className="text-steel">{a.why}</span>
             </li>
           ))}
         </ul>
       </Panel>
 
-      {/* ── Self-critique ────────────────────────────────────────────── */}
       <Panel title={`Self-critique — ${crit.survived}/${crit.attacks.length} attacks survived`} tone="hostile">
         <ul className="space-y-2 text-sm">
           {crit.attacks.map((a, i) => (
@@ -143,48 +166,34 @@ export default function EvidenceEngine() {
                 {a.survives ? "held" : "LANDED"}
               </span>
               <span className="min-w-0">
-                <span className="text-gray-300">[{a.target}] {a.attack}</span>{" "}
-                <span className="text-gray-500">— {a.note}</span>
+                <span className="text-steel">[{a.target}] {a.attack}</span>{" "}
+                <span className="text-slate">— {a.note}</span>
               </span>
             </li>
           ))}
         </ul>
       </Panel>
 
-      {/* ── Calibration detail ───────────────────────────────────────── */}
       <Panel title={`Calibration — ${cal.score}/100`} tone="neutral">
         <div className="space-y-2">
-          <Bar value={cal.components.evidenceCompleteness} label="Evidence completeness" />
-          <Bar value={cal.components.confoundCoverage}     label="Confound coverage" />
+          <Bar value={cal.components.evidenceCompleteness}  label="Evidence completeness" />
+          <Bar value={cal.components.confoundCoverage}      label="Confound coverage" />
           <Bar value={cal.components.contradictionCoverage} label="Contradiction coverage" />
-          <Bar value={cal.components.benchmarkConfidence}  label="Benchmark / statistical confidence" />
-          <p className="pt-1 text-xs text-gray-400">{cal.recommendation}</p>
+          <Bar value={cal.components.benchmarkConfidence}   label="Benchmark / statistical confidence" />
+          <p className="pt-1 text-xs text-slate">{cal.recommendation}</p>
         </div>
       </Panel>
 
-      {/* ── Assumptions & confounds ──────────────────────────────────── */}
       {(ex.assumptions[0] && !ex.assumptions[0].startsWith("(")) && (
         <Panel title="Key assumptions & confounds" tone="neutral">
-          <Group label="Assumptions" items={ex.assumptions} cls="text-gray-300" />
-          <Group label="Confounds"   items={ex.confounds}   cls="text-gray-300" />
+          <Group label="Assumptions" items={ex.assumptions} cls="text-steel" />
+          <Group label="Confounds"   items={ex.confounds}   cls="text-steel" />
         </Panel>
       )}
     </div>
   );
 }
 
-// ── Local sub-components ─────────────────────────────────────────────────────
-function Toggle({ on, label, onClick }: { on: boolean; label: string; onClick: () => void }) {
-  return (
-    <button
-      onClick={onClick}
-      className="flex min-h-11 items-center justify-between rounded-xl border border-line px-3 py-2 text-sm active:bg-white/5 w-full text-left"
-    >
-      <span className="pr-2 leading-snug">{label}</span>
-      <span className={`pill shrink-0 ${on ? "verdict-GO" : "bg-white/10"}`}>{on ? "YES" : "NO"}</span>
-    </button>
-  );
-}
 function Panel({ title, children, tone }: { title: string; children: React.ReactNode; tone: "neutral" | "hostile" }) {
   return (
     <section className={`card ${tone === "hostile" ? "border-kill/30" : ""}`}>
@@ -197,7 +206,7 @@ function Group({ label, items, cls }: { label: string; items: string[]; cls: str
   return (
     <div>
       <div className={`text-xs font-semibold ${cls}`}>{label}</div>
-      <ul className="mt-1 list-disc space-y-0.5 pl-5 text-sm text-gray-300">
+      <ul className="mt-1 list-disc space-y-0.5 pl-5 text-sm text-steel">
         {items.map((x, i) => <li key={i}>{x}</li>)}
       </ul>
     </div>

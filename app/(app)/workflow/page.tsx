@@ -5,6 +5,7 @@ import { api, getProviderConfig } from "@/lib/client";
 import { VerdictPill, Bar } from "@/components/Verdict";
 import { NavigationPanel } from "@/components/NavigationPanel";
 import { ExecutiveSummaryCard, GoBlockersPanel, PathToGoPanel } from "@/components/DecisionIntelligence";
+import { Slider } from "@/components/ui/Slider";
 import type { Evidence } from "@/lib/core";
 
 type Step = 1 | 2 | 3 | 4 | 5;
@@ -96,12 +97,15 @@ export default function Workflow() {
     <div className="space-y-4">
       <section className="card">
         <div className="flex items-center justify-between">
-          <h1 className="text-xl font-bold">Workflow</h1>
-          <span className="label">step {step}/5</span>
+          <div>
+            <div className="label">Workflow</div>
+            <h1 className="text-2xl font-bold tracking-tight">Decision pipeline</h1>
+          </div>
+          <span className="data text-sm text-slate">step {step}/5</span>
         </div>
-        <p className="mt-1 text-sm text-gray-400">Hypothesis → decompose → evidence → engine verdict → report. End to end.</p>
-        <div className="mt-2 flex gap-1">
-          {[1, 2, 3, 4, 5].map((s) => <div key={s} className={`h-1 flex-1 rounded ${s <= step ? "bg-white/70" : "bg-white/15"}`} />)}
+        <p className="mt-1 text-sm text-steel">Hypothesis → decompose → evidence → engine verdict → report. End to end.</p>
+        <div className="mt-3 flex gap-1">
+          {[1, 2, 3, 4, 5].map((s) => <div key={s} className={`h-1 flex-1 rounded-full ${s <= step ? "bg-amber" : "bg-white/10"}`} />)}
         </div>
       </section>
 
@@ -114,7 +118,7 @@ export default function Workflow() {
         <textarea className="input min-h-[72px]" value={title}
           placeholder="State your hypothesis…" onChange={(e) => changeTitle(e.target.value)} />
         {!hyp ? (
-          <button className="btn" onClick={create} disabled={busy || !title.trim()}>{busy ? "…" : "Create & decompose"}</button>
+          <button className="btn-primary" onClick={create} disabled={busy || !title.trim()}>{busy ? "…" : "Create & decompose"}</button>
         ) : (
           <div className="space-y-2">
             <div className="flex flex-wrap gap-1.5">
@@ -133,11 +137,11 @@ export default function Workflow() {
       {hyp && (
         <section className="card space-y-2">
           <div className="label">2 · Experiments</div>
-          {!plan ? <button className="btn" onClick={design} disabled={busy}>Design tests</button> :
+          {!plan ? <button className="btn-primary" onClick={design} disabled={busy}>Design tests</button> :
             plan.tiers.map((t: any) => (
-              <div key={t.tier} className="rounded-xl bg-black/30 p-2 text-sm">
-                <div className="font-semibold">{t.tier} <span className="font-normal text-gray-500">· {t.cost}</span></div>
-                <ul className="mt-1 list-disc pl-5 text-gray-300">{t.steps.map((s: string, i: number) => <li key={i}>{s}</li>)}</ul>
+              <div key={t.tier} className="rounded-xl bg-obsidian p-2 text-sm">
+                <div className="font-semibold">{t.tier} <span className="font-normal text-slate">· {t.cost}</span></div>
+                <ul className="mt-1 list-disc pl-5 text-steel">{t.steps.map((s: string, i: number) => <li key={i}>{s}</li>)}</ul>
               </div>
             ))}
         </section>
@@ -148,18 +152,15 @@ export default function Workflow() {
         <section className="card space-y-2">
           <div className="label">3 · Enter evidence</div>
           {FIELDS.map((f) => (
-            <label key={f.k} className="block text-xs text-gray-400">
-              {f.label} — {(ev[f.k] as number).toFixed(2)}
-              <input type="range" min={0} max={1} step={0.01} className="h-6 w-full accent-white"
-                value={ev[f.k] as number} onChange={(e) => setEv((p) => ({ ...p, [f.k]: parseFloat(e.target.value) }))} />
-            </label>
+            <Slider key={f.k} label={f.label}
+              value={ev[f.k] as number} onChange={(val) => setEv((p) => ({ ...p, [f.k]: val }))} />
           ))}
-          <label className="flex items-center justify-between rounded-xl border border-line px-3 py-2 text-sm">
+          <label className="flex min-h-11 items-center justify-between rounded-btn border border-border-hair px-3 py-2 text-sm">
             Interval excludes the null
             <button onClick={() => setEv((p) => ({ ...p, ciExcludesNull: !p.ciExcludesNull }))}
-              className={`pill ${ev.ciExcludesNull ? "verdict-GO" : "bg-white/10"}`}>{ev.ciExcludesNull ? "YES" : "NO"}</button>
+              className={`pill ${ev.ciExcludesNull ? "verdict-GO" : "bg-white/10 text-slate"}`}>{ev.ciExcludesNull ? "YES" : "NO"}</button>
           </label>
-          <button className="btn" onClick={addAndClassify} disabled={busy}>{busy ? "…" : "Record evidence & classify"}</button>
+          <button className="btn-primary w-full sm:w-auto" onClick={addAndClassify} disabled={busy}>{busy ? "…" : "Record evidence & classify"}</button>
         </section>
       )}
 
@@ -185,10 +186,10 @@ export default function Workflow() {
             />
           )}
           <section className={`card border-2 verdict-${result.verdict.finalVerdict} space-y-2`}>
-            <div className="label">4 · Engine verdict <span className="text-gray-500">· judge: {result.judge}</span></div>
+            <div className="label">4 · Engine verdict <span className="text-slate">· judge: {result.judge}</span></div>
             <div className="flex flex-wrap items-center gap-2">
               <VerdictPill verdict={result.verdict.finalVerdict} />
-              <span className="text-sm text-gray-300">support {result.verdict.support} · {result.verdict.band} {result.verdict.calibration}/100</span>
+              <span className="text-sm text-steel">support {result.verdict.support} · {result.verdict.band} {result.verdict.calibration}/100</span>
             </div>
             {result.critique.downgrade && <p className="text-xs text-unresolved">{result.critique.downgrade}</p>}
             <Detail label="Evidence for"     items={result.explanation.supporting} />
@@ -217,7 +218,7 @@ export default function Workflow() {
       {report && (
         <section className="card space-y-2">
           <div className="label">5 · Report {report.aiAssisted ? "· AI-assisted summary included" : "· deterministic"}</div>
-          <pre className="table-scroll whitespace-pre-wrap rounded-xl bg-black/40 p-3 text-xs text-gray-300">{report.markdown}</pre>
+          <pre className="table-scroll whitespace-pre-wrap rounded-xl bg-black/40 p-3 text-xs text-steel">{report.markdown}</pre>
           <div className="flex gap-2">
             <button className="btn flex-1" onClick={reset}>Start another</button>
             {hyp && (
@@ -235,8 +236,8 @@ export default function Workflow() {
 function Detail({ label, items }: { label: string; items: string[] }) {
   return (
     <div>
-      <div className="text-xs font-semibold text-gray-400">{label}</div>
-      <ul className="mt-0.5 list-disc space-y-0.5 pl-5 text-sm text-gray-300">{items.map((x, i) => <li key={i}>{x}</li>)}</ul>
+      <div className="text-xs font-semibold text-steel">{label}</div>
+      <ul className="mt-0.5 list-disc space-y-0.5 pl-5 text-sm text-steel">{items.map((x, i) => <li key={i}>{x}</li>)}</ul>
     </div>
   );
 }
