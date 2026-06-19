@@ -22,10 +22,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <>
+      <a href="#main" className="skip-link">Skip to content</a>
       <Sidebar onCommand={() => setCmd(true)} />
       <div className="lg:pl-16">
         <TopBar onCommand={() => setCmd(true)} />
-        <main className="mx-auto w-full max-w-3xl px-4 pb-28 pt-4 lg:max-w-5xl lg:px-8 lg:pb-10">
+        <main id="main" className="mx-auto w-full max-w-3xl px-4 pb-28 pt-4 lg:max-w-5xl lg:px-8 lg:pb-10">
           {children}
         </main>
       </div>

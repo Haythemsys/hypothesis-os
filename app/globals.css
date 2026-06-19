@@ -64,6 +64,24 @@ input[type="range"], select { max-width: 100%; }
 /* ── Long content must wrap, never overflow ───────────────────────────────── */
 .card, .card-flat, .card-raised, .card-accent { overflow-wrap: break-word; word-break: break-word; }
 
+/* ── Keyboard focus — amber ring, only for keyboard users ─────────────────── */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid #E8A23D;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+/* Range thumbs use accent-amber already; ensure visible focus on the track */
+input[type="range"]:focus-visible { outline-offset: 4px; }
+
+/* Skip link */
+.skip-link {
+  position: fixed; left: 8px; top: -48px; z-index: 100;
+  background: #13161C; color: #F2EFE9; padding: 8px 12px; border-radius: 8px;
+  border: 1px solid #323845; transition: top .15s ease;
+}
+.skip-link:focus { top: 8px; }
+
 /* ── Motion respect ───────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
