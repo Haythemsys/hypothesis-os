@@ -170,4 +170,26 @@ input[type="range"]:focus-visible { outline-offset: 4px; }
 
   /* Data / mono font */
   .data { font-family: "Courier New", Courier, monospace !important; }
+
+  /* Premium section headers */
+  .card > div:first-child .data { letter-spacing: 0.05em; }
+
+  /* Board brief cover */
+  .print-brief .card:first-of-type h1 { font-size: 22pt !important; }
+
+  /* Hide collaboration panels entirely from print */
+  .print\:hidden { display: none !important; }
+
+  /* Premium typography hierarchy */
+  .text-[10px], .text-\[10px\] { font-size: 7.5pt !important; }
+  .text-\[11px\] { font-size: 8pt !important; }
+  .text-\[9px\] { font-size: 7pt !important; }
+
+  /* Keep amber section numbers visible in print */
+  .text-amber { color: #92400e !important; }
+
+  /* Ensure verdict pills print with correct colors */
+  .verdict-GO   { background-color: #dcfce7 !important; color: #15803d !important; }
+  .verdict-KILL { background-color: #fee2e2 !important; color: #b91c1c !important; }
+  .verdict-UNRESOLVED { background-color: #fef3c7 !important; color: #b45309 !important; }
 }

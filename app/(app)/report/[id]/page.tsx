@@ -11,6 +11,9 @@ import { VerdictPill, Bar } from "@/components/Verdict";
 import { Mark } from "@/components/logo/Mark";
 import { CostEstimator } from "@/components/CostEstimator";
 import { EvidenceAssistant } from "@/components/EvidenceAssistant";
+import { AIInterpretation } from "@/components/AIInterpretation";
+import { CommentThread } from "@/components/CommentThread";
+import { ApprovalWorkflow } from "@/components/ApprovalWorkflow";
 
 type HypDetail = {
   hypothesis: any;
@@ -571,6 +574,35 @@ export default function ExecutiveReport({ params }: { params: Promise<{ id: stri
           <EvidenceAssistant nav={nav} verdict={verdict} />
         </Section>
       )}
+
+      {/* ══════════════════════════════════════════════════════════════════
+          §13  INTELLIGENCE INTERPRETATION
+      ══════════════════════════════════════════════════════════════════ */}
+      {nav && debt && eff && risk && (
+        <Section n="13" title="Intelligence Interpretation">
+          <AIInterpretation
+            verdict={verdict}
+            nav={nav}
+            debt={debt}
+            effort={eff}
+            risk={risk}
+            exec_={exec_}
+            hypothesisTitle={hypothesis.title}
+          />
+        </Section>
+      )}
+
+      {/* ══════════════════════════════════════════════════════════════════
+          §14  COLLABORATION & APPROVAL  (hidden from print)
+      ══════════════════════════════════════════════════════════════════ */}
+      <div className="print:hidden">
+        <Section n="14" title="Approval Workflow">
+          <ApprovalWorkflow hypothesisId={id} />
+        </Section>
+        <Section n="15" title="Team Discussion">
+          <CommentThread hypothesisId={id} />
+        </Section>
+      </div>
 
       {/* Footer */}
       <footer className="mt-6 border-t border-border-hair pt-5 text-center text-xs text-slate print:mt-12">

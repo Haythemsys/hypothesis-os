@@ -8,6 +8,7 @@ import fs from "fs";
 import path from "path";
 import type {
   Project, Hypothesis, Experiment, EvidenceRecord, VerdictRecord, Report,
+  Comment, Approval, WorkspaceMember,
 } from "../models";
 import { canSee, type Identity } from "./identity";
 
@@ -112,6 +113,50 @@ function migrate(db: Database.Database) {
     CREATE INDEX IF NOT EXISTS idx_evidence_hypothesis ON evidence(hypothesisId);
     CREATE INDEX IF NOT EXISTS idx_verdicts_hypothesis ON verdicts(hypothesisId);
     CREATE INDEX IF NOT EXISTS idx_reports_hypothesis ON reports(hypothesisId);
+
+    CREATE TABLE IF NOT EXISTS comments (
+      id TEXT PRIMARY KEY,
+      orgId TEXT NOT NULL,
+      hypothesisId TEXT NOT NULL,
+      authorId TEXT NOT NULL,
+      authorName TEXT NOT NULL DEFAULT 'Member',
+      text TEXT NOT NULL,
+      status TEXT NOT NULL DEFAULT 'open',
+      parentId TEXT,
+      createdAt TEXT NOT NULL,
+      resolvedAt TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS approvals (
+      id TEXT PRIMARY KEY,
+      orgId TEXT NOT NULL,
+      hypothesisId TEXT NOT NULL,
+      status TEXT NOT NULL DEFAULT 'draft',
+      submittedBy TEXT NOT NULL,
+      reviewerId TEXT,
+      executiveId TEXT,
+      reviewerNotes TEXT,
+      executiveNotes TEXT,
+      submittedAt TEXT,
+      reviewedAt TEXT,
+      executiveAt TEXT,
+      createdAt TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS workspace_members (
+      id TEXT PRIMARY KEY,
+      workspaceId TEXT NOT NULL,
+      userId TEXT NOT NULL,
+      role TEXT NOT NULL DEFAULT 'viewer',
+      displayName TEXT NOT NULL DEFAULT 'Member',
+      invitedBy TEXT,
+      joinedAt TEXT NOT NULL,
+      UNIQUE(workspaceId, userId)
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_comments_hypothesis ON comments(hypothesisId);
+    CREATE INDEX IF NOT EXISTS idx_approvals_hypothesis ON approvals(hypothesisId);
+    CREATE INDEX IF NOT EXISTS idx_members_workspace ON workspace_members(workspaceId);
   `);
 }
 
@@ -257,5 +302,58 @@ export const store = {
   listReports(id: Identity, hypothesisId?: string) {
     if (hypothesisId) return scopedList<Report>(getDb(), "reports", id, "hypothesisId = ?", [hypothesisId]);
     return scopedList<Report>(getDb(), "reports", id);
+  },
+
+  // ── Comments ────────────────────────────────────────────────────────────────
+  createComment(c: Comment) {
+    const db = getDb();
+    db.prepare(`INSERT INTO comments (id,orgId,hypothesisId,authorId,authorName,text,status,parentId,createdAt) VALUES (?,?,?,?,?,?,?,?,?)`)
+      .run(c.id, c.orgId, c.hypothesisId, c.authorId, c.authorName, c.text, c.status, c.parentId ?? null, c.createdAt);
+    return c;
+  },
+  listComments(orgId: string, hypothesisId: string): Comment[] {
+    const rows = getDb().prepare(`SELECT * FROM comments WHERE orgId=? AND hypothesisId=? ORDER BY createdAt ASC`).all(orgId, hypothesisId) as any[];
+    return rows.map((r) => ({ ...r, parentId: r.parentId ?? undefined, resolvedAt: r.resolvedAt ?? undefined }));
+  },
+  resolveComment(orgId: string, commentId: string, status: string) {
+    const now = new Date().toISOString();
+    getDb().prepare(`UPDATE comments SET status=?, resolvedAt=? WHERE id=? AND orgId=?`).run(status, now, commentId, orgId);
+  },
+
+  // ── Approvals ───────────────────────────────────────────────────────────────
+  upsertApproval(a: Approval) {
+    const db = getDb();
+    db.prepare(`INSERT OR REPLACE INTO approvals (id,orgId,hypothesisId,status,submittedBy,reviewerId,executiveId,reviewerNotes,executiveNotes,submittedAt,reviewedAt,executiveAt,createdAt) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`)
+      .run(a.id, a.orgId, a.hypothesisId, a.status, a.submittedBy, a.reviewerId ?? null, a.executiveId ?? null, a.reviewerNotes ?? null, a.executiveNotes ?? null, a.submittedAt ?? null, a.reviewedAt ?? null, a.executiveAt ?? null, a.createdAt);
+    return a;
+  },
+  getApproval(orgId: string, hypothesisId: string): Approval | null {
+    const row = getDb().prepare(`SELECT * FROM approvals WHERE orgId=? AND hypothesisId=? ORDER BY createdAt DESC LIMIT 1`).get(orgId, hypothesisId) as any;
+    if (!row) return null;
+    return { ...row, reviewerId: row.reviewerId ?? undefined, executiveId: row.executiveId ?? undefined, reviewerNotes: row.reviewerNotes ?? undefined, executiveNotes: row.executiveNotes ?? undefined, submittedAt: row.submittedAt ?? undefined, reviewedAt: row.reviewedAt ?? undefined, executiveAt: row.executiveAt ?? undefined };
+  },
+  listApprovals(orgId: string): Approval[] {
+    const rows = getDb().prepare(`SELECT * FROM approvals WHERE orgId=? ORDER BY createdAt DESC`).all(orgId) as any[];
+    return rows.map((r) => ({ ...r, reviewerId: r.reviewerId ?? undefined, executiveId: r.executiveId ?? undefined, reviewerNotes: r.reviewerNotes ?? undefined, executiveNotes: r.executiveNotes ?? undefined }));
+  },
+
+  // ── Workspace members ───────────────────────────────────────────────────────
+  upsertMember(m: WorkspaceMember) {
+    const db = getDb();
+    db.prepare(`INSERT OR REPLACE INTO workspace_members (id,workspaceId,userId,role,displayName,invitedBy,joinedAt) VALUES (?,?,?,?,?,?,?)`)
+      .run(m.id, m.workspaceId, m.userId, m.role, m.displayName, m.invitedBy ?? null, m.joinedAt);
+    return m;
+  },
+  listMembers(workspaceId: string): WorkspaceMember[] {
+    const rows = getDb().prepare(`SELECT * FROM workspace_members WHERE workspaceId=? ORDER BY joinedAt ASC`).all(workspaceId) as any[];
+    return rows.map((r) => ({ ...r, invitedBy: r.invitedBy ?? undefined }));
+  },
+  getMember(workspaceId: string, userId: string): WorkspaceMember | null {
+    const row = getDb().prepare(`SELECT * FROM workspace_members WHERE workspaceId=? AND userId=?`).get(workspaceId, userId) as any;
+    if (!row) return null;
+    return { ...row, invitedBy: row.invitedBy ?? undefined };
+  },
+  removeMember(workspaceId: string, userId: string) {
+    getDb().prepare(`DELETE FROM workspace_members WHERE workspaceId=? AND userId=?`).run(workspaceId, userId);
   },
 };

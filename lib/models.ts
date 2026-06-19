@@ -96,3 +96,48 @@ export interface ArchiveItem {
   bytes: number;
   category: string;
 }
+
+export type CommentStatus = "open" | "resolved" | "needs_evidence" | "escalated";
+
+export interface Comment {
+  id: ID;
+  orgId: ID;
+  hypothesisId: ID;
+  authorId: ID;
+  authorName: string;
+  text: string;
+  status: CommentStatus;
+  parentId?: ID;
+  createdAt: string;
+  resolvedAt?: string;
+}
+
+export type ApprovalStatus = "draft" | "under_review" | "approved" | "rejected" | "archived";
+
+export interface Approval {
+  id: ID;
+  orgId: ID;
+  hypothesisId: ID;
+  status: ApprovalStatus;
+  submittedBy: ID;
+  reviewerId?: ID;
+  executiveId?: ID;
+  reviewerNotes?: string;
+  executiveNotes?: string;
+  submittedAt?: string;
+  reviewedAt?: string;
+  executiveAt?: string;
+  createdAt: string;
+}
+
+export type WorkspaceRole = "owner" | "executive" | "researcher" | "reviewer" | "viewer";
+
+export interface WorkspaceMember {
+  id: ID;
+  workspaceId: ID;
+  userId: ID;
+  role: WorkspaceRole;
+  displayName: string;
+  invitedBy?: ID;
+  joinedAt: string;
+}

@@ -205,12 +205,12 @@ export default function MissionControl() {
           {/* ── Quick Actions bar ─────────────────────────────────── */}
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-6">
             {([
-              ["/workflow",  "⚡", "New Decision"],
-              ["/portfolio", "◉", "Portfolio"],
-              ["/executive", "▣", "Executive"],
-              ["/library",   "⊟", "Library"],
-              ["/import",    "↑",  "Import"],
-              ["/export",    "↗",  "Export"],
+              ["/workflow",    "⚡", "New Decision"],
+              ["/portfolio",   "◉", "Portfolio"],
+              ["/executive",   "▣", "Executive"],
+              ["/board-brief", "▤", "Board Brief"],
+              ["/templates",   "⊞", "Templates"],
+              ["/risk-map",    "⊛", "Risk Map"],
             ] as [string, string, string][]).map(([href, icon, label]) => (
               <Link key={href} href={href}
                 className="flex items-center gap-2 rounded-inner border border-border-hair px-3 py-2.5 text-sm text-steel transition-colors hover:border-amber/40 hover:text-ivory">
