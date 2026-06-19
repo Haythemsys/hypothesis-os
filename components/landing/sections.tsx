@@ -19,19 +19,37 @@ function Section({ id, eyebrow, title, children, className = "" }: {
 // ── Sticky top nav ───────────────────────────────────────────────────────────
 export function LandingNav() {
   const links = [
-    ["#how", "How it works"], ["#demo", "Live demo"],
-    ["#vs-ai", "vs AI"], ["#pricing", "Pricing"], ["#faq", "FAQ"],
+    ["#how", "How it works"], ["#demo", "Demo"],
+    ["#vs-ai", "vs AI"], ["#pricing", "Beta"], ["#faq", "FAQ"],
   ] as const;
   return (
-    <header className="sticky top-0 z-40 border-b border-border-hair bg-obsidian/85 backdrop-blur">
-      <div className="mx-auto flex h-14 w-full max-w-5xl items-center gap-4 px-4 sm:px-6">
-        <Logo size={22} />
-        <nav className="ml-auto hidden items-center gap-6 md:flex">
+    <header className="sticky top-0 z-40 border-b border-border-hair bg-obsidian/90 backdrop-blur">
+      <div className="mx-auto flex h-14 w-full max-w-5xl items-center gap-3 px-4 sm:px-6">
+        {/* Logo — always navigates to "/" */}
+        <Logo size={22} href="/" />
+
+        {/* Desktop nav links */}
+        <nav className="ml-4 hidden items-center gap-5 md:flex" aria-label="Landing navigation">
           {links.map(([href, label]) => (
-            <a key={href} href={href} className="text-sm text-steel transition-colors hover:text-ivory">{label}</a>
+            <a key={href} href={href} className="text-sm text-steel transition-colors hover:text-ivory">
+              {label}
+            </a>
           ))}
         </nav>
-        <Link href="/app" className="btn-primary ml-auto text-sm md:ml-0">Run a decision →</Link>
+
+        {/* Spacer */}
+        <div className="flex-1" />
+
+        {/* Beta badge — visible on mobile too */}
+        <span className="pill hidden bg-amber/10 text-amber text-[10px] font-bold tracking-wide sm:inline-flex">
+          BETA
+        </span>
+
+        {/* CTA */}
+        <Link href="/app" className="btn-primary text-sm">
+          <span className="hidden sm:inline">Run a decision →</span>
+          <span className="sm:hidden">Start →</span>
+        </Link>
       </div>
     </header>
   );
@@ -235,30 +253,102 @@ export function CompareVsAI() {
   );
 }
 
-// ── §10 Pricing ──────────────────────────────────────────────────────────────
+// ── §10 Pricing — Beta Program ───────────────────────────────────────────────
 export function Pricing() {
   const tiers = [
-    ["Individual", "$39", "/mo", ["Unlimited hypotheses", "Full engine + navigation", "Executive briefs"], false],
-    ["Team", "$149", "/mo", ["Up to 10 seats", "Shared mission control", "Audit trails"], true],
-    ["Studio", "$399", "/mo", ["Up to 25 seats", "Portfolio risk view", "Priority support"], false],
-    ["Enterprise", "Custom", "", ["SSO + procurement", "Stage-gate integration", "Dedicated support"], false],
-  ] as const;
+    {
+      name: "Explorer Beta",
+      features: ["Unlimited hypotheses", "Full decision engine", "Executive reports", "Evidence Vault", "Export Center"],
+    },
+    {
+      name: "Team Beta",
+      features: ["Everything in Explorer", "Shared Mission Control", "Audit trails", "Compare engine", "Multi-seat access"],
+      highlight: true,
+    },
+    {
+      name: "Research Beta",
+      features: ["Everything in Team", "Benchmark suite", "Outcome studies", "Knowledge graph", "Priority feedback channel"],
+    },
+  ];
   return (
-    <Section id="pricing" eyebrow="Pricing" title="Less than an hour of engineering. Per month.">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {tiers.map(([name, price, per, feats, popular]) => (
-          <div key={name} className={popular ? "card-accent" : "card"}>
-            {popular && <div className="label text-amber">Most popular</div>}
-            <div className="mt-1 font-semibold text-ivory">{name}</div>
-            <div className="mt-2"><span className="data text-3xl font-bold text-ivory">{price}</span><span className="text-sm text-slate">{per}</span></div>
+    <Section id="pricing" eyebrow="Pricing">
+      {/* Beta status banner */}
+      <div className="mb-8 overflow-hidden rounded-card border border-amber-dim bg-amber/5 p-6 sm:p-8">
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="pill bg-amber/15 text-amber text-xs font-bold tracking-wide">EARLY ACCESS</span>
+              <span className="label text-amber">Public Beta</span>
+            </div>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-ivory sm:text-3xl">
+              Beta program — all features free.
+            </h2>
+            <p className="mt-2 max-w-xl text-steel">
+              Early access beta is currently open. All features are unlocked, no payment required.
+              Help shape the future of evidence-based decision making.
+            </p>
+          </div>
+          <Link href="/app" className="btn-primary shrink-0 px-6">Join Beta →</Link>
+        </div>
+        <div className="mt-5 grid grid-cols-1 gap-3 border-t border-amber-dim/30 pt-5 sm:grid-cols-3">
+          {[
+            ["All features unlocked", "No capabilities held back during beta"],
+            ["No credit card required", "Free for all beta participants"],
+            ["Pricing after validation", "Introduced only once the product is proven"],
+          ].map(([title, sub]) => (
+            <div key={title}>
+              <div className="flex items-center gap-1.5 text-sm font-semibold text-ivory">
+                <span className="text-amber">▸</span> {title}
+              </div>
+              <p className="mt-0.5 text-xs text-slate">{sub}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Current status */}
+      <div className="mb-6 flex items-center gap-3 rounded-inner border border-border-hair bg-graphite px-4 py-3">
+        <span className="h-2 w-2 rounded-full bg-go animate-pulse" />
+        <span className="text-sm text-steel">
+          <span className="font-semibold text-ivory">Current Status: PUBLIC BETA</span>
+          {" · "}All features unlocked · No payment required · Pricing introduced after validation
+        </span>
+      </div>
+
+      {/* Beta tier cards */}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        {tiers.map((tier) => (
+          <div key={tier.name} className={tier.highlight ? "card-accent" : "card"}>
+            {tier.highlight && (
+              <div className="mb-2 flex items-center gap-2">
+                <span className="pill bg-amber/15 text-amber text-[10px] font-bold tracking-wide">EARLY ACCESS</span>
+              </div>
+            )}
+            <div className="font-semibold text-ivory">{tier.name}</div>
+            <div className="mt-2 flex items-baseline gap-1">
+              <span className="data text-4xl font-bold text-ivory">FREE</span>
+              <span className="text-sm text-slate">during beta</span>
+            </div>
             <ul className="mt-4 space-y-1.5 text-sm text-steel">
-              {feats.map((f) => <li key={f} className="flex gap-2"><span className="text-amber">▸</span>{f}</li>)}
+              {tier.features.map((f) => (
+                <li key={f} className="flex gap-2">
+                  <span className="text-amber shrink-0">▸</span>{f}
+                </li>
+              ))}
             </ul>
-            <Link href="/app" className={`${popular ? "btn-primary" : "btn-ghost"} mt-5 w-full`}>Start</Link>
+            <Link
+              href="/app"
+              className={`${tier.highlight ? "btn-primary" : "btn-ghost"} mt-5 w-full text-sm`}
+            >
+              Join Beta
+            </Link>
           </div>
         ))}
       </div>
-      <p className="mt-4 text-sm text-slate">No credit card to try. The engine runs locally in your browser.</p>
+
+      <p className="mt-4 text-sm text-slate">
+        No credit card. No sign-up friction. The engine runs in your browser.
+      </p>
     </Section>
   );
 }

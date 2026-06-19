@@ -8,15 +8,15 @@ export function TopBar({ onCommand }: { onCommand: () => void }) {
       data-shell
       className="sticky top-0 z-30 flex h-12 items-center gap-2 border-b border-border-hair bg-obsidian/95 px-4 backdrop-blur lg:h-14 lg:gap-3 lg:px-5"
     >
-      {/* Mobile brand — sidebar covers desktop */}
+      {/* Mobile brand — always returns to landing */}
       <Link
-        href="/dashboard"
-        aria-label="Signal Vertex home"
+        href="/"
+        aria-label="HypothesisOS home"
         className="flex shrink-0 items-center gap-2 lg:hidden"
       >
         <Mark size={20} />
         <span className="text-sm font-bold tracking-tight text-ivory">
-          Signal<span className="text-amber">Vertex</span>
+          Hypothesis<span className="text-amber">OS</span>
         </span>
       </Link>
 

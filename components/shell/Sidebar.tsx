@@ -12,8 +12,8 @@ export function Sidebar({ onCommand }: { onCommand: () => void }) {
       data-shell
       className="group fixed inset-y-0 left-0 z-40 hidden w-16 flex-col border-r border-border-hair bg-obsidian transition-[width] duration-200 ease-signal hover:w-[220px] lg:flex"
     >
-      {/* Logo */}
-      <Link href="/dashboard" aria-label="HypothesisOS" className="flex h-12 items-center gap-2 px-[18px]">
+      {/* Logo — always returns to home (landing) */}
+      <Link href="/" aria-label="HypothesisOS home" className="flex h-12 items-center gap-2 px-[18px]">
         <Mark size={24} />
         <span className="whitespace-nowrap text-sm font-bold tracking-tight text-ivory opacity-0 transition-opacity group-hover:opacity-100">
           Hypothesis<span className="text-amber">OS</span>

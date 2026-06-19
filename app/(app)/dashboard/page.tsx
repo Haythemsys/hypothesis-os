@@ -149,10 +149,57 @@ export default function MissionControl() {
       </div>
 
       {total === 0 ? (
-        <Card variant="accent" className="space-y-3 text-center">
-          <p className="text-steel">No decisions under evaluation.</p>
-          <ButtonLink href="/workflow" className="inline-flex">Begin a decision →</ButtonLink>
-        </Card>
+        <div className="space-y-4">
+          {/* Welcome onboarding */}
+          <Card variant="accent" className="space-y-6">
+            <div className="text-center space-y-2">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-amber/10 text-3xl">◈</div>
+              <h2 className="text-xl font-bold text-ivory">Welcome to HypothesisOS</h2>
+              <p className="text-sm text-steel max-w-md mx-auto">
+                Your decision intelligence workspace. Start by running your first hypothesis through the engine.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {([
+                ["01", "Create hypothesis", "Name your claim and decompose it into assumptions"],
+                ["02", "Add evidence", "Encode 8 evidence dimensions from your data"],
+                ["03", "Receive verdict", "Engine computes GO / KILL / UNRESOLVED deterministically"],
+                ["04", "Generate report", "Export a print-ready Executive Intelligence Brief"],
+              ] as [string, string, string][]).map(([n, title, desc]) => (
+                <div key={n} className="rounded-inner border border-border-hair bg-obsidian/50 p-4">
+                  <span className="data text-xs font-bold text-amber">{n}</span>
+                  <div className="mt-1.5 font-semibold text-ivory">{title}</div>
+                  <p className="mt-1 text-xs text-slate">{desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <ButtonLink href="/workflow" className="sm:px-8">Run First Decision →</ButtonLink>
+              <Link href="/evidence" className="text-sm text-steel hover:text-ivory">
+                Try the live engine first →
+              </Link>
+            </div>
+          </Card>
+
+          {/* Quick links */}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {([
+              ["/workflow", "⚡", "Decision Workflow", "Step-by-step guided decision pipeline"],
+              ["/evidence", "⚖", "Evidence Engine", "Live analyzer — encode evidence in real time"],
+              ["/compare", "⇄", "Compare Engine", "Side-by-side hypothesis comparison"],
+            ] as [string, string, string, string][]).map(([href, icon, title, desc]) => (
+              <Link key={href} href={href} className="card flex items-start gap-3 hover:bg-white/5 transition-colors">
+                <span className="text-xl text-amber">{icon}</span>
+                <div>
+                  <div className="font-semibold text-ivory">{title}</div>
+                  <p className="mt-0.5 text-xs text-slate">{desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       ) : (
         <>
           {/* ── Row 1: Health · Risk · Debt avg ──────────────────── */}
