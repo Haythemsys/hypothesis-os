@@ -20,6 +20,8 @@ import { navigate as _navigate } from "./navigation.mjs";
 import {
   evidenceDebt as _debt, decisionEffort as _effort, pathToGo as _path,
   confidenceBreakdown as _confBreakdown, executiveSummary as _execSummary,
+  decisionRisk as _risk, resolutionTimeline as _timeline,
+  costToResolve as _cost, investorView as _investor,
 } from "./decision-intelligence.mjs";
 // @ts-ignore
 import { ALL_BENCHMARKS as _ALL, DOMAINS as _DOMAINS } from "./benchmarks/index.mjs";
@@ -118,6 +120,21 @@ export const decisionEffort    = _effort        as (nav: Navigation) => Decision
 export const pathToGo          = _path          as (nav: Navigation) => PathStep[];
 export const confidenceBreakdown = _confBreakdown as (e: Partial<Evidence>, score: number) => ConfidenceBreakdown;
 export const executiveSummary  = _execSummary   as (verdict: Verdict, nav: Navigation, debt: EvidenceDebt, effort: DecisionEffort) => ExecutiveSummary;
+
+// ── Phase O commercial intelligence ─────────────────────────────────────────
+export interface DecisionRisk {
+  level: "LOW" | "MEDIUM" | "HIGH" | "CRITICAL";
+  score: number; reason: string;
+}
+export interface TimelineItem { dimension: string; label: string; minWeeks: number; maxWeeks: number; }
+export interface ResolutionTimeline { items: TimelineItem[]; totalMin: number; totalMax: number; }
+export interface CostToResolve { level: "LOW" | "MEDIUM" | "HIGH"; description: string; }
+export interface InvestorView { verdict: "YES" | "NO" | "NOT YET"; reason: string; }
+
+export const decisionRisk      = _risk     as (debt: EvidenceDebt, nav: Navigation, cal: number) => DecisionRisk;
+export const resolutionTimeline = _timeline as (nav: Navigation) => ResolutionTimeline | null;
+export const costToResolve     = _cost     as (effort: DecisionEffort, nav: Navigation) => CostToResolve;
+export const investorView      = _investor as (debt: EvidenceDebt, risk: DecisionRisk, nav: Navigation) => InvestorView;
 export interface Benchmark {
   id: string; title: string; expected: Verdict; evidence: Evidence; note?: string;
   domain?: string; implications?: { var: string; sign: number }[];

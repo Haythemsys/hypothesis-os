@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import {
   explain, calibrate, selfCritique, navigate,
   evidenceDebt, decisionEffort, pathToGo, confidenceBreakdown, executiveSummary,
+  decisionRisk, resolutionTimeline, costToResolve, investorView,
   type Evidence,
 } from "@/lib/core";
 import { VerdictPill, Bar } from "@/components/Verdict";
@@ -11,6 +12,10 @@ import {
   ExecutiveSummaryCard, GoBlockersPanel, EvidenceDebtPanel,
   EffortPanel, PathToGoPanel, ConfidenceExplanationPanel,
 } from "@/components/DecisionIntelligence";
+import {
+  DecisionRiskCard, ResolutionTimelinePanel, CostToResolvePanel,
+  InvestorViewCard, WhatIfSimulator,
+} from "@/components/CommercialIntelligence";
 
 const FIELDS: { key: keyof Evidence; label: string; hint: string }[] = [
   { key: "effect",          label: "Effect size",       hint: "strength of the measured effect" },
@@ -38,6 +43,10 @@ export default function EvidenceEngine() {
   const path  = useMemo(() => pathToGo(nav),                     [nav]);
   const conf  = useMemo(() => confidenceBreakdown(e, cal.score), [e, cal.score]);
   const exec  = useMemo(() => executiveSummary(crit.finalVerdict, nav, debt, eff), [crit.finalVerdict, nav, debt, eff]);
+  const risk  = useMemo(() => decisionRisk(debt, nav, cal.score), [debt, nav, cal.score]);
+  const tline = useMemo(() => resolutionTimeline(nav),            [nav]);
+  const cost  = useMemo(() => costToResolve(eff, nav),            [eff, nav]);
+  const inv   = useMemo(() => investorView(debt, risk, nav),      [debt, risk, nav]);
 
   const isUnresolved = crit.finalVerdict === "UNRESOLVED";
   const isNotGo      = crit.finalVerdict !== "GO";
@@ -94,6 +103,17 @@ export default function EvidenceEngine() {
 
       {/* ── Confidence explanation ───────────────────────────────────── */}
       <ConfidenceExplanationPanel breakdown={conf} />
+
+      {/* ── Commercial Intelligence ──────────────────────────────────── */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <DecisionRiskCard risk={risk} />
+        <InvestorViewCard inv={inv} />
+      </div>
+      {tline && <ResolutionTimelinePanel timeline={tline} />}
+      <CostToResolvePanel cost={cost} />
+      {crit.finalVerdict !== "GO" && (
+        <WhatIfSimulator evidence={e} currentVerdict={crit.finalVerdict} currentSupport={nav.currentSupport} />
+      )}
 
       {/* ── Why this verdict ─────────────────────────────────────────── */}
       <Panel title="Why this verdict" tone="neutral">

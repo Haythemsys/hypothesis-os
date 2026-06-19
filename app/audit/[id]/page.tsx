@@ -139,9 +139,46 @@ export default function AuditDetail({ params }: { params: Promise<{ id: string }
         </div>
       </section>
 
+      {/* History & Evolution — verdict trend across verdicts */}
+      {data.latestVerdict && (() => {
+        const verdictEvents = timeline.filter(e => e.type === "verdict_rendered");
+        if (verdictEvents.length < 2) return null;
+        return (
+          <section className="card space-y-3">
+            <div className="label">History & Evolution</div>
+            <div className="space-y-2">
+              {verdictEvents.map((e, i) => {
+                const v = (e as any).data;
+                return (
+                  <div key={i} className="flex items-center gap-2 text-sm">
+                    <span className="text-[10px] text-gray-500 tabular-nums shrink-0 w-20">
+                      {new Date(e.at).toLocaleDateString()}
+                    </span>
+                    <VerdictPill verdict={v.finalVerdict} />
+                    <span className="text-xs text-gray-400">
+                      support {v.support?.toFixed(2)} · {v.calibration}/100
+                    </span>
+                    {i > 0 && (() => {
+                      const prev = (verdictEvents[i - 1] as any).data;
+                      if (prev.finalVerdict !== v.finalVerdict) {
+                        return <span className="text-xs text-unresolved font-semibold">↑ flipped</span>;
+                      }
+                      const delta = (v.support - prev.support).toFixed(2);
+                      const sign = parseFloat(delta) >= 0 ? "+" : "";
+                      return <span className={`text-xs ${parseFloat(delta) >= 0 ? "text-go" : "text-kill"}`}>{sign}{delta}</span>;
+                    })()}
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        );
+      })()}
+
       {/* Actions */}
-      <div className="flex gap-2">
+      <div className="flex gap-2 flex-wrap">
         <Link href="/workflow" className="btn flex-1 text-center text-sm">New workflow</Link>
+        <Link href={`/report/${id}`} className="btn flex-1 text-center text-sm bg-white/5">Executive Report</Link>
         <Link href="/audit" className="btn flex-1 text-center text-sm bg-white/5">← Index</Link>
       </div>
     </div>

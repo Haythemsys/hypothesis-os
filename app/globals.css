@@ -26,3 +26,32 @@ input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; }
 .verdict-GO { @apply bg-go/20 text-go; }
 .verdict-KILL { @apply bg-kill/20 text-kill; }
 .verdict-UNRESOLVED { @apply bg-unresolved/20 text-unresolved; }
+
+/* ── Mobile audit (Feature 10) ────────────────────────────── */
+/* Prevent horizontal overflow at all viewport widths */
+html, body { max-width: 100vw; overflow-x: hidden; }
+/* Cards must not overflow their container */
+.card { min-width: 0; max-width: 100%; box-sizing: border-box; }
+/* Long words/URLs inside cards wrap rather than escape */
+.card, .card * { overflow-wrap: break-word; word-break: break-word; }
+/* Prevent sliders and selects from widening the viewport */
+input[type="range"], select { max-width: 100%; }
+/* Grid cells collapse gracefully below 390px */
+@media (max-width: 390px) {
+  .grid.grid-cols-2  { grid-template-columns: 1fr; }
+  .grid.sm\:grid-cols-2 { grid-template-columns: 1fr; }
+  .grid.sm\:grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
+}
+/* Ensure the nav safe-area padding works on all mobile browsers */
+nav { padding-bottom: max(env(safe-area-inset-bottom), 4px); }
+/* Comparison table cells: never crop text, allow wrapping */
+.grid.grid-cols-3 > * { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+/* Print styles for the PDF report */
+@media print {
+  nav, .print\:hidden { display: none !important; }
+  body { background: white; color: black; }
+  .card { border-color: #e5e7eb; background: white; }
+  .text-go { color: #16a34a !important; }
+  .text-kill { color: #dc2626 !important; }
+  .text-unresolved { color: #d97706 !important; }
+}

@@ -1,14 +1,16 @@
 import Link from "next/link";
 
 const TOOLS = [
-  { href: "/lab", t: "Hypothesis Lab", d: "Decompose a claim into assumptions & confounds", icon: "⚗" },
-  { href: "/experiments", t: "Experiment Engine", d: "Cheap / strong / hostile test plans", icon: "⚙" },
-  { href: "/audit", t: "Decision Audit Trail", d: "Traceable timeline: hypothesis → evidence → verdict → report", icon: "⌗" },
-  { href: "/graph", t: "Knowledge Graph", d: "Dependencies & auto-detected contradictions", icon: "◉" },
-  { href: "/memory", t: "Research Memory", d: "Versioned, traceable hypothesis history", icon: "⎘" },
-  { href: "/archive", t: "Research Archive", d: "Indexed local research files", icon: "▤" },
-  { href: "/settings", t: "Settings", d: "Model provider, local models, identity", icon: "⚙" },
-  { href: "/governance", t: "AI Governance", d: "What AI may and may not do", icon: "§" },
+  { href: "/dashboard",   t: "Project Dashboard",    d: "Aggregate view: GO/KILL/UNRESOLVED counts, recent verdicts",         icon: "▦" },
+  { href: "/compare",     t: "Benchmark Compare",     d: "Side-by-side comparison of two hypotheses on key metrics",           icon: "⇄" },
+  { href: "/lab",         t: "Hypothesis Lab",        d: "Decompose a claim into assumptions & confounds",                     icon: "⚗" },
+  { href: "/experiments", t: "Experiment Engine",     d: "Cheap / strong / hostile test plans",                               icon: "⚙" },
+  { href: "/audit",       t: "Decision Audit Trail",  d: "Traceable timeline: hypothesis → evidence → verdict → report",      icon: "⌗" },
+  { href: "/graph",       t: "Knowledge Graph",       d: "Dependencies & auto-detected contradictions",                       icon: "◉" },
+  { href: "/memory",      t: "Research Memory",       d: "Versioned, traceable hypothesis history",                           icon: "⎘" },
+  { href: "/archive",     t: "Research Archive",      d: "Indexed local research files",                                      icon: "▤" },
+  { href: "/settings",    t: "Settings",              d: "Model provider, local models, identity",                            icon: "⚙" },
+  { href: "/governance",  t: "AI Governance",         d: "What AI may and may not do",                                        icon: "§" },
 ];
 
 export default function More() {
