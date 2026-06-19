@@ -233,7 +233,7 @@ function EventDetail({ event }: { event: AuditEvent }) {
                   <span className="text-gray-400">{label}</span>
                   <span className="text-white">{(val as number).toFixed(2)}</span>
                 </div>
-                <Bar value={val as number} />
+                <Bar value={val as number} label={label as string} />
               </div>
             ) : null
           )}
