@@ -1,7 +1,8 @@
 "use client";
 import { useMemo, useState } from "react";
-import { explain, calibrate, selfCritique, type Evidence } from "@/lib/core";
+import { explain, calibrate, selfCritique, navigate, type Evidence } from "@/lib/core";
 import { VerdictPill, Bar } from "@/components/Verdict";
+import { NavigationPanel } from "@/components/NavigationPanel";
 
 const FIELDS: { key: keyof Evidence; label: string; hint: string }[] = [
   { key: "effect", label: "Effect size", hint: "strength of the measured effect" },
@@ -23,6 +24,7 @@ export default function EvidenceEngine() {
   const ex = useMemo(() => explain(e, hypothesis), [e, hypothesis]);
   const cal = useMemo(() => calibrate(e), [e]);
   const crit = useMemo(() => selfCritique(e), [e]);
+  const nav = useMemo(() => navigate(e, crit.finalVerdict), [e, crit.finalVerdict]);
   const calCls = cal.band.startsWith("HIGH") ? "verdict-GO" : cal.band.startsWith("MEDIUM") ? "verdict-UNRESOLVED" : "verdict-KILL";
 
   return (
@@ -40,6 +42,8 @@ export default function EvidenceEngine() {
         </div>
         <p className="mt-2 text-xs text-gray-400">{ex.confidenceExplanation}</p>
       </section>
+
+      {crit.finalVerdict !== "GO" && <NavigationPanel nav={nav} />}
 
       <section className="card">
         <label className="label">Hypothesis (optional — enables assumptions & confounds)</label>

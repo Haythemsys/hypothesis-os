@@ -2,7 +2,7 @@ import type { NextRequest } from "next/server";
 import { ok, bad, notFound, readJson } from "@/lib/server/http";
 import { getIdentity, scopeOf } from "@/lib/server/identity";
 import { store, newId } from "@/lib/server/store";
-import { selfCritique, explain } from "@/lib/core";
+import { selfCritique, explain, navigate } from "@/lib/core";
 import type { VerdictRecord } from "@/lib/models";
 
 export const dynamic = "force-dynamic";
@@ -23,6 +23,7 @@ export async function POST(req: NextRequest, ctx: { params: Promise<{ id: string
 
   const crit = selfCritique(rec.evidence);
   const ex = explain(rec.evidence, h.title);
+  const nav = navigate(rec.evidence, crit.finalVerdict);
   const v: VerdictRecord = {
     id: newId("vrd"), ...scopeOf(ident), hypothesisId: id, evidenceId: rec.id,
     verdict: crit.baseVerdict, finalVerdict: crit.finalVerdict,
@@ -30,5 +31,5 @@ export async function POST(req: NextRequest, ctx: { params: Promise<{ id: string
     reasons: crit.reasons, createdAt: new Date().toISOString(),
   };
   store.createVerdict(v);
-  return ok({ verdict: v, explanation: ex, critique: crit, judge: "deterministic-engine" });
+  return ok({ verdict: v, explanation: ex, critique: crit, navigation: nav, judge: "deterministic-engine" });
 }

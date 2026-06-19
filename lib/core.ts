@@ -15,6 +15,8 @@ import { selfCritique as _selfCritique } from "./critique.mjs";
 // @ts-ignore
 import { detectContradictions as _detect } from "./contradict.mjs";
 // @ts-ignore
+import { navigate as _navigate } from "./navigation.mjs";
+// @ts-ignore
 import { ALL_BENCHMARKS as _ALL, DOMAINS as _DOMAINS } from "./benchmarks/index.mjs";
 // @ts-ignore
 import { newHypothesis as _newH, commitRevision as _commit, finalVerdict as _final, verdictFlipped as _flipped, STORE_KEY as _SK } from "./memory.mjs";
@@ -68,6 +70,28 @@ export const explain = _explain as (e: Partial<Evidence>, hypothesis?: string) =
 export const calibrate = _calibrate as (e: Partial<Evidence>) => Calibration;
 export const selfCritique = _selfCritique as (e: Partial<Evidence>) => Critique;
 export const detectContradictions = _detect as (hs: any[]) => Contradiction[];
+
+export interface NavigationDimensionGain {
+  dimension: string; label: string; current: number; weight: number; maxGain: number;
+}
+export interface Navigation {
+  verdict: Verdict;
+  currentSupport: number;
+  goThreshold: number;
+  supportGap: number;
+  navigable: boolean;
+  distanceToGo: string | null;
+  highestLeverageDimension: string | null;
+  highestLeverageLabel: string | null;
+  highestLeverageGain: number | null;
+  unmetGoCriteria: string[] | null;
+  recommendedAction: string | null;
+  explanation: string;
+  impossibleReason: string | null;
+  dimensionGains: NavigationDimensionGain[];
+  killedBy?: { gate: string; value: number; floor: number; action: string }[];
+}
+export const navigate = _navigate as (e: Partial<Evidence>, verdict: Verdict) => Navigation;
 export interface Benchmark {
   id: string; title: string; expected: Verdict; evidence: Evidence; note?: string;
   domain?: string; implications?: { var: string; sign: number }[];
