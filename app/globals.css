@@ -13,11 +13,13 @@ html, body {
   background: #0A0C10;        /* obsidian */
   color: #F2EFE9;             /* ivory */
   overscroll-behavior-y: none;
-  max-width: 100vw;
-  overflow-x: hidden;
   font-family: var(--font-sans);
 }
-body { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+/* Prevent horizontal scroll WITHOUT locking vertical document scroll.
+   overflow-x:clip clips horizontally but — unlike overflow-x:hidden — does NOT
+   establish a scroll container or coerce overflow-y to auto, so the page scrolls
+   normally on mobile. Applying overflow to <html> previously trapped scrolling. */
+body { max-width: 100%; overflow-x: clip; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 
 input[type="range"] { touch-action: pan-x; min-height: 36px; }
 input[type="range"]::-webkit-slider-thumb { width: 24px; height: 24px; }
