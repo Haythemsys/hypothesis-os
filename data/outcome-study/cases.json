@@ -1,0 +1,402 @@
+[
+  {
+    "id": "power_posing",
+    "domain": "psychology",
+    "hypothesis": "High-power body poses (expansive postures) causally increase testosterone, decrease cortisol, and increase risk-taking behaviour.",
+    "decision_date": "2010-06-01",
+    "evidence_available": "One published study (Carney, Cuddy & Yap 2010, n=42). Large reported effects (d>1 on testosterone). No independent replication. Demand characteristics present (participants knew they were being filmed). Biomarkers measured post-hoc from many candidates (researcher degrees of freedom). Small sample for hormonal measurement (high variance). Mechanism proposed but not established.",
+    "evidence_packet": {
+      "effect": 0.65,
+      "replication": 0.0,
+      "hostileSurvival": null,
+      "confoundControl": 0.20,
+      "generalization": 0.10,
+      "power": 0.20,
+      "ciExcludesNull": true,
+      "claimRequiresGeneralization": true
+    },
+    "known_outcome": "Claim failed to replicate. Ranehill et al. 2015 (n=200) found no hormonal effects. Carney (lead author) publicly disavowed the finding in 2016. Multiple large pre-registered replications converged on null for the physiological claim.",
+    "expected_verdict": "KILL",
+    "ground_truth_notes": "A textbook case of a single underpowered study with demand characteristics that failed hostile replication. The generalization claim (universal human response) was asserted but tested in one context."
+  },
+  {
+    "id": "ego_depletion",
+    "domain": "psychology",
+    "hypothesis": "Self-control draws from a limited mental resource; exerting willpower on one task reduces performance on a subsequent unrelated task (ego depletion).",
+    "decision_date": "2011-01-01",
+    "evidence_available": "~100+ published studies from Baumeister lab and affiliates showing depletion effects (d=0.6-0.8). Limited independent replications; most came from the same research group. Demand characteristics present (depleting tasks are obvious). Proposed mechanism (glucose) had weak mechanistic evidence. Effect sizes large but heterogeneous. No pre-registered replications had been run.",
+    "evidence_packet": {
+      "effect": 0.60,
+      "replication": 0.55,
+      "hostileSurvival": 0.30,
+      "confoundControl": 0.25,
+      "generalization": 0.50,
+      "power": 0.35,
+      "ciExcludesNull": true,
+      "claimRequiresGeneralization": true
+    },
+    "known_outcome": "Hagger et al. 2016 multi-lab pre-registered replication (23 labs, n=2141) found no significant effect. Subsequent Bayesian meta-analyses support d≈0 after correcting for publication bias. The glucose mechanism was never independently confirmed.",
+    "expected_verdict": "KILL",
+    "ground_truth_notes": "The hostile survival score of 0.30 reflects that the pattern of results (concentrated in one lab, sensitive to experimenter expectations, no blind conditions) would not have survived pre-registered adversarial replication. This was visible in the evidence structure even before Hagger et al."
+  },
+  {
+    "id": "social_priming_florida",
+    "domain": "psychology",
+    "hypothesis": "Priming people with elderly-related words causes them to walk measurably more slowly (the Florida priming effect).",
+    "decision_date": "2011-01-01",
+    "evidence_available": "One published study (Bargh, Chen & Burrows 1996, n=30). Experimenter who timed participants' walking speed was NOT blind to condition — a critical confound. No independent replication. Effect size large but based on small n. Mechanism unclear (how does unconscious word exposure affect gait?). Widely cited in textbooks but never independently confirmed.",
+    "evidence_packet": {
+      "effect": 0.45,
+      "replication": 0.30,
+      "hostileSurvival": 0.15,
+      "confoundControl": 0.18,
+      "generalization": 0.25,
+      "power": 0.15,
+      "ciExcludesNull": true,
+      "claimRequiresGeneralization": true
+    },
+    "known_outcome": "Doyen et al. 2012 ran a blinded replication and found no effect — but found that experimenters who expected the effect measured it and experimenters who did not expected it did not. Multiple pre-registered replications since have failed. The original confound (non-blind timing) is considered decisive.",
+    "expected_verdict": "KILL",
+    "ground_truth_notes": "The experimenter-expectancy confound made this claim practically untestable in its original form. hostile survival 0.15 reflects the fact that any blinded replication was overwhelmingly likely to fail."
+  },
+  {
+    "id": "spacing_effect",
+    "domain": "psychology",
+    "hypothesis": "Distributing practice over time (spaced practice) produces better long-term retention than the same amount of massed practice.",
+    "decision_date": "2006-01-01",
+    "evidence_available": "Replicated since Ebbinghaus 1885. Hundreds of studies across age groups, materials (verbal, motor, visual), and species. Effect size consistent (d=0.5-0.8 in lab). Multiple meta-analyses agree. Mechanistic understanding strong (encoding variability, spaced retrieval). Effect holds in real classroom settings.",
+    "evidence_packet": {
+      "effect": 0.80,
+      "replication": 1.0,
+      "hostileSurvival": 0.85,
+      "confoundControl": 0.75,
+      "generalization": 0.80,
+      "power": 0.80,
+      "ciExcludesNull": true,
+      "claimRequiresGeneralization": true
+    },
+    "known_outcome": "One of the most robust findings in cognitive science. Continues to replicate in classroom interventions, digital learning platforms, and clinical populations. Effect size somewhat attenuated in ecological settings but remains significant and educationally meaningful.",
+    "expected_verdict": "GO",
+    "ground_truth_notes": "The gold standard case: replicated across over a century of research, multiple labs, populations, and contexts. Mechanism well-understood. Used as the baseline for assessing what a genuine GO looks like."
+  },
+  {
+    "id": "theranos_blood_testing",
+    "domain": "technology",
+    "hypothesis": "Theranos's Edison device can perform 200+ clinical-grade blood tests reliably from a single finger-prick of blood.",
+    "decision_date": "2013-06-01",
+    "evidence_available": "Company's own unverified claims (no published peer-reviewed data). Walgreens partnership announced based on Theranos self-reporting. FDA clearance obtained for only 1 test (HSV-1) by 2015. No independent lab had verified device accuracy. Industry experts had raised methodological concerns privately. Technology described as a 'black box'.",
+    "evidence_packet": {
+      "effect": 0.08,
+      "replication": 0.0,
+      "hostileSurvival": 0.05,
+      "confoundControl": 0.05,
+      "generalization": 0.10,
+      "power": 0.10,
+      "ciExcludesNull": false,
+      "claimRequiresGeneralization": false
+    },
+    "known_outcome": "John Carreyrou's WSJ investigation (Oct 2015) revealed Theranos was running most tests on standard third-party machines (Siemens) and diluting samples. FDA inspection 2016 found serious deficiencies. Holmes convicted of fraud 2022. Company dissolved 2018. The device never performed as claimed.",
+    "expected_verdict": "KILL",
+    "ground_truth_notes": "The complete absence of published, independently verified performance data is itself decisive evidence. Any rigorous evaluator should have flagged the zero evidence basis. No independent replication, no peer review, no FDA clearance for the claimed tests."
+  },
+  {
+    "id": "google_glass_consumer",
+    "domain": "technology",
+    "hypothesis": "Google Glass will achieve significant mainstream consumer adoption as a wearable computing platform.",
+    "decision_date": "2013-06-01",
+    "evidence_available": "Explorer program launched (limited beta, $1500 price). Widespread immediate public backlash ('Glasshole' coined within weeks). Privacy concerns raised by Congress members, businesses, and civil liberties groups. No compelling consumer use case demonstrated beyond novelty. Developer ecosystem nascent. Enterprise interest weak. No competitor had succeeded with a similar form factor.",
+    "evidence_packet": {
+      "effect": 0.20,
+      "replication": 0.10,
+      "hostileSurvival": 0.20,
+      "confoundControl": 0.30,
+      "generalization": 0.15,
+      "power": 0.15,
+      "ciExcludesNull": false,
+      "claimRequiresGeneralization": true
+    },
+    "known_outcome": "Consumer version quietly cancelled January 2015. Google pivoted to enterprise-only 'Glass Enterprise Edition'. In 2023 the enterprise edition was also discontinued. The form factor did not achieve mainstream consumer adoption by any measure.",
+    "expected_verdict": "KILL",
+    "ground_truth_notes": "Social resistance was immediate and measurable. The effect size reflects that early adopter response was mixed-to-negative rather than signals of mainstream uptake."
+  },
+  {
+    "id": "moviepass_sustainability",
+    "domain": "business",
+    "hypothesis": "MoviePass can build a sustainable subscription business at $9.99/month for unlimited movie tickets.",
+    "decision_date": "2017-08-15",
+    "evidence_available": "Average US movie ticket price $9.16 (2017) — MoviePass was paying full price with no theater agreements for discounts. No signed data-sharing revenue agreements. No precedent: no comparable subscription model had achieved movie industry partnerships. Cash reserves limited. Business plan required 3M+ subscribers and data monetization that did not exist. Industry analysts immediately flagged negative unit economics.",
+    "evidence_packet": {
+      "effect": 0.05,
+      "replication": 0.0,
+      "hostileSurvival": 0.05,
+      "confoundControl": 0.40,
+      "generalization": 0.10,
+      "power": 0.30,
+      "ciExcludesNull": false,
+      "claimRequiresGeneralization": false
+    },
+    "known_outcome": "MoviePass burned through cash within 3 months of the price cut. Filed for bankruptcy in 2019. At peak had 3M subscribers but lost over $40M/month. CEO Mitch Lowe admitted they had no plan for the losses. The fundamental unit economics never worked.",
+    "expected_verdict": "KILL",
+    "ground_truth_notes": "Effect size 0.05 reflects that the evidence for sustainability was essentially zero at the decision date. The math was visible to any analyst: ticket cost ≥ subscription price with no revenue offset. This is not hindsight — multiple analysts published this calculation on launch day."
+  },
+  {
+    "id": "wework_valuation",
+    "domain": "business",
+    "hypothesis": "WeWork's business model justifies a $47 billion valuation at the January 2019 SoftBank funding round.",
+    "decision_date": "2019-01-07",
+    "evidence_available": "2018: $1.9B net loss on $1.8B revenue. $47B in lease commitments (12-15 year terms) against short-term flexible subleases. 'Community-adjusted EBITDA' excluded SG&A, D&A, and stock compensation. Related-party transactions between Neumann and company. No evidence of network effects (co-working has low switching costs). Multiple co-working competitors (IWG/Regus) valued at $3.7B on similar revenue. Office real estate is inherently cyclical; WeWork had no recession experience.",
+    "evidence_packet": {
+      "effect": 0.10,
+      "replication": 0.10,
+      "hostileSurvival": 0.10,
+      "confoundControl": 0.20,
+      "generalization": 0.15,
+      "power": 0.55,
+      "ciExcludesNull": false,
+      "claimRequiresGeneralization": false
+    },
+    "known_outcome": "IPO withdrawn September 2019 after S-1 disclosed governance problems and losses. SoftBank bailout at ~$8B valuation (83% write-down). Neumann ousted. Company filed for bankruptcy 2023 at near-zero valuation.",
+    "expected_verdict": "KILL",
+    "ground_truth_notes": "The effect score of 0.10 reflects that no evidence supported the $47B figure — comparable companies were valued at 10-15x lower multiples on similar revenue. The financial evidence available in the S-1 was decisive."
+  },
+  {
+    "id": "quibi_mobile_streaming",
+    "domain": "technology",
+    "hypothesis": "Short-form (<10 min) mobile-only premium streaming will capture significant market share in the video streaming market.",
+    "decision_date": "2020-04-06",
+    "evidence_available": "$1.75B raised with A-list Hollywood partnerships. BUT: no prior evidence of demand for the format (no comparable product had succeeded). COVID-19 lockdowns immediately invalidated the 'commute/waiting' use case. Competing with free platforms (TikTok, YouTube). Unable to cast to TV at launch. No social sharing. Downloads weak in first weeks despite massive marketing spend.",
+    "evidence_packet": {
+      "effect": 0.20,
+      "replication": 0.10,
+      "hostileSurvival": 0.15,
+      "confoundControl": 0.30,
+      "generalization": 0.20,
+      "power": 0.40,
+      "ciExcludesNull": false,
+      "claimRequiresGeneralization": true
+    },
+    "known_outcome": "Shut down October 2020, six months after launch. 7.9M downloads, far below projections. $1.75B invested returned ~$350M to investors. Jeffrey Katzenberg attributed failure partly to COVID; most analysts attributed it to the unproven format hypothesis.",
+    "expected_verdict": "KILL",
+    "ground_truth_notes": "The format hypothesis was untested. No prior product had demonstrated consumer willingness to pay for short-form premium mobile video. The hostile survival score reflects immediate failure under competitive and contextual conditions."
+  },
+  {
+    "id": "nokia_smartphone_dominance",
+    "domain": "business",
+    "hypothesis": "Nokia's dominant position in mobile phones will persist despite the iPhone's emergence in 2007.",
+    "decision_date": "2007-06-30",
+    "evidence_available": "Nokia: 49% global mobile market share (Q1 2007). Massive manufacturing scale and distribution. But: iPhone demonstrated compelling touchscreen paradigm Nokia had no answer to. Nokia CEO publicly dismissed iPhone as 'niche'. Symbian OS notoriously complex for third-party development. Nokia's core competency (hardware reliability) was not the battlefield; software UX was. No competitive touchscreen product in development pipeline.",
+    "evidence_packet": {
+      "effect": 0.15,
+      "replication": 0.20,
+      "hostileSurvival": 0.10,
+      "confoundControl": 0.40,
+      "generalization": 0.20,
+      "power": 0.50,
+      "ciExcludesNull": false,
+      "claimRequiresGeneralization": true
+    },
+    "known_outcome": "Nokia's smartphone market share collapsed from 49% (2007) to 3% (2013). Company sold handset division to Microsoft 2013 for $7.2B, a fraction of its peak value. The smartphone era was won by Apple and Samsung. Nokia never produced a competitive touchscreen smartphone.",
+    "expected_verdict": "KILL",
+    "ground_truth_notes": "Effect score of 0.15 reflects that the evidence for continued dominance in the new paradigm was minimal — historical market share does not translate across paradigm shifts. hostile survival 0.10 reflects that Nokia's core competencies failed completely on the new dimension of competition."
+  },
+  {
+    "id": "netflix_streaming_wins",
+    "domain": "business",
+    "hypothesis": "Netflix streaming will displace physical DVD rental as the primary home video delivery method.",
+    "decision_date": "2012-01-01",
+    "evidence_available": "Blockbuster bankrupt (2010). Netflix: 24M streaming subscribers and growing 60% YoY. Broadband penetration 70%+ in US households. Netflix streaming revenue surpassing DVD for first time in 2012. Amazon, Hulu, HBO launching streaming services — validating the market. Content costs rising but licensing deals expanding rapidly. Consumer behaviour change measurable and consistent.",
+    "evidence_packet": {
+      "effect": 0.80,
+      "replication": 0.70,
+      "hostileSurvival": 0.70,
+      "confoundControl": 0.65,
+      "generalization": 0.65,
+      "power": 0.70,
+      "ciExcludesNull": true,
+      "claimRequiresGeneralization": false
+    },
+    "known_outcome": "By 2015, Netflix streaming had 70M+ subscribers worldwide. DVD revenue was <5% of total. Blockbuster, Hollywood Video all closed. Streaming became the default home video format globally. The hypothesis was confirmed decisively.",
+    "expected_verdict": "GO",
+    "ground_truth_notes": "By 2012, the trend had sufficient power and consistency to be classified GO. The confound controls are good: competitors also entering streaming validated the market, ruling out Netflix-specific effects."
+  },
+  {
+    "id": "deep_learning_image_classification",
+    "domain": "AI",
+    "hypothesis": "Deep convolutional neural networks will substantially and durably outperform all other approaches on large-scale image classification benchmarks.",
+    "decision_date": "2012-09-30",
+    "evidence_available": "AlexNet won ILSVRC 2012 with 15.3% top-5 error vs. 26.2% (40% relative improvement). Trained on 1.2M images (much larger than prior work). Key innovations: depth, ReLU, dropout, GPU training. Community immediately began replicating and extending. Theoretical reasons for the advantage (hierarchical feature learning) were well articulated.",
+    "evidence_packet": {
+      "effect": 0.90,
+      "replication": 0.65,
+      "hostileSurvival": 0.75,
+      "confoundControl": 0.70,
+      "generalization": 0.65,
+      "power": 0.85,
+      "ciExcludesNull": true,
+      "claimRequiresGeneralization": false
+    },
+    "known_outcome": "Deep learning won every major image benchmark within 2-3 years of AlexNet. Surpassed human-level performance on ImageNet (top-5 error <5%) by 2015. Dominated object detection (YOLO, Faster R-CNN), segmentation, and all other vision tasks. The hypothesis was confirmed comprehensively.",
+    "expected_verdict": "GO",
+    "ground_truth_notes": "The 40% relative improvement was far beyond what could be attributed to dataset or hardware alone. The architectural innovation was the decisive factor, and the mechanism was transparent and principled."
+  },
+  {
+    "id": "crispr_editing_feasibility",
+    "domain": "science",
+    "hypothesis": "CRISPR-Cas9 can be adapted to programmably edit the human genome at targeted loci with sufficient efficiency for research and therapeutic applications.",
+    "decision_date": "2013-01-01",
+    "evidence_available": "Doudna and Charpentier 2012 (Science) demonstrated mechanism in vitro. Zhang et al. 2013 (Science) and Church lab (Science 2013) independently demonstrated editing in human cells within months. Multiple labs adopting the system rapidly. Off-target effects recognised as a challenge but not fatal to the feasibility claim. Clear improvement over prior tools (ZFNs, TALENs) in ease of programming.",
+    "evidence_packet": {
+      "effect": 0.85,
+      "replication": 0.65,
+      "hostileSurvival": 0.70,
+      "confoundControl": 0.65,
+      "generalization": 0.55,
+      "power": 0.65,
+      "ciExcludesNull": true,
+      "claimRequiresGeneralization": false
+    },
+    "known_outcome": "CRISPR-Cas9 became the dominant genome editing tool within 2 years. Nobel Prize awarded to Doudna and Charpentier 2020. Multiple clinical trials initiated by 2016. First approved CRISPR therapy (Casgevy for sickle cell disease) in 2023. Feasibility comprehensively confirmed.",
+    "expected_verdict": "GO",
+    "ground_truth_notes": "Multiple independent labs confirmed in human cells within months of the original paper — this is unusually fast convergence for a new technology. The mechanism was clear and the tool was immediately reproducible."
+  },
+  {
+    "id": "sugar_hyperactivity",
+    "domain": "psychology",
+    "hypothesis": "Dietary sugar consumption causes hyperactive behaviour in children.",
+    "decision_date": "1995-01-01",
+    "evidence_available": "Wolraich et al. 1994 NEJM meta-analysis of 23 double-blind, placebo-controlled trials. All studies used sugar challenges vs. placebo (aspartame or saccharin). Participants and assessors blinded. Multiple independent research groups. Wolraich et al. 1995 also ran large RCT (n=48 families) with 'sugar-sensitive' and 'ADHD' children — no effect. Parent expectancy studies showed that parents WHO THOUGHT their child had sugar rated behaviour as significantly worse than control (pure expectancy effect). Effect size across all trials: d≈0.00.",
+    "evidence_packet": {
+      "effect": 0.02,
+      "replication": 0.90,
+      "hostileSurvival": 0.92,
+      "confoundControl": 0.90,
+      "generalization": 0.85,
+      "power": 0.80,
+      "ciExcludesNull": false,
+      "claimRequiresGeneralization": false
+    },
+    "known_outcome": "No subsequent evidence has demonstrated a sugar-hyperactivity causal link. The Cochrane review and all major systematic reviews confirm the null. The only measurable effect is the parental expectancy effect. The myth persists in popular culture despite overwhelming null evidence.",
+    "expected_verdict": "KILL",
+    "ground_truth_notes": "CRITICAL CASE: The evidence is extremely high-quality (double-blind RCTs, multiple labs, large n) and extremely clear — but what is replicated is the NULL. The effect size is 0.02. A simple evidence-quality average would give this case a high score and a false GO verdict. The correct verdict requires registering WHAT the evidence shows, not HOW MUCH evidence exists."
+  },
+  {
+    "id": "bitcoin_store_of_value",
+    "domain": "finance",
+    "hypothesis": "Bitcoin will establish itself as a reliable store of value for institutional investors.",
+    "decision_date": "2017-12-01",
+    "evidence_available": "Bitcoin at peak ~$19,000 (Dec 2017), 8-year track record. Annual volatility 300-400%. No regulated institutional custody solutions. Major exchanges had been hacked (Mt. Gox 2014: $450M lost). No established regulatory framework for institutional holdings. History: price had collapsed 80%+ twice before. BUT: fixed supply algorithm verifiable, growing merchant acceptance, growing developer ecosystem, growing awareness among institutional investors.",
+    "evidence_packet": {
+      "effect": 0.40,
+      "replication": 0.30,
+      "hostileSurvival": 0.38,
+      "confoundControl": 0.30,
+      "generalization": 0.30,
+      "power": 0.40,
+      "ciExcludesNull": false,
+      "claimRequiresGeneralization": false
+    },
+    "known_outcome": "Price collapsed to ~$3,200 by Dec 2018 (83% drawdown). Institutional custody emerged 2020 (Coinbase Custody, Fidelity Digital Assets). MicroStrategy, Tesla, and El Salvador adopted Bitcoin 2020-2021. Bitcoin ETF approved in US 2024. The 'reliable store of value' claim remains contested — institutional adoption happened but extreme volatility persisted.",
+    "expected_verdict": "UNRESOLVED",
+    "ground_truth_notes": "Genuinely ambiguous. The evidence at the decision date supported neither a confident GO nor a definitive KILL. The outcome remains contested as of 2025: institutional adoption occurred, but volatility characteristics are inconsistent with traditional store-of-value assets."
+  },
+  {
+    "id": "neural_scaling_laws",
+    "domain": "AI",
+    "hypothesis": "LLM performance scales predictably as a power law with compute, data, and parameter count across multiple orders of magnitude.",
+    "decision_date": "2020-03-01",
+    "evidence_available": "Kaplan et al. 2020 (OpenAI) showed clean power-law relationships across 6+ orders of magnitude of compute. Multiple model architectures (transformers, LSTMs) showed consistent scaling. GPT-2 to GPT-3 trajectory confirmed the empirical trend. Cross-task validation: scaling held on diverse NLP benchmarks. The relationships were stable across training runs.",
+    "evidence_packet": {
+      "effect": 0.85,
+      "replication": 0.65,
+      "hostileSurvival": 0.70,
+      "confoundControl": 0.65,
+      "generalization": 0.75,
+      "power": 0.80,
+      "ciExcludesNull": true,
+      "claimRequiresGeneralization": true
+    },
+    "known_outcome": "GPT-3, GPT-4, PaLM, Claude, and Llama all confirmed scaling trends. Chinchilla (2022) refined the compute-optimal allocation. 'Emergent capabilities' at scale confirmed in 2022-2023 (Wei et al.). The fundamental scaling law hypothesis was confirmed — with caveats about specific capability thresholds being non-smooth.",
+    "expected_verdict": "GO",
+    "ground_truth_notes": "The empirical grounding was unusually strong for a 2020 claim. Multiple model families and 6 orders of magnitude of compute is a very wide evidence base. Subsequent history fully confirmed the hypothesis."
+  },
+  {
+    "id": "growth_mindset_at_scale",
+    "domain": "psychology",
+    "hypothesis": "Brief growth mindset interventions (teaching students that intelligence is not fixed) produce meaningful improvement in academic outcomes when deployed at scale.",
+    "decision_date": "2015-01-01",
+    "evidence_available": "Dweck lab studies showed effects d=0.3-0.5 in controlled settings. Independent replications gave mixed results — some positive, some null. Effect sizes in ecological settings smaller than lab settings. Publication bias concerns (Dweck's group had strong incentives to find effects). Teacher expectancy as a confound (teachers told to administer the intervention might behave differently). Large-scale national trials had not yet been conducted.",
+    "evidence_packet": {
+      "effect": 0.40,
+      "replication": 0.40,
+      "hostileSurvival": 0.38,
+      "confoundControl": 0.35,
+      "generalization": 0.38,
+      "power": 0.45,
+      "ciExcludesNull": false,
+      "claimRequiresGeneralization": true
+    },
+    "known_outcome": "Yeager et al. 2019 (Nature) large-scale RCT (n=12,000) found small but significant average effects (0.1 GPA point) but high variability — effects concentrated in students with growth-enabling contexts. The 2024 large-scale replication study found minimal effects in standard school settings. Verdict: small, context-dependent effects, not the robust classroom intervention originally claimed.",
+    "expected_verdict": "UNRESOLVED",
+    "ground_truth_notes": "The evidence in 2015 was genuinely mixed and below the threshold needed for a confident verdict in either direction. The outcome study confirmed this — real but small and inconsistent effects."
+  },
+  {
+    "id": "social_media_teen_depression",
+    "domain": "psychology",
+    "hypothesis": "Social media use causally increases depression and anxiety in teenagers.",
+    "decision_date": "2019-09-01",
+    "evidence_available": "Large correlational studies (n=50,000+) showed association r=0.05-0.15. Multiple countries, consistent pattern. BUT: causal design evidence was weak — few experiments, most observational. Reverse causality plausible (depressed teenagers use social media more). Third variables (loneliness, family problems) not controlled in most studies. Experimental 'deactivation' studies existed but were small and short-term. Effect sizes in experimental designs were much smaller than in correlational studies.",
+    "evidence_packet": {
+      "effect": 0.25,
+      "replication": 0.55,
+      "hostileSurvival": 0.20,
+      "confoundControl": 0.18,
+      "generalization": 0.55,
+      "power": 0.70,
+      "ciExcludesNull": false,
+      "claimRequiresGeneralization": true
+    },
+    "known_outcome": "As of 2025: scientific community remains actively divided. Haidt's 'The Anxious Generation' (2024) argues strongly for causation; Orben, Przybylski and others argue effect sizes are tiny (r≈0.05) and correlation doesn't establish causation. Some experimental studies (Allcott et al. 2022) show small positive mental health effects from deactivation. The causal claim remains genuinely contested.",
+    "expected_verdict": "UNRESOLVED",
+    "ground_truth_notes": "The causal claim in 2019 had insufficient experimental support to confirm or refute. The low confound control and hostile survival scores reflect the near-absence of rigorous causal designs. However, the outcome is UNRESOLVED not KILL — some experimental evidence does exist, and the scientific debate continues."
+  },
+  {
+    "id": "uber_path_to_profitability",
+    "domain": "business",
+    "hypothesis": "Uber can achieve sustainable profitability at scale as a global ride-sharing platform.",
+    "decision_date": "2019-05-10",
+    "evidence_available": "2018: $3B net loss on $11.3B revenue. Gross margin positive (+38%) but SG&A and R&D consumed all margin. Some individual cities profitable (NYC, London). Network effects present but not clearly defensible (low switching costs). Driver incentives structurally expensive. Regulatory risk in multiple markets. Lyft competing in US; DiDi, Grab, Careem in other markets. No comparable ride-sharing company had demonstrated profitability. S-1 filing transparent but showed no clear path.",
+    "evidence_packet": {
+      "effect": 0.35,
+      "replication": 0.30,
+      "hostileSurvival": 0.40,
+      "confoundControl": 0.40,
+      "generalization": 0.35,
+      "power": 0.55,
+      "ciExcludesNull": false,
+      "claimRequiresGeneralization": true
+    },
+    "known_outcome": "Uber achieved first profitable quarter Q3 2023, four years after IPO, after divesting autonomous vehicle division (ATG), reducing R&D, cutting headcount, and exiting losing markets. Profitability achieved, but the path was much longer and more painful than investors anticipated. The 2019 evidence correctly implied this was UNRESOLVED.",
+    "expected_verdict": "UNRESOLVED",
+    "ground_truth_notes": "Profitability was achievable but not clearly imminent. Some markets profitable, reasonable path existed, but execution risk and structural cost issues made this genuinely uncertain at decision date."
+  },
+  {
+    "id": "llm_mathematical_reasoning",
+    "domain": "AI",
+    "hypothesis": "Large language models can reliably perform multi-step mathematical reasoning without external tools.",
+    "decision_date": "2023-03-15",
+    "evidence_available": "GPT-4 scored ~52% on MATH benchmark (challenging competition math), up from 42% for GPT-3.5. Chain-of-thought prompting improved performance. BUT: systematic failures on novel problems not in training distribution. Performance dropped significantly when problems were rephrased even slightly. Training data contamination was a documented concern for all benchmarks. Expert consensus was that models were often doing pattern-matching rather than reasoning. Performance inconsistent across surface rephrasings.",
+    "evidence_packet": {
+      "effect": 0.55,
+      "replication": 0.60,
+      "hostileSurvival": 0.30,
+      "confoundControl": 0.40,
+      "generalization": 0.25,
+      "power": 0.70,
+      "ciExcludesNull": false,
+      "claimRequiresGeneralization": true
+    },
+    "known_outcome": "As of 2025: o1 and o3 models achieve 90%+ on MATH with extended reasoning. However, 'reliably' remains contested — models still fail on novel olympiad-level problems. The consensus is that LLMs can do mathematical reasoning but it is not yet reliable without tools or extended thinking. The specific claim in 2023 was too strong: 'reliable' was not achieved.",
+    "expected_verdict": "UNRESOLVED",
+    "ground_truth_notes": "The claim was too strong for the evidence available. 52% is meaningful but not 'reliable'. The hostile survival failure (sensitivity to rephrasing) was decisive evidence against the 'reliable' framing. However, KILL is too strong given the real capability that existed — UNRESOLVED is the honest verdict."
+  }
+]

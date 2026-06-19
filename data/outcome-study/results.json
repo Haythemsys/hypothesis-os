@@ -1,0 +1,494 @@
+[
+  {
+    "id": "power_posing",
+    "domain": "psychology",
+    "hypothesis": "High-power body poses (expansive postures) causally increase testosterone, decrease cortisol, and increase risk-taking behaviour.",
+    "decision_date": "2010-06-01",
+    "expected": "KILL",
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.24,
+      "calibration": 36,
+      "band": "LOW CONFIDENCE",
+      "downgrade": "Verdict stands but flagged LOW CONFIDENCE (calibration 36/100).",
+      "reasons": [
+        "claim asserts generality but it does not generalize (gen 0.10 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.24,
+      "reasoning": "Mean evidence quality 0.24 ≤ 0.35 threshold."
+    }
+  },
+  {
+    "id": "ego_depletion",
+    "domain": "psychology",
+    "hypothesis": "Self-control draws from a limited mental resource; exerting willpower on one task reduces performance on a subsequent unrelated task (ego depletion).",
+    "decision_date": "2011-01-01",
+    "expected": "KILL",
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.45,
+      "calibration": 55,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.30 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.44,
+      "reasoning": "Mean evidence quality 0.44 is ambiguous (0.35–0.55)."
+    }
+  },
+  {
+    "id": "social_priming_florida",
+    "domain": "psychology",
+    "hypothesis": "Priming people with elderly-related words causes them to walk measurably more slowly (the Florida priming effect).",
+    "decision_date": "2011-01-01",
+    "expected": "KILL",
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.28,
+      "calibration": 46,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.15 < 0.34)",
+        "explained by an uncontrolled confound (control 0.18 < 0.2)",
+        "claim asserts generality but it does not generalize (gen 0.25 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.27,
+      "reasoning": "Mean evidence quality 0.27 ≤ 0.35 threshold."
+    }
+  },
+  {
+    "id": "spacing_effect",
+    "domain": "psychology",
+    "hypothesis": "Distributing practice over time (spaced practice) produces better long-term retention than the same amount of massed practice.",
+    "decision_date": "2006-01-01",
+    "expected": "GO",
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.85,
+      "calibration": 88,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.84 >= 0.65",
+        "replicated (1.00 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.80 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.84,
+      "reasoning": "Mean evidence quality 0.84 ≥ 0.55 threshold."
+    }
+  },
+  {
+    "id": "theranos_blood_testing",
+    "domain": "technology",
+    "hypothesis": "Theranos's Edison device can perform 200+ clinical-grade blood tests reliably from a single finger-prick of blood.",
+    "decision_date": "2013-06-01",
+    "expected": "KILL",
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.09,
+      "calibration": 33,
+      "band": "LOW CONFIDENCE",
+      "downgrade": "Verdict stands but flagged LOW CONFIDENCE (calibration 33/100).",
+      "reasons": [
+        "no measurable effect (effect 0.08 < 0.15)",
+        "fails hostile/confound tests (survival 0.05 < 0.34)",
+        "explained by an uncontrolled confound (control 0.05 < 0.2)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.06,
+      "reasoning": "Mean evidence quality 0.06 ≤ 0.35 threshold."
+    }
+  },
+  {
+    "id": "google_glass_consumer",
+    "domain": "technology",
+    "hypothesis": "Google Glass will achieve significant mainstream consumer adoption as a wearable computing platform.",
+    "decision_date": "2013-06-01",
+    "expected": "KILL",
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.19,
+      "calibration": 45,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.20 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.15 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.19,
+      "reasoning": "Mean evidence quality 0.19 ≤ 0.35 threshold."
+    }
+  },
+  {
+    "id": "moviepass_sustainability",
+    "domain": "business",
+    "hypothesis": "MoviePass can build a sustainable subscription business at $9.99/month for unlimited movie tickets.",
+    "decision_date": "2017-08-15",
+    "expected": "KILL",
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.14,
+      "calibration": 44,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "no measurable effect (effect 0.05 < 0.15)",
+        "fails hostile/confound tests (survival 0.05 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.12,
+      "reasoning": "Mean evidence quality 0.12 ≤ 0.35 threshold."
+    }
+  },
+  {
+    "id": "wework_valuation",
+    "domain": "business",
+    "hypothesis": "WeWork's business model justifies a $47 billion valuation at the January 2019 SoftBank funding round.",
+    "decision_date": "2019-01-07",
+    "expected": "KILL",
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.16,
+      "calibration": 43,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "no measurable effect (effect 0.10 < 0.15)",
+        "fails hostile/confound tests (survival 0.10 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.13,
+      "reasoning": "Mean evidence quality 0.13 ≤ 0.35 threshold."
+    }
+  },
+  {
+    "id": "quibi_mobile_streaming",
+    "domain": "technology",
+    "hypothesis": "Short-form (<10 min) mobile-only premium streaming will capture significant market share in the video streaming market.",
+    "decision_date": "2020-04-06",
+    "expected": "KILL",
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.18,
+      "calibration": 45,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.15 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.20 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.19,
+      "reasoning": "Mean evidence quality 0.19 ≤ 0.35 threshold."
+    }
+  },
+  {
+    "id": "nokia_smartphone_dominance",
+    "domain": "business",
+    "hypothesis": "Nokia's dominant position in mobile phones will persist despite the iPhone's emergence in 2007.",
+    "decision_date": "2007-06-30",
+    "expected": "KILL",
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.19,
+      "calibration": 48,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.10 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.20 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.21,
+      "reasoning": "Mean evidence quality 0.21 ≤ 0.35 threshold."
+    }
+  },
+  {
+    "id": "netflix_streaming_wins",
+    "domain": "business",
+    "hypothesis": "Netflix streaming will displace physical DVD rental as the primary home video delivery method.",
+    "decision_date": "2012-01-01",
+    "expected": "GO",
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.7,
+      "calibration": 79,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.70 >= 0.65",
+        "replicated (0.70 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.70 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.7,
+      "reasoning": "Mean evidence quality 0.7 ≥ 0.55 threshold."
+    }
+  },
+  {
+    "id": "deep_learning_image_classification",
+    "domain": "AI",
+    "hypothesis": "Deep convolutional neural networks will substantially and durably outperform all other approaches on large-scale image classification benchmarks.",
+    "decision_date": "2012-09-30",
+    "expected": "GO",
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.74,
+      "calibration": 82,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.74 >= 0.65",
+        "replicated (0.65 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.85 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.73,
+      "reasoning": "Mean evidence quality 0.73 ≥ 0.55 threshold."
+    }
+  },
+  {
+    "id": "crispr_editing_feasibility",
+    "domain": "science",
+    "hypothesis": "CRISPR-Cas9 can be adapted to programmably edit the human genome at targeted loci with sufficient efficiency for research and therapeutic applications.",
+    "decision_date": "2013-01-01",
+    "expected": "GO",
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.71,
+      "calibration": 78,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.71 >= 0.65",
+        "replicated (0.65 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.65 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.68,
+      "reasoning": "Mean evidence quality 0.68 ≥ 0.55 threshold."
+    }
+  },
+  {
+    "id": "sugar_hyperactivity",
+    "domain": "psychology",
+    "hypothesis": "Dietary sugar consumption causes hyperactive behaviour in children.",
+    "decision_date": "1995-01-01",
+    "expected": "KILL",
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.6,
+      "calibration": 89,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "no measurable effect (effect 0.02 < 0.15)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.72,
+      "reasoning": "Mean evidence quality 0.72 ≥ 0.55 threshold."
+    }
+  },
+  {
+    "id": "bitcoin_store_of_value",
+    "domain": "finance",
+    "hypothesis": "Bitcoin will establish itself as a reliable store of value for institutional investors.",
+    "decision_date": "2017-12-01",
+    "expected": "UNRESOLVED",
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.37,
+      "calibration": 53,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.37 >= 0.65",
+        "missing: replicated (0.30 >= 0.5)",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.34,
+      "reasoning": "Mean evidence quality 0.34 ≤ 0.35 threshold."
+    }
+  },
+  {
+    "id": "neural_scaling_laws",
+    "domain": "AI",
+    "hypothesis": "LLM performance scales predictably as a power law with compute, data, and parameter count across multiple orders of magnitude.",
+    "decision_date": "2020-03-01",
+    "expected": "GO",
+    "hypothesisos": {
+      "verdict": "GO",
+      "baseVerdict": "GO",
+      "support": 0.73,
+      "calibration": 79,
+      "band": "HIGH CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "support 0.73 >= 0.65",
+        "replicated (0.65 >= 0.5)",
+        "interval excludes the null",
+        "adequate power (0.80 >= 0.4)"
+      ]
+    },
+    "baseline": {
+      "verdict": "GO",
+      "score": 0.72,
+      "reasoning": "Mean evidence quality 0.72 ≥ 0.55 threshold."
+    }
+  },
+  {
+    "id": "growth_mindset_at_scale",
+    "domain": "psychology",
+    "hypothesis": "Brief growth mindset interventions (teaching students that intelligence is not fixed) produce meaningful improvement in academic outcomes when deployed at scale.",
+    "decision_date": "2015-01-01",
+    "expected": "UNRESOLVED",
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.39,
+      "calibration": 55,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.39 >= 0.65",
+        "missing: replicated (0.40 >= 0.5)",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.38,
+      "reasoning": "Mean evidence quality 0.38 is ambiguous (0.35–0.55)."
+    }
+  },
+  {
+    "id": "social_media_teen_depression",
+    "domain": "psychology",
+    "hypothesis": "Social media use causally increases depression and anxiety in teenagers.",
+    "decision_date": "2019-09-01",
+    "expected": "UNRESOLVED",
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.32,
+      "calibration": 50,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.20 < 0.34)",
+        "explained by an uncontrolled confound (control 0.18 < 0.2)"
+      ]
+    },
+    "baseline": {
+      "verdict": "KILL",
+      "score": 0.35,
+      "reasoning": "Mean evidence quality 0.35 ≤ 0.35 threshold."
+    }
+  },
+  {
+    "id": "uber_path_to_profitability",
+    "domain": "business",
+    "hypothesis": "Uber can achieve sustainable profitability at scale as a global ride-sharing platform.",
+    "decision_date": "2019-05-10",
+    "expected": "UNRESOLVED",
+    "hypothesisos": {
+      "verdict": "UNRESOLVED",
+      "baseVerdict": "UNRESOLVED",
+      "support": 0.36,
+      "calibration": 57,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "missing: support 0.36 >= 0.65",
+        "missing: replicated (0.30 >= 0.5)",
+        "missing: interval excludes the null"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.36,
+      "reasoning": "Mean evidence quality 0.36 is ambiguous (0.35–0.55)."
+    }
+  },
+  {
+    "id": "llm_mathematical_reasoning",
+    "domain": "AI",
+    "hypothesis": "Large language models can reliably perform multi-step mathematical reasoning without external tools.",
+    "decision_date": "2023-03-15",
+    "expected": "UNRESOLVED",
+    "hypothesisos": {
+      "verdict": "KILL",
+      "baseVerdict": "KILL",
+      "support": 0.45,
+      "calibration": 58,
+      "band": "MEDIUM CONFIDENCE",
+      "downgrade": null,
+      "reasons": [
+        "fails hostile/confound tests (survival 0.30 < 0.34)",
+        "claim asserts generality but it does not generalize (gen 0.25 < 0.34)"
+      ]
+    },
+    "baseline": {
+      "verdict": "UNRESOLVED",
+      "score": 0.42,
+      "reasoning": "Mean evidence quality 0.42 is ambiguous (0.35–0.55)."
+    }
+  }
+]
