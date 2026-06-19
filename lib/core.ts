@@ -17,6 +17,11 @@ import { detectContradictions as _detect } from "./contradict.mjs";
 // @ts-ignore
 import { navigate as _navigate } from "./navigation.mjs";
 // @ts-ignore
+import {
+  evidenceDebt as _debt, decisionEffort as _effort, pathToGo as _path,
+  confidenceBreakdown as _confBreakdown, executiveSummary as _execSummary,
+} from "./decision-intelligence.mjs";
+// @ts-ignore
 import { ALL_BENCHMARKS as _ALL, DOMAINS as _DOMAINS } from "./benchmarks/index.mjs";
 // @ts-ignore
 import { newHypothesis as _newH, commitRevision as _commit, finalVerdict as _final, verdictFlipped as _flipped, STORE_KEY as _SK } from "./memory.mjs";
@@ -74,6 +79,9 @@ export const detectContradictions = _detect as (hs: any[]) => Contradiction[];
 export interface NavigationDimensionGain {
   dimension: string; label: string; current: number; weight: number; maxGain: number;
 }
+export interface UnmetCriterionDetail {
+  criterion: string; current: number | boolean; required: number | boolean;
+}
 export interface Navigation {
   verdict: Verdict;
   currentSupport: number;
@@ -85,6 +93,7 @@ export interface Navigation {
   highestLeverageLabel: string | null;
   highestLeverageGain: number | null;
   unmetGoCriteria: string[] | null;
+  unmetGoCriteriaDetail: UnmetCriterionDetail[] | null;
   recommendedAction: string | null;
   explanation: string;
   impossibleReason: string | null;
@@ -92,6 +101,23 @@ export interface Navigation {
   killedBy?: { gate: string; value: number; floor: number; action: string }[];
 }
 export const navigate = _navigate as (e: Partial<Evidence>, verdict: Verdict) => Navigation;
+
+// ── Decision Intelligence types & exports ────────────────────────────────────
+export interface EvidenceDebt { pct: number; band: string; debt: number; }
+export interface DecisionEffort { level: "LOW" | "MEDIUM" | "HIGH"; studyCycles: number | null; }
+export interface PathStep { dimension: string; label: string; action: string; maxGain: number | null; }
+export interface ConfidenceBreakdown { score: number; contributors: string[]; penalties: string[]; }
+export interface ExecutiveSummary {
+  verdict: Verdict; reason: string; fastestRoute: string | null;
+  effort: string | null; studyCycles: number | null;
+  debtPct: number | null; debtBand: string | null;
+}
+
+export const evidenceDebt      = _debt         as (e: Partial<Evidence>, nav: Navigation) => EvidenceDebt;
+export const decisionEffort    = _effort        as (nav: Navigation) => DecisionEffort;
+export const pathToGo          = _path          as (nav: Navigation) => PathStep[];
+export const confidenceBreakdown = _confBreakdown as (e: Partial<Evidence>, score: number) => ConfidenceBreakdown;
+export const executiveSummary  = _execSummary   as (verdict: Verdict, nav: Navigation, debt: EvidenceDebt, effort: DecisionEffort) => ExecutiveSummary;
 export interface Benchmark {
   id: string; title: string; expected: Verdict; evidence: Evidence; note?: string;
   domain?: string; implications?: { var: string; sign: number }[];

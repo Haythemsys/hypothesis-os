@@ -4,6 +4,7 @@ import Link from "next/link";
 import { api, getProviderConfig } from "@/lib/client";
 import { VerdictPill, Bar } from "@/components/Verdict";
 import { NavigationPanel } from "@/components/NavigationPanel";
+import { ExecutiveSummaryCard, GoBlockersPanel, PathToGoPanel } from "@/components/DecisionIntelligence";
 import type { Evidence } from "@/lib/core";
 
 type Step = 1 | 2 | 3 | 4 | 5;
@@ -165,20 +166,49 @@ export default function Workflow() {
       {/* Step 4 */}
       {result && (
         <>
+          {result.navigation && (
+            <ExecutiveSummaryCard
+              summary={{
+                verdict: result.verdict.finalVerdict,
+                reason: (result.navigation.unmetGoCriteria?.length
+                  ? `${(result.navigation.unmetGoCriteria as string[]).slice(0,2).join(" and ")} remain${result.navigation.unmetGoCriteria.length === 1 ? "s" : ""} below acceptance thresholds.`
+                  : result.verdict.finalVerdict === "GO" ? "All evidence criteria are satisfied." : "Evidence is positive but criteria status indeterminate."),
+                fastestRoute: result.navigation.navigable ? (result.navigation.highestLeverageLabel ?? null) : null,
+                effort: result.navigation.navigable
+                  ? (result.navigation.distanceToGo === "1 evidence move" ? "LOW" : result.navigation.distanceToGo === "3+ evidence moves" ? "HIGH" : "MEDIUM")
+                  : "HIGH",
+                studyCycles: null,
+                debtPct: null,
+                debtBand: null,
+              }}
+              verdict={result.verdict.finalVerdict}
+            />
+          )}
           <section className={`card border-2 verdict-${result.verdict.finalVerdict} space-y-2`}>
             <div className="label">4 · Engine verdict <span className="text-gray-500">· judge: {result.judge}</span></div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <VerdictPill verdict={result.verdict.finalVerdict} />
               <span className="text-sm text-gray-300">support {result.verdict.support} · {result.verdict.band} {result.verdict.calibration}/100</span>
             </div>
             {result.critique.downgrade && <p className="text-xs text-unresolved">{result.critique.downgrade}</p>}
-            <Detail label="Evidence for" items={result.explanation.supporting} />
+            <Detail label="Evidence for"     items={result.explanation.supporting} />
             <Detail label="Evidence against" items={result.explanation.against} />
-            <Detail label="Missing" items={result.explanation.missing} />
-            <button className="btn" onClick={genReport} disabled={busy}>{busy ? "…" : "Generate report"}</button>
+            <Detail label="Missing"          items={result.explanation.missing} />
+            <button className="btn w-full sm:w-auto" onClick={genReport} disabled={busy}>{busy ? "…" : "Generate report"}</button>
           </section>
+          {result.navigation && result.verdict.finalVerdict === "UNRESOLVED" && (
+            <GoBlockersPanel nav={result.navigation} />
+          )}
           {result.navigation && result.verdict.finalVerdict !== "GO" && (
             <NavigationPanel nav={result.navigation} />
+          )}
+          {result.navigation && result.navigation.navigable && (
+            <PathToGoPanel steps={
+              (result.navigation.dimensionGains ?? [])
+                .filter((g: any) => g.maxGain > 0.005)
+                .slice(0, 3)
+                .map((g: any) => ({ dimension: g.dimension, label: g.label, action: `Increase ${g.label.toLowerCase()}.`, maxGain: g.maxGain }))
+            } />
           )}
         </>
       )}
