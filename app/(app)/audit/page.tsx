@@ -60,16 +60,16 @@ export default function AuditIndex() {
     <div className="space-y-4">
       <section className="card">
         <h1 className="text-xl font-bold">Decision Audit Trail</h1>
-        <p className="mt-1 text-sm text-gray-400">
+        <p className="mt-1 text-sm text-steel">
           Every hypothesis decision is traceable from creation to verdict to report.
         </p>
       </section>
 
-      {loading && <p className="card text-sm text-gray-400">Loading…</p>}
+      {loading && <p className="card text-sm text-steel">Loading…</p>}
       {err && <p className="card text-sm text-kill">{err}</p>}
 
       {!loading && entries.length === 0 && (
-        <div className="card space-y-2 text-center text-sm text-gray-400">
+        <div className="card space-y-2 text-center text-sm text-steel">
           <p>No hypotheses yet.</p>
           <Link href="/workflow" className="btn inline-block">Start a workflow</Link>
         </div>
@@ -84,19 +84,19 @@ export default function AuditIndex() {
           >
             <div className="flex-1 min-w-0">
               <p className="truncate font-semibold text-sm">{hypothesis.title}</p>
-              <p className="text-xs text-gray-500 mt-0.5">
+              <p className="text-xs text-slate mt-0.5">
                 {eventCount} events · {new Date(hypothesis.createdAt).toLocaleDateString()}
               </p>
             </div>
             {latestVerdict ? (
               <div className="flex flex-col items-end gap-0.5 shrink-0">
                 <VerdictPill verdict={latestVerdict.finalVerdict as any} />
-                <span className="text-[10px] text-gray-500">
+                <span className="text-[10px] text-slate">
                   {latestVerdict.band} {latestVerdict.calibration}/100
                 </span>
               </div>
             ) : (
-              <span className="pill bg-white/10 text-xs text-gray-400 shrink-0">no verdict</span>
+              <span className="pill bg-white/10 text-xs text-steel shrink-0">no verdict</span>
             )}
           </Link>
         ))}

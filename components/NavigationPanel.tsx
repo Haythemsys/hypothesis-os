@@ -30,10 +30,10 @@ function GapBar({ current, goal }: { current: number; goal: number }) {
 const HARD_DISTANCES = new Set(["1 evidence move", "2 evidence moves", "2–3 evidence moves"]);
 
 function navStatusLabel(distanceToGo: string | null): { label: string; sub: string; cls: string } {
-  if (!distanceToGo) return { label: "Honest unresolved", sub: "", cls: "text-gray-400" };
+  if (!distanceToGo) return { label: "Honest unresolved", sub: "", cls: "text-steel" };
   if (HARD_DISTANCES.has(distanceToGo))
     return { label: "Recommended next evidence", sub: distanceToGo, cls: "text-unresolved" };
-  return { label: "Requires substantial evidence", sub: distanceToGo, cls: "text-gray-400" };
+  return { label: "Requires substantial evidence", sub: distanceToGo, cls: "text-steel" };
 }
 
 export function NavigationPanel({ nav }: { nav: Navigation }) {
@@ -47,12 +47,12 @@ export function NavigationPanel({ nav }: { nav: Navigation }) {
 
       {/* Support bar */}
       <div className="space-y-1">
-        <div className="flex justify-between text-xs text-gray-400">
+        <div className="flex justify-between text-xs text-steel">
           <span>Current support</span>
           <span className="font-mono font-semibold text-white">{nav.currentSupport}</span>
         </div>
         <GapBar current={nav.currentSupport} goal={nav.goThreshold} />
-        <div className="flex justify-between text-xs text-gray-500">
+        <div className="flex justify-between text-xs text-slate">
           <span>0</span>
           <span>
             GO threshold: {nav.goThreshold}
@@ -68,12 +68,12 @@ export function NavigationPanel({ nav }: { nav: Navigation }) {
         <div className="rounded-lg bg-kill/10 border border-kill/20 p-3 space-y-1">
           <div className="text-xs font-semibold text-kill">Kill gate(s) fired</div>
           {nav.killedBy.map((g) => (
-            <div key={g.gate} className="text-xs text-gray-300">
+            <div key={g.gate} className="text-xs text-steel">
               <span className="font-mono">{g.gate}</span> = {g.value}{" "}
-              <span className="text-gray-500">(floor: {g.floor})</span>
+              <span className="text-slate">(floor: {g.floor})</span>
             </div>
           ))}
-          <p className="text-xs text-gray-400 pt-1">
+          <p className="text-xs text-steel pt-1">
             Address the kill gate(s) before targeting GO. Navigation to GO is not available from a KILL verdict.
           </p>
         </div>
@@ -84,7 +84,7 @@ export function NavigationPanel({ nav }: { nav: Navigation }) {
         <>
           {/* Highest leverage */}
           <div className="rounded-lg bg-white/5 p-3 space-y-1">
-            <div className="text-xs font-semibold text-gray-300">
+            <div className="text-xs font-semibold text-steel">
               Highest leverage dimension
             </div>
             <div className="flex items-center gap-2">
@@ -95,7 +95,7 @@ export function NavigationPanel({ nav }: { nav: Navigation }) {
                 <div className="text-sm font-semibold text-white">
                   {nav.highestLeverageLabel ?? nav.highestLeverageDimension}
                 </div>
-                <div className="text-xs text-gray-400">
+                <div className="text-xs text-steel">
                   Max support gain: +{nav.highestLeverageGain}
                 </div>
               </div>
@@ -105,15 +105,15 @@ export function NavigationPanel({ nav }: { nav: Navigation }) {
           {/* Recommended action */}
           {nav.recommendedAction && (
             <div className="space-y-1">
-              <div className="text-xs font-semibold text-gray-400">Recommended next action</div>
-              <p className="text-sm text-gray-200">{nav.recommendedAction}</p>
+              <div className="text-xs font-semibold text-steel">Recommended next action</div>
+              <p className="text-sm text-ivory">{nav.recommendedAction}</p>
             </div>
           )}
 
           {/* Unmet GO criteria */}
           {nav.unmetGoCriteria && nav.unmetGoCriteria.length > 0 && (
             <div className="space-y-1">
-              <div className="text-xs font-semibold text-gray-400">
+              <div className="text-xs font-semibold text-steel">
                 Unmet GO criteria ({nav.unmetGoCriteria.length}/4)
               </div>
               <div className="flex flex-wrap gap-1">
@@ -134,7 +134,7 @@ export function NavigationPanel({ nav }: { nav: Navigation }) {
                 <span className={`${cls} text-sm`}>⟳</span>
                 <div>
                   <div className={`text-sm font-semibold ${cls}`}>{label}</div>
-                  {sub && <div className="text-xs text-gray-500">{sub}</div>}
+                  {sub && <div className="text-xs text-slate">{sub}</div>}
                 </div>
               </div>
             );
@@ -145,9 +145,9 @@ export function NavigationPanel({ nav }: { nav: Navigation }) {
       {/* Not navigable */}
       {!nav.navigable && (
         <div className="rounded-lg bg-white/5 border border-white/10 p-3">
-          <div className="text-xs font-semibold text-gray-400 mb-1">Honest unresolved</div>
+          <div className="text-xs font-semibold text-steel mb-1">Honest unresolved</div>
           {nav.impossibleReason && (
-            <p className="text-sm text-gray-300">{nav.impossibleReason}</p>
+            <p className="text-sm text-steel">{nav.impossibleReason}</p>
           )}
         </div>
       )}

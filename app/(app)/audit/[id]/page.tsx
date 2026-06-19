@@ -21,10 +21,10 @@ type AuditEvent =
 
 const EVENT_CONFIG: Record<string, { label: string; icon: string; color: string }> = {
   hypothesis_created: { label: "Hypothesis created", icon: "◈", color: "text-white" },
-  experiments_designed: { label: "Experiments designed", icon: "⚙", color: "text-blue-400" },
-  evidence_recorded: { label: "Evidence recorded", icon: "⊕", color: "text-yellow-400" },
+  experiments_designed: { label: "Experiments designed", icon: "⚙", color: "text-steel" },
+  evidence_recorded: { label: "Evidence recorded", icon: "⊕", color: "text-amber" },
   verdict_rendered: { label: "Verdict rendered", icon: "⚖", color: "text-white" },
-  report_generated: { label: "Report generated", icon: "▤", color: "text-green-400" },
+  report_generated: { label: "Report generated", icon: "▤", color: "text-go" },
 };
 
 export default function AuditDetail({ params }: { params: Promise<{ id: string }> }) {
@@ -48,7 +48,7 @@ export default function AuditDetail({ params }: { params: Promise<{ id: string }
       return n;
     });
 
-  if (loading) return <p className="card text-sm text-gray-400">Loading audit trail…</p>;
+  if (loading) return <p className="card text-sm text-steel">Loading audit trail…</p>;
   if (err) return <p className="card text-sm text-kill">{err}</p>;
   if (!data) return null;
 
@@ -60,14 +60,14 @@ export default function AuditDetail({ params }: { params: Promise<{ id: string }
       <section className="card space-y-2">
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0 flex-1">
-            <Link href="/audit" className="text-xs text-gray-500 hover:text-white">← Audit Index</Link>
+            <Link href="/audit" className="text-xs text-slate hover:text-white">← Audit Index</Link>
             <h1 className="mt-1 text-lg font-bold leading-snug">{hypothesis.title}</h1>
-            {project && <p className="text-xs text-gray-500 mt-0.5">Project: {project.name}</p>}
+            {project && <p className="text-xs text-slate mt-0.5">Project: {project.name}</p>}
           </div>
           {latestVerdict && (
             <div className="flex flex-col items-end gap-1 shrink-0">
               <VerdictPill verdict={latestVerdict.finalVerdict} />
-              <span className="text-[10px] text-gray-500">
+              <span className="text-[10px] text-slate">
                 {latestVerdict.band} {latestVerdict.calibration}/100
               </span>
             </div>
@@ -84,7 +84,7 @@ export default function AuditDetail({ params }: { params: Promise<{ id: string }
           </span>
         </div>
 
-        <p className="text-xs text-gray-500">
+        <p className="text-xs text-slate">
           {timeline.length} events · created {new Date(hypothesis.createdAt).toLocaleString()}
         </p>
       </section>
@@ -98,7 +98,7 @@ export default function AuditDetail({ params }: { params: Promise<{ id: string }
 
           <div className="space-y-0">
             {timeline.map((event, i) => {
-              const cfg = EVENT_CONFIG[event.type] ?? { label: event.type, icon: "·", color: "text-gray-400" };
+              const cfg = EVENT_CONFIG[event.type] ?? { label: event.type, icon: "·", color: "text-steel" };
               const isExpanded = expanded.has(i);
               const isLast = i === timeline.length - 1;
 
@@ -115,7 +115,7 @@ export default function AuditDetail({ params }: { params: Promise<{ id: string }
                   >
                     <div className="flex items-baseline justify-between gap-2">
                       <span className={`text-sm font-semibold ${cfg.color}`}>{cfg.label}</span>
-                      <span className="text-[10px] text-gray-500 shrink-0">
+                      <span className="text-[10px] text-slate shrink-0">
                         {new Date(event.at).toLocaleString()}
                       </span>
                     </div>
@@ -151,11 +151,11 @@ export default function AuditDetail({ params }: { params: Promise<{ id: string }
                 const v = (e as any).data;
                 return (
                   <div key={i} className="flex items-center gap-2 text-sm">
-                    <span className="text-[10px] text-gray-500 tabular-nums shrink-0 w-20">
+                    <span className="text-[10px] text-slate tabular-nums shrink-0 w-20">
                       {new Date(e.at).toLocaleDateString()}
                     </span>
                     <VerdictPill verdict={v.finalVerdict} />
-                    <span className="text-xs text-gray-400">
+                    <span className="text-xs text-steel">
                       support {v.support?.toFixed(2)} · {v.calibration}/100
                     </span>
                     {i > 0 && (() => {
@@ -189,19 +189,19 @@ function EventSummary({ event }: { event: AuditEvent }) {
   switch (event.type) {
     case "hypothesis_created":
       return (
-        <p className="text-xs text-gray-500 mt-0.5 truncate">
+        <p className="text-xs text-slate mt-0.5 truncate">
           {event.data.assumptions?.length ?? 0} assumptions · {event.data.confounds?.length ?? 0} confounds
         </p>
       );
     case "experiments_designed":
       return (
-        <p className="text-xs text-gray-500 mt-0.5">
+        <p className="text-xs text-slate mt-0.5">
           {event.data.length} experiment plans
         </p>
       );
     case "evidence_recorded":
       return (
-        <p className="text-xs text-gray-500 mt-0.5 truncate">
+        <p className="text-xs text-slate mt-0.5 truncate">
           {event.data.label} · effect {event.data.evidence?.effect?.toFixed(2) ?? "—"}
         </p>
       );
@@ -209,14 +209,14 @@ function EventSummary({ event }: { event: AuditEvent }) {
       return (
         <div className="mt-1 flex items-center gap-2">
           <VerdictPill verdict={event.data.finalVerdict} />
-          <span className="text-xs text-gray-500">
+          <span className="text-xs text-slate">
             support {event.data.support?.toFixed(2)} · {event.data.band} {event.data.calibration}/100
           </span>
         </div>
       );
     case "report_generated":
       return (
-        <p className="text-xs text-gray-500 mt-0.5 truncate">{event.data.title}</p>
+        <p className="text-xs text-slate mt-0.5 truncate">{event.data.title}</p>
       );
     default:
       return null;
@@ -239,10 +239,10 @@ function EventDetail({ event }: { event: AuditEvent }) {
       return (
         <div className="space-y-2">
           {event.data.map((exp: any, i: number) => (
-            <div key={i} className="rounded-xl bg-black/30 p-2 text-sm">
-              <div className="font-semibold text-xs">{exp.tier} <span className="text-gray-500 font-normal">· {exp.cost}</span></div>
-              <p className="text-xs text-gray-400 mt-0.5">{exp.purpose}</p>
-              <ul className="mt-1 list-disc pl-4 text-xs text-gray-300">
+            <div key={i} className="rounded-xl bg-obsidian p-2 text-sm">
+              <div className="font-semibold text-xs">{exp.tier} <span className="text-slate font-normal">· {exp.cost}</span></div>
+              <p className="text-xs text-steel mt-0.5">{exp.purpose}</p>
+              <ul className="mt-1 list-disc pl-4 text-xs text-steel">
                 {(exp.steps || []).map((s: string, j: number) => <li key={j}>{s}</li>)}
               </ul>
             </div>
@@ -262,19 +262,19 @@ function EventDetail({ event }: { event: AuditEvent }) {
       ];
       return (
         <div className="space-y-1.5">
-          <p className="text-xs text-gray-400">{event.data.label}</p>
+          <p className="text-xs text-steel">{event.data.label}</p>
           {fields.map(([label, val]) =>
             typeof val === "number" ? (
               <div key={label as string} className="text-xs">
                 <div className="flex justify-between">
-                  <span className="text-gray-400">{label}</span>
+                  <span className="text-steel">{label}</span>
                   <span className="text-white">{(val as number).toFixed(2)}</span>
                 </div>
                 <Bar value={val as number} label={label as string} />
               </div>
             ) : null
           )}
-          <p className="text-xs text-gray-500 mt-1">
+          <p className="text-xs text-slate mt-1">
             CI excludes null: {ev.ciExcludesNull ? "YES" : "NO"} ·
             Requires generalization: {ev.claimRequiresGeneralization ? "YES" : "NO"}
           </p>
@@ -287,7 +287,7 @@ function EventDetail({ event }: { event: AuditEvent }) {
         <div className="space-y-2">
           <div className="flex items-center gap-2">
             <VerdictPill verdict={v.finalVerdict} />
-            <span className="text-xs text-gray-400">
+            <span className="text-xs text-steel">
               support {v.support?.toFixed(2)} · {v.band} {v.calibration}/100
             </span>
           </div>
@@ -304,8 +304,8 @@ function EventDetail({ event }: { event: AuditEvent }) {
       const r = event.data;
       return (
         <div className="space-y-1">
-          <p className="text-xs text-gray-400">{r.aiAssisted ? "AI-assisted" : "Deterministic"}</p>
-          <pre className="table-scroll whitespace-pre-wrap rounded-xl bg-black/40 p-2 text-[10px] text-gray-300 max-h-48 overflow-y-auto">
+          <p className="text-xs text-steel">{r.aiAssisted ? "AI-assisted" : "Deterministic"}</p>
+          <pre className="table-scroll whitespace-pre-wrap rounded-xl bg-obsidian p-2 text-[10px] text-steel max-h-48 overflow-y-auto">
             {r.markdown}
           </pre>
         </div>
@@ -320,8 +320,8 @@ function Detail({ label, items }: { label: string; items: string[] }) {
   if (!items?.length) return null;
   return (
     <div>
-      <p className="text-xs font-semibold text-gray-400">{label}</p>
-      <ul className="mt-0.5 list-disc pl-4 text-xs text-gray-300 space-y-0.5">
+      <p className="text-xs font-semibold text-steel">{label}</p>
+      <ul className="mt-0.5 list-disc pl-4 text-xs text-steel space-y-0.5">
         {items.map((x, i) => <li key={i}>{x}</li>)}
       </ul>
     </div>

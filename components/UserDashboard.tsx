@@ -18,7 +18,7 @@ export default function UserDashboard() {
 
   if (!stats) return null;
   if (stats.totalHypotheses === 0) return (
-    <section className="card border border-white/10 text-center text-sm text-gray-500">
+    <section className="card border border-white/10 text-center text-sm text-slate">
       No hypotheses yet. <a href="/workflow" className="underline">Start a workflow</a> to create your first.
     </section>
   );
@@ -38,11 +38,11 @@ export default function UserDashboard() {
             {stats.recent.map((v, i) => (
               <li key={i} className="flex items-start gap-2 text-sm">
                 <VerdictPill verdict={v.verdict as any} />
-                <span className="min-w-0 truncate text-gray-300">{v.title}</span>
+                <span className="min-w-0 truncate text-steel">{v.title}</span>
               </li>
             ))}
           </ul>
-          <div className="mt-2 text-xs text-gray-500">{stats.totalHypotheses} total hypothesis{stats.totalHypotheses !== 1 ? "es" : ""}</div>
+          <div className="mt-2 text-xs text-slate">{stats.totalHypotheses} total hypothesis{stats.totalHypotheses !== 1 ? "es" : ""}</div>
         </section>
       )}
     </>

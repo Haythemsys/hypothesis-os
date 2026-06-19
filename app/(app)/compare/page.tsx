@@ -100,14 +100,14 @@ export default function Compare() {
     return computeView(detailB.hypothesis.title, ev, cal.score);
   }, [detailB]);
 
-  if (loading) return <p className="card text-sm text-gray-400">Loading…</p>;
+  if (loading) return <p className="card text-sm text-steel">Loading…</p>;
   if (err)     return <p className="card text-sm text-kill">{err}</p>;
 
   return (
     <div className="space-y-4">
       <section className="card space-y-1">
         <h1 className="text-xl font-bold">Benchmark Compare</h1>
-        <p className="text-sm text-gray-400">Side-by-side comparison of any two hypotheses.</p>
+        <p className="text-sm text-steel">Side-by-side comparison of any two hypotheses.</p>
       </section>
 
       {/* Selectors */}
@@ -126,8 +126,8 @@ export default function Compare() {
       {/* Comparison table */}
       {viewA && viewB && (
         <section className="card overflow-hidden p-0">
-          <div className="grid grid-cols-3 border-b border-line">
-            <div className="p-3 text-xs text-gray-400 font-semibold">Dimension</div>
+          <div className="grid grid-cols-3 border-b border-border-hair">
+            <div className="p-3 text-xs text-steel font-semibold">Dimension</div>
             <ColHeader title={viewA.title} />
             <ColHeader title={viewB.title} />
           </div>
@@ -157,8 +157,8 @@ export default function Compare() {
             a={viewA.distanceToGo ?? (viewA.navigable ? "—" : "Not navigable")}
             b={viewB.distanceToGo ?? (viewB.navigable ? "—" : "Not navigable")} />
           {/* Support bars */}
-          <div className="grid grid-cols-3 border-t border-line/50 px-3 py-2">
-            <div className="text-xs text-gray-400 self-center">Support bar</div>
+          <div className="grid grid-cols-3 border-t border-border-hair/50 px-3 py-2">
+            <div className="text-xs text-steel self-center">Support bar</div>
             <div className="pr-3 pt-1"><Bar value={viewA.support} label="" /></div>
             <div className="pl-0 pt-1"><Bar value={viewB.support} label="" /></div>
           </div>
@@ -166,7 +166,7 @@ export default function Compare() {
       )}
 
       {hyps.length < 2 && (
-        <p className="card text-sm text-gray-400 text-center">
+        <p className="card text-sm text-steel text-center">
           You need at least 2 hypotheses with evidence to compare. Use Workflow to add more.
         </p>
       )}
@@ -201,8 +201,8 @@ function ColHeader({ title }: { title: string }) {
 function CompRow({ label, children }: { label: string; children: React.ReactNode }) {
   const [a, b] = Array.isArray(children) ? children : [children];
   return (
-    <div className="grid grid-cols-3 border-t border-line/50 px-3 py-2.5">
-      <div className="text-xs text-gray-400 self-center">{label}</div>
+    <div className="grid grid-cols-3 border-t border-border-hair/50 px-3 py-2.5">
+      <div className="text-xs text-steel self-center">{label}</div>
       <div className="pr-2">{a}</div>
       <div>{b}</div>
     </div>
@@ -213,10 +213,10 @@ function CompRowText({ label, a, b, better }: {
   label: string; a: string; b: string; better?: "a" | "b";
 }) {
   return (
-    <div className="grid grid-cols-3 border-t border-line/50 px-3 py-2.5">
-      <div className="text-xs text-gray-400 self-center">{label}</div>
-      <div className={`text-sm font-semibold ${better === "a" ? "text-white" : "text-gray-400"}`}>{a}</div>
-      <div className={`text-sm font-semibold ${better === "b" ? "text-white" : "text-gray-400"}`}>{b}</div>
+    <div className="grid grid-cols-3 border-t border-border-hair/50 px-3 py-2.5">
+      <div className="text-xs text-steel self-center">{label}</div>
+      <div className={`text-sm font-semibold ${better === "a" ? "text-white" : "text-steel"}`}>{a}</div>
+      <div className={`text-sm font-semibold ${better === "b" ? "text-white" : "text-steel"}`}>{b}</div>
     </div>
   );
 }

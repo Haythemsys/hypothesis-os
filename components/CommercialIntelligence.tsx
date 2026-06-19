@@ -27,13 +27,13 @@ const INV_BG: Record<string, string>   = {
 
 // ── 1. Decision Risk Card ────────────────────────────────────────────────────
 export function DecisionRiskCard({ risk }: { risk: DecisionRisk }) {
-  const cls  = RISK_CLS[risk.level]  ?? "text-gray-200";
+  const cls  = RISK_CLS[risk.level]  ?? "text-ivory";
   const bgCls = RISK_BG[risk.level]  ?? "bg-white/5 border-white/10";
   return (
     <section className={`card border space-y-2 ${bgCls}`}>
       <div className="label">Decision Risk</div>
       <div className={`text-3xl font-bold ${cls}`}>{risk.level}</div>
-      <p className="text-sm text-gray-300 leading-relaxed">{risk.reason}</p>
+      <p className="text-sm text-steel leading-relaxed">{risk.reason}</p>
     </section>
   );
 }
@@ -49,8 +49,8 @@ export function ResolutionTimelinePanel({ timeline }: { timeline: ResolutionTime
         {timeline.items.map((item) => (
           <div key={item.dimension} className="space-y-1">
             <div className="flex items-baseline justify-between gap-2">
-              <span className="text-sm text-gray-200 min-w-0 truncate">{item.label}</span>
-              <span className="text-xs text-gray-400 shrink-0 tabular-nums">
+              <span className="text-sm text-ivory min-w-0 truncate">{item.label}</span>
+              <span className="text-xs text-steel shrink-0 tabular-nums">
                 {item.minWeeks}–{item.maxWeeks} wks
               </span>
             </div>
@@ -66,7 +66,7 @@ export function ResolutionTimelinePanel({ timeline }: { timeline: ResolutionTime
         ))}
       </div>
       <div className="flex items-center justify-between rounded-lg bg-white/5 px-3 py-2 text-sm">
-        <span className="text-gray-400">Overall estimate</span>
+        <span className="text-steel">Overall estimate</span>
         <span className="font-semibold text-white">
           {timeline.totalMin}–{timeline.totalMax} weeks
         </span>
@@ -77,25 +77,25 @@ export function ResolutionTimelinePanel({ timeline }: { timeline: ResolutionTime
 
 // ── 3. Cost to Resolve Panel ─────────────────────────────────────────────────
 export function CostToResolvePanel({ cost }: { cost: CostToResolve }) {
-  const cls = COST_CLS[cost.level] ?? "text-gray-200";
+  const cls = COST_CLS[cost.level] ?? "text-ivory";
   return (
     <section className="card space-y-2">
       <div className="label">Estimated Evidence Cost</div>
       <div className={`text-2xl font-bold ${cls}`}>{cost.level}</div>
-      <p className="text-sm text-gray-300 leading-relaxed">{cost.description}</p>
+      <p className="text-sm text-steel leading-relaxed">{cost.description}</p>
     </section>
   );
 }
 
 // ── 4. Investor / Founder View ───────────────────────────────────────────────
 export function InvestorViewCard({ inv }: { inv: InvestorView }) {
-  const cls  = INV_CLS[inv.verdict]  ?? "text-gray-200";
+  const cls  = INV_CLS[inv.verdict]  ?? "text-ivory";
   const bgCls = INV_BG[inv.verdict]  ?? "bg-white/5 border-white/10";
   return (
     <section className={`card border space-y-2 ${bgCls}`}>
       <div className="label">Should I invest more evidence?</div>
       <div className={`text-3xl font-bold tracking-wide ${cls}`}>{inv.verdict}</div>
-      <p className="text-sm text-gray-300 leading-relaxed">{inv.reason}</p>
+      <p className="text-sm text-steel leading-relaxed">{inv.reason}</p>
     </section>
   );
 }
@@ -140,20 +140,20 @@ export function WhatIfSimulator({
       >
         <div>
           <div className="label">What-If Simulator</div>
-          <p className="text-xs text-gray-500 mt-0.5">Adjust evidence hypothetically — does not alter stored data</p>
+          <p className="text-xs text-slate mt-0.5">Adjust evidence hypothetically — does not alter stored data</p>
         </div>
-        <span className="text-gray-400 text-lg ml-2 shrink-0">{open ? "▲" : "▼"}</span>
+        <span className="text-steel text-lg ml-2 shrink-0">{open ? "▲" : "▼"}</span>
       </button>
 
       {open && (
-        <div className="space-y-4 border-t border-line pt-3">
+        <div className="space-y-4 border-t border-border-hair pt-3">
           {/* Sliders */}
           <div className="space-y-3">
             {SIM_FIELDS.map((f) => {
               const val = sim[f.key] as number;
               return (
                 <div key={f.key + reset}>
-                  <div className="flex justify-between text-xs text-gray-400 mb-1">
+                  <div className="flex justify-between text-xs text-steel mb-1">
                     <span>{f.label}</span>
                     <span className="tabular-nums font-mono">{val.toFixed(2)}</span>
                   </div>
@@ -165,7 +165,7 @@ export function WhatIfSimulator({
                 </div>
               );
             })}
-            <div className="flex items-center justify-between rounded-xl border border-line px-3 py-2 text-sm min-h-11">
+            <div className="flex items-center justify-between rounded-xl border border-border-hair px-3 py-2 text-sm min-h-11">
               <span>CI excludes null</span>
               <button onClick={() => setSim(p => ({ ...p, ciExcludesNull: !p.ciExcludesNull }))}
                 className={`pill shrink-0 ${sim.ciExcludesNull ? "verdict-GO" : "bg-white/10"}`}>
@@ -176,27 +176,27 @@ export function WhatIfSimulator({
 
           {/* Comparison */}
           <div className="grid grid-cols-2 gap-3">
-            <div className="rounded-xl bg-black/30 p-3 space-y-1.5">
-              <div className="text-xs font-semibold text-gray-400">Current</div>
-              <div className={`text-lg font-bold ${VERDICT_TEXT[currentVerdict] ?? "text-gray-200"}`}>
+            <div className="rounded-xl bg-obsidian p-3 space-y-1.5">
+              <div className="text-xs font-semibold text-steel">Current</div>
+              <div className={`text-lg font-bold ${VERDICT_TEXT[currentVerdict] ?? "text-ivory"}`}>
                 {currentVerdict}
               </div>
-              <div className="text-xs text-gray-400">Support: <span className="text-white tabular-nums">{currentSupport}</span></div>
+              <div className="text-xs text-steel">Support: <span className="text-white tabular-nums">{currentSupport}</span></div>
             </div>
-            <div className={`rounded-xl p-3 space-y-1.5 ${verdictChanged ? "bg-white/10 border border-white/20" : "bg-black/30"}`}>
-              <div className="text-xs font-semibold text-gray-400">Projected</div>
-              <div className={`text-lg font-bold ${VERDICT_TEXT[simCrit.finalVerdict] ?? "text-gray-200"}`}>
+            <div className={`rounded-xl p-3 space-y-1.5 ${verdictChanged ? "bg-white/10 border border-white/20" : "bg-obsidian"}`}>
+              <div className="text-xs font-semibold text-steel">Projected</div>
+              <div className={`text-lg font-bold ${VERDICT_TEXT[simCrit.finalVerdict] ?? "text-ivory"}`}>
                 {simCrit.finalVerdict}
                 {verdictChanged && <span className="ml-1.5 text-xs font-normal text-white">↑ changed</span>}
               </div>
-              <div className="text-xs text-gray-400">Support: <span className="text-white tabular-nums">{simNav.currentSupport}</span></div>
-              <div className="text-xs text-gray-400">Debt: <span className="text-white tabular-nums">{simDebt.pct}%</span></div>
+              <div className="text-xs text-steel">Support: <span className="text-white tabular-nums">{simNav.currentSupport}</span></div>
+              <div className="text-xs text-steel">Debt: <span className="text-white tabular-nums">{simDebt.pct}%</span></div>
             </div>
           </div>
 
           {/* Effort under simulation */}
           {simEffort && (
-            <div className="text-xs text-gray-500 text-center">
+            <div className="text-xs text-slate text-center">
               Simulated effort: <span className={`font-semibold ${simEffort.level === "LOW" ? "text-go" : simEffort.level === "HIGH" ? "text-kill" : "text-unresolved"}`}>
                 {simEffort.level}
               </span>
@@ -204,7 +204,7 @@ export function WhatIfSimulator({
             </div>
           )}
 
-          <button onClick={resetSim} className="btn w-full text-xs text-gray-400">Reset simulation</button>
+          <button onClick={resetSim} className="btn w-full text-xs text-steel">Reset simulation</button>
         </div>
       )}
     </section>

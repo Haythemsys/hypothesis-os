@@ -18,7 +18,7 @@ export default function More() {
     <div className="space-y-4">
       <section className="card">
         <h1 className="text-xl font-bold">More</h1>
-        <p className="mt-1 text-sm text-gray-400">Tools, configuration, and governance.</p>
+        <p className="mt-1 text-sm text-steel">Tools, configuration, and governance.</p>
       </section>
       <section className="grid grid-cols-1 gap-3">
         {TOOLS.map((x) => (
@@ -26,7 +26,7 @@ export default function More() {
             <span className="text-2xl">{x.icon}</span>
             <span>
               <span className="block font-semibold">{x.t}</span>
-              <span className="block text-sm text-gray-400">{x.d}</span>
+              <span className="block text-sm text-steel">{x.d}</span>
             </span>
           </Link>
         ))}

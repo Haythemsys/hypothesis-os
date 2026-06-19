@@ -20,9 +20,9 @@ export function ExecutiveSummaryCard({
   summary: ExecutiveSummary;
   verdict: string;
 }) {
-  const vText  = VERDICT_TEXT[verdict] ?? "text-gray-200";
+  const vText  = VERDICT_TEXT[verdict] ?? "text-ivory";
   const eff    = summary.effort;
-  const effCls = eff ? EFFORT_CLS[eff] ?? "text-gray-200" : "text-gray-400";
+  const effCls = eff ? EFFORT_CLS[eff] ?? "text-ivory" : "text-steel";
 
   return (
     <section className={`card border-2 verdict-${verdict} space-y-3`}>
@@ -30,15 +30,15 @@ export function ExecutiveSummaryCard({
 
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <div className="text-xs text-gray-400">Verdict</div>
+          <div className="text-xs text-steel">Verdict</div>
           <div className={`text-xl font-bold ${vText}`}>{verdict}</div>
         </div>
         {eff && (
           <div className="text-right min-w-0">
-            <div className="text-xs text-gray-400">Estimated effort</div>
+            <div className="text-xs text-steel">Estimated effort</div>
             <div className={`text-sm font-bold ${effCls}`}>{eff}</div>
             {summary.studyCycles !== null && (
-              <div className="text-xs text-gray-500">
+              <div className="text-xs text-slate">
                 {summary.studyCycles} study cycle{summary.studyCycles !== 1 ? "s" : ""}
               </div>
             )}
@@ -47,25 +47,25 @@ export function ExecutiveSummaryCard({
       </div>
 
       <div>
-        <div className="text-xs text-gray-400 mb-0.5">Reason</div>
-        <p className="text-sm text-gray-200 leading-relaxed">{summary.reason}</p>
+        <div className="text-xs text-steel mb-0.5">Reason</div>
+        <p className="text-sm text-ivory leading-relaxed">{summary.reason}</p>
       </div>
 
       {summary.fastestRoute && (
         <div>
-          <div className="text-xs text-gray-400 mb-0.5">Fastest route</div>
+          <div className="text-xs text-steel mb-0.5">Fastest route</div>
           <p className="text-sm font-medium text-white">{summary.fastestRoute}</p>
         </div>
       )}
 
       {verdict !== "GO" && summary.debtPct !== null && (
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-          <span className="text-xs text-gray-400">Evidence debt:</span>
+          <span className="text-xs text-steel">Evidence debt:</span>
           <span className={`text-sm font-bold ${debtCls(summary.debtPct)}`}>
             {summary.debtPct}%
           </span>
           {summary.debtBand && (
-            <span className="text-xs text-gray-500">· {summary.debtBand}</span>
+            <span className="text-xs text-slate">· {summary.debtBand}</span>
           )}
         </div>
       )}
@@ -100,7 +100,7 @@ export function GoBlockersPanel({ nav }: { nav: Navigation }) {
             : String(Math.round((Number(d.required) - Number(d.current)) * 100) / 100);
 
           return (
-            <div key={d.criterion} className="rounded-lg bg-black/30 p-3 space-y-2">
+            <div key={d.criterion} className="rounded-lg bg-obsidian p-3 space-y-2">
               <div className="flex items-center gap-1.5">
                 <span className="text-kill text-sm" aria-hidden>✗</span>
                 <span className="text-sm font-semibold text-white">
@@ -109,15 +109,15 @@ export function GoBlockersPanel({ nav }: { nav: Navigation }) {
               </div>
               <div className="grid grid-cols-3 gap-2 text-xs">
                 <div>
-                  <div className="text-gray-500 mb-0.5">Current</div>
-                  <div className="font-mono text-gray-200">{currentStr}</div>
+                  <div className="text-slate mb-0.5">Current</div>
+                  <div className="font-mono text-ivory">{currentStr}</div>
                 </div>
                 <div>
-                  <div className="text-gray-500 mb-0.5">Required</div>
-                  <div className="font-mono text-gray-200">{requiredStr}</div>
+                  <div className="text-slate mb-0.5">Required</div>
+                  <div className="font-mono text-ivory">{requiredStr}</div>
                 </div>
                 <div>
-                  <div className="text-gray-500 mb-0.5">Gap</div>
+                  <div className="text-slate mb-0.5">Gap</div>
                   <div className="font-mono text-unresolved">{gapStr}</div>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export function EvidenceDebtPanel({ debt }: { debt: EvidenceDebt }) {
       <div className="label">Evidence Debt</div>
       <div className="flex items-end justify-between gap-2">
         <div className={`text-3xl font-bold tabular-nums ${cls}`}>{pct}%</div>
-        <div className="text-xs text-gray-400 text-right">{debt.band}</div>
+        <div className="text-xs text-steel text-right">{debt.band}</div>
       </div>
 
       {/* Progress bar — fill represents debt (red = more debt) */}
@@ -153,7 +153,7 @@ export function EvidenceDebtPanel({ debt }: { debt: EvidenceDebt }) {
         />
       </div>
 
-      <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-gray-500">
+      <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-slate">
         <span>0–10%  Near GO</span>
         <span>30–60%  Significant</span>
         <span>10–30%  Moderate</span>
@@ -169,7 +169,7 @@ const EFFORT_BG: Record<string, string> = {
 };
 
 export function EffortPanel({ effort }: { effort: DecisionEffort }) {
-  const cls    = EFFORT_CLS[effort.level] ?? "text-gray-200";
+  const cls    = EFFORT_CLS[effort.level] ?? "text-ivory";
   const bgCls  = EFFORT_BG[effort.level]  ?? "bg-white/5 border-white/10";
 
   return (
@@ -177,11 +177,11 @@ export function EffortPanel({ effort }: { effort: DecisionEffort }) {
       <div className="label">Decision Effort Estimate</div>
       <div className={`text-3xl font-bold ${cls}`}>{effort.level}</div>
       {effort.studyCycles !== null ? (
-        <div className="text-sm text-gray-300">
+        <div className="text-sm text-steel">
           Estimated study cycles: <span className="font-semibold text-white">{effort.studyCycles}</span>
         </div>
       ) : (
-        <div className="text-sm text-gray-400">
+        <div className="text-sm text-steel">
           Multiple study cycles required — no single move closes the gap.
         </div>
       )}
@@ -199,12 +199,12 @@ export function PathToGoPanel({ steps }: { steps: PathStep[] }) {
       <ol className="space-y-3">
         {steps.map((s, i) => (
           <li key={s.dimension} className="flex gap-3 min-w-0">
-            <div className="shrink-0 w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold text-gray-300">
+            <div className="shrink-0 w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold text-steel">
               {i + 1}
             </div>
             <div className="min-w-0 space-y-0.5">
               <div className="text-sm font-semibold text-white truncate">{s.label}</div>
-              <p className="text-xs text-gray-400 leading-relaxed">{s.action}</p>
+              <p className="text-xs text-steel leading-relaxed">{s.action}</p>
               {s.maxGain !== null && (
                 <span className="inline-block text-xs text-go">+{s.maxGain} max support gain</span>
               )}
@@ -212,7 +212,7 @@ export function PathToGoPanel({ steps }: { steps: PathStep[] }) {
           </li>
         ))}
       </ol>
-      <div className="rounded-lg bg-white/5 px-3 py-2 text-xs text-gray-400">
+      <div className="rounded-lg bg-white/5 px-3 py-2 text-xs text-steel">
         Expected outcome: <span className="text-white font-medium">GO becomes eligible</span>
       </div>
     </section>
@@ -228,7 +228,7 @@ export function ConfidenceExplanationPanel({ breakdown }: { breakdown: Confidenc
     <section className="card space-y-3">
       <div className="flex items-baseline gap-2">
         <div className="label">Why {breakdown.score}?</div>
-        <span className="text-xs text-gray-500">Calibration score breakdown</span>
+        <span className="text-xs text-slate">Calibration score breakdown</span>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -237,7 +237,7 @@ export function ConfidenceExplanationPanel({ breakdown }: { breakdown: Confidenc
             <div className="text-xs font-semibold text-go mb-1.5">Contributors</div>
             <ul className="space-y-1">
               {breakdown.contributors.map((c) => (
-                <li key={c} className="flex items-start gap-1.5 text-xs text-gray-300">
+                <li key={c} className="flex items-start gap-1.5 text-xs text-steel">
                   <span className="text-go shrink-0 mt-0.5">+</span>
                   <span>{c}</span>
                 </li>
@@ -251,7 +251,7 @@ export function ConfidenceExplanationPanel({ breakdown }: { breakdown: Confidenc
             <div className="text-xs font-semibold text-kill mb-1.5">Penalties</div>
             <ul className="space-y-1">
               {breakdown.penalties.map((p) => (
-                <li key={p} className="flex items-start gap-1.5 text-xs text-gray-300">
+                <li key={p} className="flex items-start gap-1.5 text-xs text-steel">
                   <span className="text-kill shrink-0 mt-0.5">−</span>
                   <span>{p}</span>
                 </li>
