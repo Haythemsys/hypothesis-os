@@ -52,6 +52,17 @@ export default function Workflow() {
     } catch {}
   }, [title, project, hyp, plan, ev, result, report]);
 
+  // Editing project or title after hypothesis was created resets step 1
+  // so the form re-activates and "Create & decompose" becomes available again.
+  const changeProject = (v: string) => {
+    setProject(v);
+    if (hyp) { setHyp(null); setPlan(null); setResult(null); setReport(null); }
+  };
+  const changeTitle = (v: string) => {
+    setTitle(v);
+    if (hyp) { setHyp(null); setPlan(null); setResult(null); setReport(null); }
+  };
+
   const run = async (fn: () => Promise<void>) => {
     setBusy(true); setErr("");
     try { await fn(); } catch (e: any) { setErr(e.message || String(e)); } finally { setBusy(false); }
@@ -98,9 +109,9 @@ export default function Workflow() {
       {/* Step 1 */}
       <section className="card space-y-2">
         <div className="label">1 · Project & hypothesis</div>
-        <input className="input" value={project} onChange={(e) => setProject(e.target.value)} placeholder="project name" />
-        <textarea className="input min-h-[72px]" value={title} disabled={!!hyp}
-          placeholder="State your hypothesis…" onChange={(e) => setTitle(e.target.value)} />
+        <input className="input" value={project} onChange={(e) => changeProject(e.target.value)} placeholder="project name" />
+        <textarea className="input min-h-[72px]" value={title}
+          placeholder="State your hypothesis…" onChange={(e) => changeTitle(e.target.value)} />
         {!hyp ? (
           <button className="btn" onClick={create} disabled={busy || !title.trim()}>{busy ? "…" : "Create & decompose"}</button>
         ) : (
