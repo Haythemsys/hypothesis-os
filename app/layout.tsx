@@ -1,22 +1,23 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Nav from "@/components/Nav";
+import { Logo } from "@/components/logo/Logo";
 
 export const metadata: Metadata = {
-  title: "HypothesisOS",
-  description: "A research operating system: evaluate hypotheses → GO / KILL / UNRESOLVED, from evidence.",
+  title: "HypothesisOS — Decision Falsification Platform",
+  description: "Stop bad decisions before they cost you money. Encode evidence, get a deterministic GO / KILL / UNRESOLVED verdict with kill gates, calibration, and a path to GO.",
 };
 export const viewport: Viewport = {
-  width: "device-width", initialScale: 1, maximumScale: 1, viewportFit: "cover", themeColor: "#0b0f17",
+  width: "device-width", initialScale: 1, maximumScale: 1, viewportFit: "cover", themeColor: "#0A0C10",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-dvh">
-        <header className="sticky top-0 z-40 border-b border-line bg-ink/90 px-4 py-3 backdrop-blur">
+      <body className="min-h-dvh bg-obsidian text-ivory">
+        <header className="sticky top-0 z-40 border-b border-border-hair bg-obsidian/90 px-4 py-3 backdrop-blur">
           <div className="mx-auto flex max-w-3xl items-center gap-2">
-            <span className="text-lg font-black tracking-tight">Hypothesis<span className="text-go">OS</span></span>
+            <Logo size={22} />
             <span className="label ml-auto">decision engine</span>
           </div>
         </header>
