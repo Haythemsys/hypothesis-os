@@ -9,6 +9,7 @@ import path from "path";
 import type {
   Project, Hypothesis, Experiment, EvidenceRecord, VerdictRecord, Report,
   Comment, Approval, WorkspaceMember,
+  IngestDocument, KnowledgeItem, IntelligenceSnapshot,
 } from "../models";
 import { canSee, type Identity } from "./identity";
 
@@ -157,6 +158,50 @@ function migrate(db: Database.Database) {
     CREATE INDEX IF NOT EXISTS idx_comments_hypothesis ON comments(hypothesisId);
     CREATE INDEX IF NOT EXISTS idx_approvals_hypothesis ON approvals(hypothesisId);
     CREATE INDEX IF NOT EXISTS idx_members_workspace ON workspace_members(workspaceId);
+
+    CREATE TABLE IF NOT EXISTS documents (
+      id TEXT PRIMARY KEY,
+      orgId TEXT NOT NULL,
+      ownerId TEXT NOT NULL,
+      name TEXT NOT NULL,
+      type TEXT NOT NULL DEFAULT 'txt',
+      size INTEGER NOT NULL DEFAULT 0,
+      content TEXT NOT NULL DEFAULT '',
+      claims TEXT NOT NULL DEFAULT '[]',
+      metrics TEXT NOT NULL DEFAULT '[]',
+      dates TEXT NOT NULL DEFAULT '[]',
+      entities TEXT NOT NULL DEFAULT '[]',
+      summary TEXT NOT NULL DEFAULT '',
+      uploadedAt TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS knowledge_items (
+      id TEXT PRIMARY KEY,
+      orgId TEXT NOT NULL,
+      ownerId TEXT NOT NULL,
+      hypothesisId TEXT,
+      type TEXT NOT NULL DEFAULT 'lesson',
+      title TEXT NOT NULL,
+      body TEXT NOT NULL,
+      tags TEXT NOT NULL DEFAULT '[]',
+      createdAt TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS intelligence_snapshots (
+      id TEXT PRIMARY KEY,
+      orgId TEXT NOT NULL,
+      decisionQuality REAL NOT NULL DEFAULT 0,
+      evidenceQuality REAL NOT NULL DEFAULT 0,
+      riskDiscipline REAL NOT NULL DEFAULT 0,
+      learningVelocity REAL NOT NULL DEFAULT 0,
+      consistency REAL NOT NULL DEFAULT 0,
+      total REAL NOT NULL DEFAULT 0,
+      recordedAt TEXT NOT NULL
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_documents_org ON documents(orgId);
+    CREATE INDEX IF NOT EXISTS idx_knowledge_org ON knowledge_items(orgId);
+    CREATE INDEX IF NOT EXISTS idx_intel_org ON intelligence_snapshots(orgId);
   `);
 }
 
@@ -355,5 +400,46 @@ export const store = {
   },
   removeMember(workspaceId: string, userId: string) {
     getDb().prepare(`DELETE FROM workspace_members WHERE workspaceId=? AND userId=?`).run(workspaceId, userId);
+  },
+
+  // ── Ingest Documents (VI-2) ─────────────────────────────────────────────────
+  createDocument(doc: IngestDocument) {
+    const db = getDb();
+    db.prepare(`INSERT OR REPLACE INTO documents (id,orgId,ownerId,name,type,size,content,claims,metrics,dates,entities,summary,uploadedAt) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`)
+      .run(doc.id, doc.orgId, doc.ownerId, doc.name, doc.type, doc.size, doc.content, JSON.stringify(doc.claims), JSON.stringify(doc.metrics), JSON.stringify(doc.dates), JSON.stringify(doc.entities), doc.summary, doc.uploadedAt);
+    return doc;
+  },
+  listDocuments(orgId: string): IngestDocument[] {
+    const rows = getDb().prepare(`SELECT * FROM documents WHERE orgId=? ORDER BY uploadedAt DESC`).all(orgId) as any[];
+    return rows.map(r => ({ ...r, claims: JSON.parse(r.claims || "[]"), metrics: JSON.parse(r.metrics || "[]"), dates: JSON.parse(r.dates || "[]"), entities: JSON.parse(r.entities || "[]") }));
+  },
+  deleteDocument(orgId: string, id: string) {
+    getDb().prepare(`DELETE FROM documents WHERE id=? AND orgId=?`).run(id, orgId);
+  },
+
+  // ── Knowledge Items (VI-7) ──────────────────────────────────────────────────
+  createKnowledgeItem(item: KnowledgeItem) {
+    const db = getDb();
+    db.prepare(`INSERT OR REPLACE INTO knowledge_items (id,orgId,ownerId,hypothesisId,type,title,body,tags,createdAt) VALUES (?,?,?,?,?,?,?,?,?)`)
+      .run(item.id, item.orgId, item.ownerId, item.hypothesisId ?? null, item.type, item.title, item.body, JSON.stringify(item.tags), item.createdAt);
+    return item;
+  },
+  listKnowledgeItems(orgId: string): KnowledgeItem[] {
+    const rows = getDb().prepare(`SELECT * FROM knowledge_items WHERE orgId=? ORDER BY createdAt DESC`).all(orgId) as any[];
+    return rows.map(r => ({ ...r, hypothesisId: r.hypothesisId ?? undefined, tags: JSON.parse(r.tags || "[]") }));
+  },
+  deleteKnowledgeItem(orgId: string, id: string) {
+    getDb().prepare(`DELETE FROM knowledge_items WHERE id=? AND orgId=?`).run(id, orgId);
+  },
+
+  // ── Intelligence Snapshots (VI-10) ──────────────────────────────────────────
+  createSnapshot(snap: IntelligenceSnapshot) {
+    const db = getDb();
+    db.prepare(`INSERT INTO intelligence_snapshots (id,orgId,decisionQuality,evidenceQuality,riskDiscipline,learningVelocity,consistency,total,recordedAt) VALUES (?,?,?,?,?,?,?,?,?)`)
+      .run(snap.id, snap.orgId, snap.decisionQuality, snap.evidenceQuality, snap.riskDiscipline, snap.learningVelocity, snap.consistency, snap.total, snap.recordedAt);
+    return snap;
+  },
+  listSnapshots(orgId: string): IntelligenceSnapshot[] {
+    return getDb().prepare(`SELECT * FROM intelligence_snapshots WHERE orgId=? ORDER BY recordedAt ASC`).all(orgId) as IntelligenceSnapshot[];
   },
 };

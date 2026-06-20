@@ -141,3 +141,48 @@ export interface WorkspaceMember {
   invitedBy?: ID;
   joinedAt: string;
 }
+
+// VI-2: Ingested evidence documents
+export interface IngestDocument {
+  id: ID;
+  orgId: ID;
+  ownerId: ID;
+  name: string;
+  type: string; // pdf | docx | txt | md | csv | json
+  size: number;
+  content: string; // extracted text
+  claims: string[];
+  metrics: string[];
+  dates: string[];
+  entities: string[];
+  summary: string;
+  uploadedAt: string;
+}
+
+// VI-7: Organizational knowledge items
+export type KnowledgeItemType = "principle" | "lesson" | "pattern" | "checklist";
+
+export interface KnowledgeItem {
+  id: ID;
+  orgId: ID;
+  ownerId: ID;
+  hypothesisId?: ID;
+  type: KnowledgeItemType;
+  title: string;
+  body: string;
+  tags: string[];
+  createdAt: string;
+}
+
+// VI-10: Intelligence score snapshots
+export interface IntelligenceSnapshot {
+  id: ID;
+  orgId: ID;
+  decisionQuality: number;
+  evidenceQuality: number;
+  riskDiscipline: number;
+  learningVelocity: number;
+  consistency: number;
+  total: number;
+  recordedAt: string;
+}
