@@ -43,9 +43,14 @@ function ExportCenterInner() {
 
   const selectedHyp = hypotheses.find((h) => h.id === selected);
 
+  function trackExport(format: string) {
+    fetch("/api/events", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "export_clicked", properties: { format } }) }).catch(() => {});
+  }
+
   const exportJSON = async () => {
     if (!selected) return;
     setExporting("json");
+    trackExport("json");
     try {
       const data = await api<any>(`/api/hypotheses/${selected}`);
       downloadBlob(
@@ -59,6 +64,7 @@ function ExportCenterInner() {
   const exportCSV = async () => {
     if (!selected) return;
     setExporting("csv");
+    trackExport("csv");
     try {
       const data = await api<any>(`/api/hypotheses/${selected}`);
       const h = data.hypothesis || {};
@@ -88,6 +94,7 @@ function ExportCenterInner() {
   const exportMarkdown = async () => {
     if (!selected) return;
     setExporting("md");
+    trackExport("markdown");
     try {
       const data = await api<any>(`/api/hypotheses/${selected}`);
       const reports: any[] = data.reports || [];

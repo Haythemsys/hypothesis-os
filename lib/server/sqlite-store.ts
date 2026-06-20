@@ -10,6 +10,7 @@ import type {
   Project, Hypothesis, Experiment, EvidenceRecord, VerdictRecord, Report,
   Comment, Approval, WorkspaceMember,
   IngestDocument, KnowledgeItem, IntelligenceSnapshot,
+  BetaSignup, AnalyticsEvent,
 } from "../models";
 import { canSee, type Identity } from "./identity";
 
@@ -202,6 +203,28 @@ function migrate(db: Database.Database) {
     CREATE INDEX IF NOT EXISTS idx_documents_org ON documents(orgId);
     CREATE INDEX IF NOT EXISTS idx_knowledge_org ON knowledge_items(orgId);
     CREATE INDEX IF NOT EXISTS idx_intel_org ON intelligence_snapshots(orgId);
+
+    CREATE TABLE IF NOT EXISTS beta_signups (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT NOT NULL,
+      role TEXT NOT NULL DEFAULT '',
+      useCase TEXT NOT NULL DEFAULT '',
+      company TEXT NOT NULL DEFAULT '',
+      decisionType TEXT NOT NULL DEFAULT '',
+      createdAt TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS analytics_events (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      properties TEXT NOT NULL DEFAULT '{}',
+      orgId TEXT NOT NULL DEFAULT '',
+      createdAt TEXT NOT NULL
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_events_name ON analytics_events(name);
+    CREATE INDEX IF NOT EXISTS idx_events_created ON analytics_events(createdAt);
   `);
 }
 
@@ -430,6 +453,38 @@ export const store = {
   },
   deleteKnowledgeItem(orgId: string, id: string) {
     getDb().prepare(`DELETE FROM knowledge_items WHERE id=? AND orgId=?`).run(id, orgId);
+  },
+
+  // ── Beta Signups (X4) ──────────────────────────────────────────────────────
+  createBetaSignup(s: BetaSignup) {
+    const db = getDb();
+    db.prepare(`INSERT OR IGNORE INTO beta_signups (id,name,email,role,useCase,company,decisionType,createdAt) VALUES (?,?,?,?,?,?,?,?)`)
+      .run(s.id, s.name, s.email, s.role, s.useCase, s.company, s.decisionType, s.createdAt);
+    return s;
+  },
+  listBetaSignups(): BetaSignup[] {
+    return getDb().prepare(`SELECT * FROM beta_signups ORDER BY createdAt DESC`).all() as BetaSignup[];
+  },
+  countBetaSignups(): number {
+    const row = getDb().prepare(`SELECT COUNT(*) as n FROM beta_signups`).get() as { n: number };
+    return row.n;
+  },
+
+  // ── Analytics Events (X7) ──────────────────────────────────────────────────
+  createEvent(e: AnalyticsEvent) {
+    const db = getDb();
+    db.prepare(`INSERT INTO analytics_events (id,name,properties,orgId,createdAt) VALUES (?,?,?,?,?)`)
+      .run(e.id, e.name, e.properties, e.orgId, e.createdAt);
+    return e;
+  },
+  listEvents(limit = 500): AnalyticsEvent[] {
+    return getDb().prepare(`SELECT * FROM analytics_events ORDER BY createdAt DESC LIMIT ?`).all(limit) as AnalyticsEvent[];
+  },
+  countEventsByName(): Record<string, number> {
+    const rows = getDb().prepare(`SELECT name, COUNT(*) as n FROM analytics_events GROUP BY name ORDER BY n DESC`).all() as { name: string; n: number }[];
+    const out: Record<string, number> = {};
+    for (const r of rows) out[r.name] = r.n;
+    return out;
   },
 
   // ── Intelligence Snapshots (VI-10) ──────────────────────────────────────────

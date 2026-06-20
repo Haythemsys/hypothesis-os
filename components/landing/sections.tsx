@@ -20,7 +20,7 @@ function Section({ id, eyebrow, title, children, className = "" }: {
 export function LandingNav() {
   const links = [
     ["#how", "How it works"], ["#demo", "Demo"],
-    ["#vs-ai", "vs AI"], ["#pricing", "Beta"], ["#faq", "FAQ"],
+    ["#vs-ai", "vs AI"], ["/pricing", "Pricing"], ["#faq", "FAQ"],
   ] as const;
   return (
     <header className="sticky top-0 z-40 border-b border-border-hair bg-obsidian/90 backdrop-blur">
@@ -31,22 +31,26 @@ export function LandingNav() {
         {/* Desktop nav links */}
         <nav className="ml-4 hidden items-center gap-5 md:flex" aria-label="Landing navigation">
           {links.map(([href, label]) => (
-            <a key={href} href={href} className="text-sm text-steel transition-colors hover:text-ivory">
-              {label}
-            </a>
+            href.startsWith("/")
+              ? <Link key={href} href={href} className="text-sm text-steel transition-colors hover:text-ivory">{label}</Link>
+              : <a key={href} href={href} className="text-sm text-steel transition-colors hover:text-ivory">{label}</a>
           ))}
         </nav>
 
         {/* Spacer */}
         <div className="flex-1" />
 
-        {/* Beta badge — visible on mobile too */}
-        <span className="pill hidden bg-amber/10 text-amber text-[10px] font-bold tracking-wide sm:inline-flex">
+        {/* Trust + Docs links */}
+        <Link href="/docs" className="hidden lg:inline text-sm text-slate hover:text-ivory transition-colors">Docs</Link>
+        <Link href="/trust" className="hidden lg:inline text-sm text-slate hover:text-ivory transition-colors ml-4">Trust</Link>
+
+        {/* Beta badge */}
+        <Link href="/beta" className="pill hidden bg-amber/10 text-amber text-[10px] font-bold tracking-wide sm:inline-flex ml-2 hover:bg-amber/20 transition-colors">
           BETA
-        </span>
+        </Link>
 
         {/* CTA */}
-        <Link href="/workflow" className="btn-primary text-sm">
+        <Link href="/workflow" className="btn-primary text-sm ml-2">
           <span className="hidden sm:inline">Run a decision →</span>
           <span className="sm:hidden">Start →</span>
         </Link>
@@ -63,23 +67,24 @@ export function Hero() {
       <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.06]"
         style={{ backgroundImage: "radial-gradient(circle at 20% 30%, #E8A23D 0, transparent 40%), radial-gradient(circle at 80% 70%, #A4ADBC 0, transparent 45%)" }} />
       <div className="relative mx-auto w-full max-w-5xl px-4 py-20 sm:px-6 sm:py-28">
-        <div className="label text-amber">Decision Falsification Platform</div>
+        <div className="label text-amber">For founders, investors & research teams</div>
         <h1 className="mt-3 max-w-3xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl">
-          Stop bad decisions<br />before they <span className="text-amber">cost you money.</span>
+          Know what evidence is missing<br />
+          <span className="text-amber">before you make the decision.</span>
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-steel">
-          HypothesisOS analyzes your evidence, finds hidden failure signals, and tells you whether
-          a hypothesis should move forward, stop, or remain unresolved — with a deterministic verdict
-          you can defend.
+          HypothesisOS scores your evidence across 12 dimensions and returns a deterministic verdict —
+          GO, KILL, or UNRESOLVED. Unlike ChatGPT, it can&apos;t be argued into a yes.
+          Same evidence always returns the same answer.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/workflow" className="btn-primary px-6 text-base">Run your first decision →</Link>
-          <a href="#how" className="btn-ghost px-6 text-base">See how it works</a>
+          <Link href="/onboarding" className="btn-primary px-6 text-base">Get your first verdict →</Link>
+          <Link href="/demo" className="btn-ghost px-6 text-base">See 3 live demos</Link>
         </div>
         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate">
-          <span>▸ <span className="text-steel">0 false-GO</span> across a 106-case study</span>
+          <span>▸ <span className="text-steel">Free during beta</span> · no credit card</span>
           <span>▸ <span className="text-steel">Deterministic</span> · same evidence, same verdict</span>
-          <span>▸ <span className="text-steel">Reproducible</span> · fully auditable</span>
+          <span>▸ <span className="text-steel">Not AI opinion</span> · a fixed algorithm you can defend</span>
         </div>
       </div>
     </section>
@@ -288,7 +293,10 @@ export function Pricing() {
               Help shape the future of evidence-based decision making.
             </p>
           </div>
-          <Link href="/workflow" className="btn-primary shrink-0 px-6">Join Beta →</Link>
+          <div className="flex gap-3 shrink-0 flex-wrap">
+            <Link href="/beta" className="btn-ghost px-5">Join waitlist →</Link>
+            <Link href="/workflow" className="btn-primary px-5">Try free →</Link>
+          </div>
         </div>
         <div className="mt-5 grid grid-cols-1 gap-3 border-t border-amber-dim/30 pt-5 sm:grid-cols-3">
           {[
@@ -382,19 +390,24 @@ export function FAQ() {
 export function FinalCTA() {
   return (
     <Section id="start" className="text-center">
-      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Decide on evidence, not optimism.</h2>
+      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Know what&apos;s missing before you commit.</h2>
       <p className="mx-auto mt-4 max-w-xl text-steel">
-        Run a real decision through the engine in the next five minutes. No account required to start.
+        Run a real decision through the engine in the next 3 minutes. Free during beta. No account required.
       </p>
-      <div className="mt-8"><Link href="/workflow" className="btn-primary px-8 text-base">Run your first decision →</Link></div>
+      <div className="mt-8 flex flex-wrap gap-3 justify-center">
+        <Link href="/onboarding" className="btn-primary px-8 text-base">Get your first verdict →</Link>
+        <Link href="/beta" className="btn-ghost px-8 text-base">Join the waitlist</Link>
+      </div>
       <footer className="mt-16 flex flex-col items-center gap-3 border-t border-border-hair pt-8 text-sm text-slate sm:flex-row sm:justify-between">
         <Logo size={20} />
-        <div className="flex gap-5">
+        <div className="flex gap-5 flex-wrap justify-center">
+          <Link href="/docs" className="hover:text-ivory">Docs</Link>
+          <Link href="/trust" className="hover:text-ivory">Trust</Link>
+          <Link href="/pricing" className="hover:text-ivory">Pricing</Link>
+          <Link href="/demo" className="hover:text-ivory">Demo</Link>
           <Link href="/app" className="hover:text-ivory">App</Link>
-          <Link href="/governance" className="hover:text-ivory">Governance</Link>
-          <Link href="/more" className="hover:text-ivory">Tools</Link>
         </div>
-        <span>Deterministic decision intelligence</span>
+        <span>Deterministic decision intelligence · Free beta</span>
       </footer>
     </Section>
   );

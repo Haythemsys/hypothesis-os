@@ -186,3 +186,24 @@ export interface IntelligenceSnapshot {
   total: number;
   recordedAt: string;
 }
+
+// X4: Beta signup
+export interface BetaSignup {
+  id: ID;
+  name: string;
+  email: string;
+  role: string;
+  useCase: string;
+  company: string;
+  decisionType: string;
+  createdAt: string;
+}
+
+// X7: Product analytics event
+export interface AnalyticsEvent {
+  id: ID;
+  name: string;
+  properties: string; // JSON
+  orgId: string;
+  createdAt: string;
+}

@@ -7,6 +7,9 @@ import {
 // Live demo runs the engine client-side — lazy-loaded below the fold.
 const LiveDemo = dynamic(() => import("@/components/landing/LiveDemo"));
 
+// Track landing_view event on mount (client wrapper, ssr:false not allowed in server components — use default import)
+const LandingTracker = dynamic(() => import("@/components/landing/LandingTracker"));
+
 function DemoSection() {
   return (
     <section id="demo" className="scroll-mt-20 border-t border-border-hair py-14 sm:py-20">
@@ -25,6 +28,7 @@ function DemoSection() {
 export default function Landing() {
   return (
     <>
+      <LandingTracker />
       <LandingNav />
       <main>
         <Hero />

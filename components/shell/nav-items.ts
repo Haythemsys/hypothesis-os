@@ -38,6 +38,8 @@ export const SIDEBAR_EXTRA: NavItem[] = [
   { href: "/export",              label: "Export",             icon: "↗" },
   { href: "/analytics",           label: "Analytics",          icon: "⊿" },
   { href: "/settings",            label: "Settings",           icon: "⚙" },
+  { href: "/admin/analytics",     label: "Admin: Analytics",   icon: "⊿" },
+  { href: "/admin/beta",          label: "Admin: Beta",        icon: "⊡" },
 ];
 
 // Paths that should highlight a given dock/sidebar item (prefix match)
